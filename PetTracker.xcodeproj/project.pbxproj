@@ -23,6 +23,7 @@
 		DA8D16B018CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
 		DA8D16B818CFFEAD008ACE5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */; };
 		DA8D16BA18CFFEAD008ACE5D /* PetTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */; };
+		DA8D16C618D00A56008ACE5D /* PTPetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16C518D00A56008ACE5D /* PTPetActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		DA8D16B518CFFEAD008ACE5D /* PetTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		DA8D16B718CFFEAD008ACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetTrackerTests.m; sourceTree = "<group>"; };
+		DA8D16C418D00A56008ACE5D /* PTPetActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetActivity.h; sourceTree = "<group>"; };
+		DA8D16C518D00A56008ACE5D /* PTPetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetActivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 				DA8D16A318CFFEAD008ACE5D /* PTSecondViewController.h */,
 				DA8D16A418CFFEAD008ACE5D /* PTSecondViewController.m */,
 				DA8D16A618CFFEAD008ACE5D /* Images.xcassets */,
+				DA8D16C318D00A1D008ACE5D /* Model */,
 				DA8D168F18CFFEAD008ACE5D /* Supporting Files */,
 			);
 			path = PetTracker;
@@ -158,6 +162,15 @@
 				DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA8D16C318D00A1D008ACE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA8D16C418D00A56008ACE5D /* PTPetActivity.h */,
+				DA8D16C518D00A56008ACE5D /* PTPetActivity.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8D16C618D00A56008ACE5D /* PTPetActivity.m in Sources */,
 				DA8D169918CFFEAD008ACE5D /* PTAppDelegate.m in Sources */,
 				DA8D16A218CFFEAD008ACE5D /* PTFirstViewController.m in Sources */,
 				DA8D16A518CFFEAD008ACE5D /* PTSecondViewController.m in Sources */,

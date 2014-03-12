@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PTSecondViewController : UIViewController
-
+@property (strong, nonatomic) NSArray *historyFromParent;
 @end

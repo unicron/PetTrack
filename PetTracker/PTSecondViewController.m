@@ -7,8 +7,10 @@
 //
 
 #import "PTSecondViewController.h"
+#import "PTPetActivity.h"
 
 @interface PTSecondViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *historyTextDisplay;
 
 @end
 
@@ -18,12 +20,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSMutableString *textDisplayString = [[NSMutableString alloc] init];
+    for (PTPetActivity *pa in self.historyFromParent) {
+        [textDisplayString appendString:[NSString stringWithFormat:@"%@ %@ \r\n", pa.ActivityName, pa.ActivityDateTime]];
+    }
+    
+    self.historyTextDisplay.text = textDisplayString;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

@@ -7,29 +7,42 @@
 //
 
 #import "PTFirstViewController.h"
+#import "PTPetActivity.h"
+#import "PTSecondViewController.h"
 
 @interface PTFirstViewController ()
-@property (strong, nonatomic) NSMutableDictionary *history;
-@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
+@property (strong, nonatomic) NSMutableArray *history;
+@property (strong, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
 @end
 
 @implementation PTFirstViewController
 
-- (NSMutableDictionary *)history {
+- (NSMutableArray *)history {
     if (!_history) {
-        _history = [[NSMutableDictionary alloc] init];
+        _history = [[NSMutableArray alloc] init];
     }
     return _history;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PTSecondViewController *pt2 = (PTSecondViewController *)segue.destinationViewController;
+    pt2.historyFromParent = self.history;
+}
+
 - (IBAction)walkButton:(UIButton *)sender {
-    [self.history setObject:self.selectedDateTime.date
-                     forKey:@"Walk"];
+    PTPetActivity *pa = [[PTPetActivity alloc] init];
+    pa.ActivityName = @"Walk";
+    pa.ActivityDateTime = self.selectedDateTime.date;
+    
+    [self.history addObject:pa];
 }
 
 - (IBAction)napButton:(UIButton *)sender {
-    [self.history setObject:self.selectedDateTime.date
-                     forKey:@"Nap"];
+    PTPetActivity *pa = [[PTPetActivity alloc] init];
+    pa.ActivityName = @"Nap";
+    pa.ActivityDateTime = self.selectedDateTime.date;
+    
+    [self.history addObject:pa];
 }
 
 - (void)viewDidLoad
