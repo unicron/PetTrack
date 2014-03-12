@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTSecondViewController.h"
+#import "PTHistoryViewController.h"
 #import "PTPetActivity.h"
 
-@interface PTSecondViewController ()
+@interface PTHistoryViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *historyTextDisplay;
 
 @end
 
-@implementation PTSecondViewController
+@implementation PTHistoryViewController
 
 - (void)viewDidLoad
 {
@@ -23,7 +23,13 @@
     
     NSMutableString *textDisplayString = [[NSMutableString alloc] init];
     for (PTPetActivity *pa in self.historyFromParent) {
-        [textDisplayString appendString:[NSString stringWithFormat:@"%@ %@ \r\n", pa.ActivityName, pa.ActivityDateTime]];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+        
+        
+        [textDisplayString appendString:[NSString stringWithFormat:@"%@ %@ \r\n",
+                                         pa.ActivityName,
+                                         [df stringFromDate:pa.ActivityDateTime]]];
     }
     
     self.historyTextDisplay.text = textDisplayString;

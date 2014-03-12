@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PTFirstViewController : UIViewController
+@interface PTActivityViewController : UIViewController
 
 @end

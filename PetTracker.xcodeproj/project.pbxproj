@@ -14,9 +14,8 @@
 		DA8D169518CFFEAD008ACE5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D169418CFFEAD008ACE5D /* main.m */; };
 		DA8D169918CFFEAD008ACE5D /* PTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D169818CFFEAD008ACE5D /* PTAppDelegate.m */; };
 		DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */; };
-		DA8D169F18CFFEAD008ACE5D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D169D18CFFEAD008ACE5D /* Main_iPad.storyboard */; };
-		DA8D16A218CFFEAD008ACE5D /* PTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16A118CFFEAD008ACE5D /* PTFirstViewController.m */; };
-		DA8D16A518CFFEAD008ACE5D /* PTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16A418CFFEAD008ACE5D /* PTSecondViewController.m */; };
+		DA8D16A218CFFEAD008ACE5D /* PTActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16A118CFFEAD008ACE5D /* PTActivityViewController.m */; };
+		DA8D16A518CFFEAD008ACE5D /* PTHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16A418CFFEAD008ACE5D /* PTHistoryViewController.m */; };
 		DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16A618CFFEAD008ACE5D /* Images.xcassets */; };
 		DA8D16AE18CFFEAD008ACE5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D16AD18CFFEAD008ACE5D /* XCTest.framework */; };
 		DA8D16AF18CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
@@ -24,6 +23,7 @@
 		DA8D16B818CFFEAD008ACE5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */; };
 		DA8D16BA18CFFEAD008ACE5D /* PetTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */; };
 		DA8D16C618D00A56008ACE5D /* PTPetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16C518D00A56008ACE5D /* PTPetActivity.m */; };
+		DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +48,10 @@
 		DA8D169718CFFEAD008ACE5D /* PTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTAppDelegate.h; sourceTree = "<group>"; };
 		DA8D169818CFFEAD008ACE5D /* PTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTAppDelegate.m; sourceTree = "<group>"; };
 		DA8D169B18CFFEAD008ACE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		DA8D169E18CFFEAD008ACE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		DA8D16A018CFFEAD008ACE5D /* PTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTFirstViewController.h; sourceTree = "<group>"; };
-		DA8D16A118CFFEAD008ACE5D /* PTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTFirstViewController.m; sourceTree = "<group>"; };
-		DA8D16A318CFFEAD008ACE5D /* PTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTSecondViewController.h; sourceTree = "<group>"; };
-		DA8D16A418CFFEAD008ACE5D /* PTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTSecondViewController.m; sourceTree = "<group>"; };
+		DA8D16A018CFFEAD008ACE5D /* PTActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTActivityViewController.h; sourceTree = "<group>"; };
+		DA8D16A118CFFEAD008ACE5D /* PTActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTActivityViewController.m; sourceTree = "<group>"; };
+		DA8D16A318CFFEAD008ACE5D /* PTHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTHistoryViewController.h; sourceTree = "<group>"; };
+		DA8D16A418CFFEAD008ACE5D /* PTHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTHistoryViewController.m; sourceTree = "<group>"; };
 		DA8D16A618CFFEAD008ACE5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA8D16AC18CFFEAD008ACE5D /* PetTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D16AD18CFFEAD008ACE5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,6 +60,7 @@
 		DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetTrackerTests.m; sourceTree = "<group>"; };
 		DA8D16C418D00A56008ACE5D /* PTPetActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetActivity.h; sourceTree = "<group>"; };
 		DA8D16C518D00A56008ACE5D /* PTPetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetActivity.m; sourceTree = "<group>"; };
+		DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +120,12 @@
 		DA8D168E18CFFEAD008ACE5D /* PetTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */,
-				DA8D169D18CFFEAD008ACE5D /* Main_iPad.storyboard */,
-				DA8D16A018CFFEAD008ACE5D /* PTFirstViewController.h */,
-				DA8D16A118CFFEAD008ACE5D /* PTFirstViewController.m */,
-				DA8D16A318CFFEAD008ACE5D /* PTSecondViewController.h */,
-				DA8D16A418CFFEAD008ACE5D /* PTSecondViewController.m */,
+				DA8D16A018CFFEAD008ACE5D /* PTActivityViewController.h */,
+				DA8D16A118CFFEAD008ACE5D /* PTActivityViewController.m */,
+				DA8D16A318CFFEAD008ACE5D /* PTHistoryViewController.h */,
+				DA8D16A418CFFEAD008ACE5D /* PTHistoryViewController.m */,
 				DA8D16A618CFFEAD008ACE5D /* Images.xcassets */,
 				DA8D16C318D00A1D008ACE5D /* Model */,
 				DA8D168F18CFFEAD008ACE5D /* Supporting Files */,
@@ -250,8 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA8D169F18CFFEAD008ACE5D /* Main_iPad.storyboard in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
+				DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
 				DA8D169318CFFEAD008ACE5D /* InfoPlist.strings in Resources */,
 			);
@@ -274,8 +274,8 @@
 			files = (
 				DA8D16C618D00A56008ACE5D /* PTPetActivity.m in Sources */,
 				DA8D169918CFFEAD008ACE5D /* PTAppDelegate.m in Sources */,
-				DA8D16A218CFFEAD008ACE5D /* PTFirstViewController.m in Sources */,
-				DA8D16A518CFFEAD008ACE5D /* PTSecondViewController.m in Sources */,
+				DA8D16A218CFFEAD008ACE5D /* PTActivityViewController.m in Sources */,
+				DA8D16A518CFFEAD008ACE5D /* PTHistoryViewController.m in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,14 +313,6 @@
 				DA8D169B18CFFEAD008ACE5D /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		DA8D169D18CFFEAD008ACE5D /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA8D169E18CFFEAD008ACE5D /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */ = {
@@ -417,6 +409,7 @@
 				GCC_PREFIX_HEADER = "PetTracker/PetTracker-Prefix.pch";
 				INFOPLIST_FILE = "PetTracker/PetTracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -430,6 +423,7 @@
 				GCC_PREFIX_HEADER = "PetTracker/PetTracker-Prefix.pch";
 				INFOPLIST_FILE = "PetTracker/PetTracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

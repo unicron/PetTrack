@@ -6,16 +6,17 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTFirstViewController.h"
+#import "PTActivityViewController.h"
 #import "PTPetActivity.h"
-#import "PTSecondViewController.h"
+#import "PTHistoryViewController.h"
 
-@interface PTFirstViewController ()
+@interface PTActivityViewController ()
 @property (strong, nonatomic) NSMutableArray *history;
-@property (strong, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
+@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
+@property (weak, nonatomic) IBOutlet UISwitch *setTime;
 @end
 
-@implementation PTFirstViewController
+@implementation PTActivityViewController
 
 - (NSMutableArray *)history {
     if (!_history) {
@@ -25,14 +26,18 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PTSecondViewController *pt2 = (PTSecondViewController *)segue.destinationViewController;
-    pt2.historyFromParent = self.history;
+    PTHistoryViewController *pth = (PTHistoryViewController *)segue.destinationViewController;
+    pth.historyFromParent = self.history;
 }
 
 - (IBAction)walkButton:(UIButton *)sender {
     PTPetActivity *pa = [[PTPetActivity alloc] init];
     pa.ActivityName = @"Walk";
-    pa.ActivityDateTime = self.selectedDateTime.date;
+    if (self.setTime.on) {
+        pa.ActivityDateTime = self.selectedDateTime.date;
+    } else {
+        pa.ActivityDateTime = [[NSDate alloc] init];
+    }
     
     [self.history addObject:pa];
 }
@@ -40,7 +45,11 @@
 - (IBAction)napButton:(UIButton *)sender {
     PTPetActivity *pa = [[PTPetActivity alloc] init];
     pa.ActivityName = @"Nap";
-    pa.ActivityDateTime = self.selectedDateTime.date;
+    if (self.setTime.on) {
+        pa.ActivityDateTime = self.selectedDateTime.date;
+    } else {
+        pa.ActivityDateTime = [[NSDate alloc] init];
+    }
     
     [self.history addObject:pa];
 }

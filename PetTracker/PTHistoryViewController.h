@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PTSecondViewController : UIViewController
+@interface PTHistoryViewController : UIViewController
 @property (strong, nonatomic) NSArray *historyFromParent;
 @end
