@@ -117,8 +117,6 @@
 		DA8D168E18CFFEAD008ACE5D /* PetTracker */ = {
 			isa = PBXGroup;
 			children = (
-				DA8D169718CFFEAD008ACE5D /* PTAppDelegate.h */,
-				DA8D169818CFFEAD008ACE5D /* PTAppDelegate.m */,
 				DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */,
 				DA8D169D18CFFEAD008ACE5D /* Main_iPad.storyboard */,
 				DA8D16A018CFFEAD008ACE5D /* PTFirstViewController.h */,
@@ -134,6 +132,8 @@
 		DA8D168F18CFFEAD008ACE5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA8D169718CFFEAD008ACE5D /* PTAppDelegate.h */,
+				DA8D169818CFFEAD008ACE5D /* PTAppDelegate.m */,
 				DA8D169018CFFEAD008ACE5D /* PetTracker-Info.plist */,
 				DA8D169118CFFEAD008ACE5D /* InfoPlist.strings */,
 				DA8D169418CFFEAD008ACE5D /* main.m */,
@@ -481,6 +481,7 @@
 				DA8D16BF18CFFEAD008ACE5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA8D16C018CFFEAD008ACE5D /* Build configuration list for PBXNativeTarget "PetTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				DA8D16C218CFFEAD008ACE5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
