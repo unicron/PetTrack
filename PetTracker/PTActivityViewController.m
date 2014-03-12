@@ -30,21 +30,9 @@
     pth.historyFromParent = self.history;
 }
 
-- (IBAction)walkButton:(UIButton *)sender {
+- (IBAction)buttonPush:(UIButton *)sender {
     PTPetActivity *pa = [[PTPetActivity alloc] init];
-    pa.ActivityName = @"Walk";
-    if (self.setTime.on) {
-        pa.ActivityDateTime = self.selectedDateTime.date;
-    } else {
-        pa.ActivityDateTime = [[NSDate alloc] init];
-    }
-    
-    [self.history addObject:pa];
-}
-
-- (IBAction)napButton:(UIButton *)sender {
-    PTPetActivity *pa = [[PTPetActivity alloc] init];
-    pa.ActivityName = @"Nap";
+    pa.ActivityName = sender.titleLabel.text;
     if (self.setTime.on) {
         pa.ActivityDateTime = self.selectedDateTime.date;
     } else {
