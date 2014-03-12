@@ -9,10 +9,28 @@
 #import "PTFirstViewController.h"
 
 @interface PTFirstViewController ()
-
+@property (strong, nonatomic) NSMutableDictionary *history;
+@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
 @end
 
 @implementation PTFirstViewController
+
+- (NSMutableDictionary *)history {
+    if (!_history) {
+        _history = [[NSMutableDictionary alloc] init];
+    }
+    return _history;
+}
+
+- (IBAction)walkButton:(UIButton *)sender {
+    [self.history setObject:self.selectedDateTime.date
+                     forKey:@"Walk"];
+}
+
+- (IBAction)napButton:(UIButton *)sender {
+    [self.history setObject:self.selectedDateTime.date
+                     forKey:@"Nap"];
+}
 
 - (void)viewDidLoad
 {
@@ -20,10 +38,5 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
