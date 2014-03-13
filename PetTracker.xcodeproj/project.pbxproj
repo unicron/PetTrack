@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fur-wallpaper-8-1024x682.png"; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +122,7 @@
 		DA8D168E18CFFEAD008ACE5D /* PetTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
 				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */,
 				DA8D16A018CFFEAD008ACE5D /* PTActivityViewController.h */,
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
 				DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
