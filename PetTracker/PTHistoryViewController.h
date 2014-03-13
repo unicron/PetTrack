@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PTBaseViewController.h"
 
-@interface PTHistoryViewController : UIViewController
+@interface PTHistoryViewController : PTBaseViewController
 @property (strong, nonatomic) NSArray *historyFromParent;
 @end

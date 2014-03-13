@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PTBaseViewController.h"
 
-@interface PTActivityViewController : UIViewController
+@interface PTActivityViewController : PTBaseViewController
 
 @end

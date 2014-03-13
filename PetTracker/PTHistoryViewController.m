@@ -19,11 +19,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundImage"]];
-    backgroundView.alpha = 0.5;
-    backgroundView.frame = self.view.bounds;
-    [self.view addSubview:backgroundView];
-    [self.view sendSubviewToBack:backgroundView];
     
     NSMutableString *textDisplayString = [[NSMutableString alloc] init];
     if ([self.historyFromParent count] > 0) {
