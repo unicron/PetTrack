@@ -94,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0523EB18D14870001FEA41 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
+				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
+				DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		DA8D167C18CFFEAD008ACE5D = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +137,7 @@
 		DA8D168E18CFFEAD008ACE5D /* PetTracker */ = {
 			isa = PBXGroup;
 			children = (
-				DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */,
-				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
-				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
+				DA0523EB18D14870001FEA41 /* Images */,
 				DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */,
 				DA0523E618D1471C001FEA41 /* PTBaseViewController.h */,
 				DA0523E718D1471C001FEA41 /* PTBaseViewController.m */,

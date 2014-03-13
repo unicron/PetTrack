@@ -42,6 +42,14 @@
     [self.history addObject:pa];
 }
 
+- (IBAction)setTimeToggle:(UISwitch *)sender {
+    if (self.setTime.on) {
+        self.selectedDateTime.hidden = NO;
+    } else {
+        self.selectedDateTime.hidden = YES;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
