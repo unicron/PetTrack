@@ -217,7 +217,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="PetTracker" id="Ia3-Dt-co3">
                         <barButtonItem key="rightBarButtonItem" title="History" id="UVf-O1-J8F">
                             <connections>
-                                <segue destination="PSr-N3-DAR" kind="push" identifier="History" id="Dbr-VB-YIV"/>
+                                <segue destination="hei-Qw-2P3" kind="push" id="ywV-eT-fCa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -230,40 +230,49 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="516" y="14"/>
         </scene>
-        <!--History View Controller - Activity History-->
-        <scene sceneID="QsW-uG-Yyv">
+        <!--History Table View Controller-->
+        <scene sceneID="eGc-6s-4Kl">
             <objects>
-                <viewController id="PSr-N3-DAR" customClass="PTHistoryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="srX-gF-1kv"/>
-                        <viewControllerLayoutGuide type="bottom" id="B70-NK-yOg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dpe-yB-fNN">
+                <tableViewController id="hei-Qw-2P3" customClass="PTHistoryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fl0-9k-zsk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="dui-Qf-lHV">
-                                <rect key="frame" x="20" y="72" width="280" height="476"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="dui-Qf-lHV" secondAttribute="bottom" constant="20" symbolic="YES" id="2Xa-Fn-qmQ"/>
-                            <constraint firstAttribute="trailing" secondItem="dui-Qf-lHV" secondAttribute="trailing" constant="20" symbolic="YES" id="PqI-cr-nd8"/>
-                            <constraint firstItem="dui-Qf-lHV" firstAttribute="leading" secondItem="dpe-yB-fNN" secondAttribute="leading" constant="20" symbolic="YES" id="Ssu-Hg-286"/>
-                            <constraint firstItem="dui-Qf-lHV" firstAttribute="top" secondItem="srX-gF-1kv" secondAttribute="bottom" constant="20" symbolic="YES" id="qqZ-Sv-cLO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Activity History" id="zRv-4q-TUS"/>
-                    <connections>
-                        <outlet property="historyTextDisplay" destination="dui-Qf-lHV" id="7n0-xm-fMJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bHk-4V-n5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="History Cell" textLabel="ZGe-Qq-w2w" detailTextLabel="82y-Q5-tAj" style="IBUITableViewCellStyleSubtitle" id="lVW-eY-O7r">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lVW-eY-O7r" id="Jms-WC-Io4">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZGe-Qq-w2w">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="82y-Q5-tAj">
+                                            <rect key="frame" x="15" y="25" width="32" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="hei-Qw-2P3" id="DvQ-v2-EMk"/>
+                            <outlet property="delegate" destination="hei-Qw-2P3" id="e8w-oK-AiW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lHp-iE-AfQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BH6-Zb-Ih2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="14"/>
         </scene>

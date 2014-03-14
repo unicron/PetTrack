@@ -10,6 +10,7 @@
 		DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */; };
 		DA0523E818D1471C001FEA41 /* PTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523E718D1471C001FEA41 /* PTBaseViewController.m */; };
 		DA0523EA18D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */; };
+		DA0523EE18D3B641001FEA41 /* PTHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523ED18D3B641001FEA41 /* PTHistoryTableViewController.m */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 		DA0523E618D1471C001FEA41 /* PTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTBaseViewController.h; sourceTree = "<group>"; };
 		DA0523E718D1471C001FEA41 /* PTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBaseViewController.m; sourceTree = "<group>"; };
 		DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png"; sourceTree = "<group>"; };
+		DA0523EC18D3B641001FEA41 /* PTHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTHistoryTableViewController.h; sourceTree = "<group>"; };
+		DA0523ED18D3B641001FEA41 /* PTHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTHistoryTableViewController.m; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 				DA8D16A118CFFEAD008ACE5D /* PTActivityViewController.m */,
 				DA8D16A318CFFEAD008ACE5D /* PTHistoryViewController.h */,
 				DA8D16A418CFFEAD008ACE5D /* PTHistoryViewController.m */,
+				DA0523EC18D3B641001FEA41 /* PTHistoryTableViewController.h */,
+				DA0523ED18D3B641001FEA41 /* PTHistoryTableViewController.m */,
 				DA8D16A618CFFEAD008ACE5D /* Images.xcassets */,
 				DA8D16C318D00A1D008ACE5D /* Model */,
 				DA8D168F18CFFEAD008ACE5D /* Supporting Files */,
@@ -299,6 +304,7 @@
 				DA8D16A218CFFEAD008ACE5D /* PTActivityViewController.m in Sources */,
 				DA8D16A518CFFEAD008ACE5D /* PTHistoryViewController.m in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
+				DA0523EE18D3B641001FEA41 /* PTHistoryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "PTActivityViewController.h"
 #import "PTPetActivity.h"
-#import "PTHistoryViewController.h"
+#import "PTHistoryTableViewController.h"
 
 @interface PTActivityViewController ()
 @property (strong, nonatomic) NSMutableArray *history;
@@ -26,7 +26,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PTHistoryViewController *pth = (PTHistoryViewController *)segue.destinationViewController;
+    PTHistoryTableViewController *pth = (PTHistoryTableViewController *)segue.destinationViewController;
     pth.historyFromParent = self.history;
 }
 
