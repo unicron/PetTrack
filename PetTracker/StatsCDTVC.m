@@ -45,31 +45,103 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
     request.predicate = nil;
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date"
-                                                              ascending:NO]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                              ascending:YES]];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:managedObjectContext
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:@"name"
                                                                                    cacheName:nil];
-    
 }
 
 #pragma mark - Table view data source
+//override
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[self.fetchedResultsController sections] count];
+}
+
+//override
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    return 4;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
-    PetActivity *pa = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    // Configure the cell...
+//    PetActivity *pa = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
+//    [df setDateStyle:NSDateFormatterShortStyle];
+//    [df setTimeStyle:NSDateFormatterShortStyle];
+//    
+//    cell.textLabel.text = [df stringFromDate:pa.date];
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
-    [df setDateStyle:NSDateFormatterShortStyle];
-    [df setTimeStyle:NSDateFormatterShortStyle];
+    id<NSFetchedResultsSectionInfo> section = [[self.fetchedResultsController sections] objectAtIndex:indexPath.section];
     
-    cell.textLabel.text = pa.name;
-    cell.detailTextLabel.text = [df stringFromDate:pa.date];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:[NSDate date]];
+    NSDate *today = [cal dateFromComponents:components];
+    
+    components = [[NSDateComponents alloc] init];
+    [components setWeek:-1];
+    NSDate *lastWeek = [cal dateByAddingComponents:components toDate:today options:0];
+    
+    components = [[NSDateComponents alloc] init];
+    [components setMonth:-1];
+    NSDate *lastMonth = [cal dateByAddingComponents:components toDate:today options:0];
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            int todayCount = 0;
+            for (PetActivity *pa in [section objects]) {
+                components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:pa.date];
+                NSDate *otherDate = [cal dateFromComponents:components];
+                if([today isEqualToDate:otherDate]) {
+                    todayCount++;
+                }
+            }
+            cell.textLabel.text = [NSString stringWithFormat:@"Today: %d", todayCount];
+        }
+            break;
+            
+        case 1: {
+            int weekCount = 0;
+            for (PetActivity *pa in [section objects]) {
+                if ([pa.date compare:lastWeek] == NSOrderedDescending) {
+                    weekCount++;
+                }
+            }
+            cell.textLabel.text = [NSString stringWithFormat:@"Week: %d", weekCount];
+        }
+            break;
+            
+        case 2: {
+            int monthCount = 0;
+            for (PetActivity *pa in [section objects]) {
+                if ([pa.date compare:lastMonth] == NSOrderedDescending) {
+                    monthCount++;
+                }
+            }
+            cell.textLabel.text = [NSString stringWithFormat:@"Month: %d", monthCount];
+        }
+            break;
+            
+        case 3: {
+            int totalCount = [section numberOfObjects];
+            cell.textLabel.text = [NSString stringWithFormat:@"Total: %d", totalCount];
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     return cell;
 }
