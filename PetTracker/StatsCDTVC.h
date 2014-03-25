@@ -9,5 +9,6 @@
 #import "CoreDataTableViewController.h"
 
 @interface StatsCDTVC : CoreDataTableViewController
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

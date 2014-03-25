@@ -11,6 +11,7 @@
 #import "PetActivity+Database.h"
 #import "HistoryCDTVC.h"
 #import "VCHelper.h"
+#import "StatsCDTVC.h"
 
 @interface ActivityVC ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
@@ -21,11 +22,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
-        HistoryCDTVC *pth = (HistoryCDTVC *)segue.destinationViewController;
-        pth.managedObjectContext = self.managedObjectContext;
+        HistoryCDTVC *view = (HistoryCDTVC *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
     
     } else {
-    
+        StatsCDTVC *view = (StatsCDTVC *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
     }
 }
 
