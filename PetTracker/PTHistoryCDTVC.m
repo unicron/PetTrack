@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTHistoryTableViewController.h"
-#import "PTPetActivity.h"
+#import "PTHistoryCDTVC.h"
+#import "PetActivity.h"
 
-@interface PTHistoryTableViewController ()
+@interface PTHistoryCDTVC ()
 
 @end
 
-@implementation PTHistoryTableViewController
+@implementation PTHistoryCDTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,24 +36,26 @@
     
 }
 
+-(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    _managedObjectContext = managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
+    request.predicate = nil;
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date"
+                                                              ascending:NO]];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+                                
+}
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [self.historyFromParent count];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"History Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"History Cell"];
+    PetActivity *pa = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -62,9 +64,8 @@
     [df setDateStyle:NSDateFormatterShortStyle];
     [df setTimeStyle:NSDateFormatterShortStyle];
     
-    PTPetActivity *pa = self.historyFromParent[indexPath.row];
-    cell.textLabel.text = pa.ActivityName;
-    cell.detailTextLabel.text = [df stringFromDate:pa.ActivityDateTime];
+    cell.textLabel.text = pa.name;
+    cell.detailTextLabel.text = [df stringFromDate:pa.date];
     
     return cell;
 }

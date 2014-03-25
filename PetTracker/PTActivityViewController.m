@@ -7,39 +7,45 @@
 //
 
 #import "PTActivityViewController.h"
-#import "PTPetActivity.h"
-#import "PTHistoryTableViewController.h"
+#import "PetActivity.h"
+#import "PTHistoryCDTVC.h"
+#import "PTViewControllerHelper.h"
 
 @interface PTActivityViewController ()
-@property (strong, nonatomic) NSMutableArray *history;
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
 @property (weak, nonatomic) IBOutlet UISwitch *setTime;
+@property (strong, nonatomic) UIManagedDocument *document;
 @end
 
 @implementation PTActivityViewController
 
-- (NSMutableArray *)history {
-    if (!_history) {
-        _history = [[NSMutableArray alloc] init];
-    }
-    return _history;
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PTHistoryTableViewController *pth = (PTHistoryTableViewController *)segue.destinationViewController;
-    pth.historyFromParent = self.history;
+    PTHistoryCDTVC *pth = (PTHistoryCDTVC *)segue.destinationViewController;
+    pth.managedObjectContext = self.managedObjectContext;
 }
 
 - (IBAction)buttonPush:(UIButton *)sender {
-    PTPetActivity *pa = [[PTPetActivity alloc] init];
-    pa.ActivityName = sender.titleLabel.text;
+    //PetActivity *pa = [[PetActivity alloc] init];
+    NSManagedObjectContext *context = self.managedObjectContext;
+    PetActivity *petActivity = [NSEntityDescription insertNewObjectForEntityForName:@"PetActivity"
+                                                             inManagedObjectContext:context];
+    
+    petActivity.name = sender.titleLabel.text;
+    
     if (self.setTime.on) {
-        pa.ActivityDateTime = self.selectedDateTime.date;
+        petActivity.date = self.selectedDateTime.date;
     } else {
-        pa.ActivityDateTime = [[NSDate alloc] init];
+        petActivity.date = [[NSDate alloc] init];
     }
     
-    [self.history addObject:pa];
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 - (IBAction)setTimeToggle:(UISwitch *)sender {
@@ -54,7 +60,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    [PTViewControllerHelper setBackground:self.view];
 }
 
 

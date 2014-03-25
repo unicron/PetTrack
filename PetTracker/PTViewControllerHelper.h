@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface PTBaseViewController : UIViewController
-
+@interface PTViewControllerHelper : NSObject 
++ (void)setBackground:(UIView *)view;
 @end

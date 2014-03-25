@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PTBaseViewController.h"
+#import "PTViewControllerHelper.h"
 
-@interface PTActivityViewController : PTBaseViewController
-
+@interface PTActivityViewController : UIViewController
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
