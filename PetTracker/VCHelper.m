@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTViewControllerHelper.h"
+#import "VCHelper.h"
 
-@interface PTViewControllerHelper ()
+@interface VCHelper ()
 
 @end
 
-@implementation PTViewControllerHelper
+@implementation VCHelper
 
 + (void)setBackground:(UIView *)view
 {

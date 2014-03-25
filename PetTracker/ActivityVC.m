@@ -6,29 +6,33 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTActivityViewController.h"
+#import "ActivityVC.h"
 #import "PetActivity.h"
-#import "PTHistoryCDTVC.h"
-#import "PTViewControllerHelper.h"
+#import "PetActivity+Database.h"
+#import "HistoryCDTVC.h"
+#import "VCHelper.h"
 
-@interface PTActivityViewController ()
+@interface ActivityVC ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
 @property (weak, nonatomic) IBOutlet UISwitch *setTime;
-@property (strong, nonatomic) UIManagedDocument *document;
 @end
 
-@implementation PTActivityViewController
+@implementation ActivityVC
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PTHistoryCDTVC *pth = (PTHistoryCDTVC *)segue.destinationViewController;
-    pth.managedObjectContext = self.managedObjectContext;
+    if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
+        HistoryCDTVC *pth = (HistoryCDTVC *)segue.destinationViewController;
+        pth.managedObjectContext = self.managedObjectContext;
+    
+    } else {
+    
+    }
 }
 
 - (IBAction)buttonPush:(UIButton *)sender {
-    //PetActivity *pa = [[PetActivity alloc] init];
     NSManagedObjectContext *context = self.managedObjectContext;
-    PetActivity *petActivity = [NSEntityDescription insertNewObjectForEntityForName:@"PetActivity"
-                                                             inManagedObjectContext:context];
+    PetActivity *petActivity = [PetActivity create:nil
+                            inManagedObjectContext:context];
     
     petActivity.name = sender.titleLabel.text;
     
@@ -49,18 +53,15 @@
 }
 
 - (IBAction)setTimeToggle:(UISwitch *)sender {
-    if (self.setTime.on) {
-        self.selectedDateTime.hidden = NO;
-    } else {
-        self.selectedDateTime.hidden = YES;
-    }
+    self.selectedDateTime.date = [[NSDate alloc] init];
+    self.selectedDateTime.hidden = !self.selectedDateTime.hidden;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [PTViewControllerHelper setBackground:self.view];
+    [VCHelper setBackground:self.view];
 }
 
 

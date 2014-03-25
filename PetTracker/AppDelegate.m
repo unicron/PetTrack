@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTAppDelegate.h"
-#import "PTActivityViewController.h"
+#import "AppDelegate.h"
+#import "ActivityVC.h"
 
-@implementation PTAppDelegate
+@implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -19,7 +19,7 @@
 {
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    PTActivityViewController *controller = (PTActivityViewController *)navigationController.topViewController;
+    ActivityVC *controller = (ActivityVC *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
@@ -49,6 +49,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self saveContext];
 }
 
 - (void)saveContext

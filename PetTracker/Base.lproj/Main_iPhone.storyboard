@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Activity View Controller - First-->
+        <!--ActivityVC - First-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
-                <viewController title="First" id="CZ4-MO-1fc" customClass="PTActivityViewController" sceneMemberID="viewController">
+                <viewController title="First" id="CZ4-MO-1fc" customClass="ActivityVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hnt-ca-tlu"/>
                         <viewControllerLayoutGuide type="bottom" id="vYU-HK-7EU"/>
@@ -35,9 +35,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqF-vM-Asw">
                                 <rect key="frame" x="20" y="153" width="113" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Nap">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -174,6 +175,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="buttonPush:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="CNN-Gi-vlX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVp-CO-H8p">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stats">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Gfm-0U-Sa6" kind="push" identifier="Stats" id="NmG-zG-XhK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -214,10 +225,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="RD0-nU-azm" firstAttribute="leading" secondItem="EOB-yO-Glf" secondAttribute="leading" id="vNs-YP-6JB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="PetTracker" id="Ia3-Dt-co3">
+                    <navigationItem key="navigationItem" title="Pet Tracker" id="Ia3-Dt-co3">
+                        <barButtonItem key="backBarButtonItem" title="Activities" id="k6m-Xu-yTk"/>
                         <barButtonItem key="rightBarButtonItem" title="History" id="UVf-O1-J8F">
                             <connections>
-                                <segue destination="hei-Qw-2P3" kind="push" id="ywV-eT-fCa"/>
+                                <segue destination="hei-Qw-2P3" kind="push" identifier="History" id="ywV-eT-fCa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -230,10 +242,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="516" y="14"/>
         </scene>
-        <!--HistoryCDTVC-->
+        <!--HistoryCDTVC - Activity History-->
         <scene sceneID="eGc-6s-4Kl">
             <objects>
-                <tableViewController id="hei-Qw-2P3" customClass="PTHistoryCDTVC" sceneMemberID="viewController">
+                <tableViewController id="hei-Qw-2P3" customClass="HistoryCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fl0-9k-zsk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,11 +282,40 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="hei-Qw-2P3" id="e8w-oK-AiW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lHp-iE-AfQ"/>
+                    <navigationItem key="navigationItem" title="Activity History" id="lHp-iE-AfQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH6-Zb-Ih2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="14"/>
+            <point key="canvasLocation" x="1074" y="-331"/>
+        </scene>
+        <!--StatsCDTVC - Statistics-->
+        <scene sceneID="bpL-lh-8sX">
+            <objects>
+                <tableViewController id="Gfm-0U-Sa6" customClass="StatsCDTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Toe-AU-inU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0s2-QQ-5Ha">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0s2-QQ-5Ha" id="cuP-Hc-ynz">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gfm-0U-Sa6" id="zLW-IW-2AR"/>
+                            <outlet property="delegate" destination="Gfm-0U-Sa6" id="V2U-R7-8ne"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Statistics" id="bas-Eh-cDc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7i-z8-etd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074" y="335"/>
         </scene>
         <!--Navigation Controller - First-->
         <scene sceneID="BPu-Qy-KOq">

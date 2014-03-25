@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "PTHistoryCDTVC.h"
+#import "HistoryCDTVC.h"
 #import "PetActivity.h"
+#import "VCHelper.h"
 
-@interface PTHistoryCDTVC ()
+@interface HistoryCDTVC ()
 
 @end
 
-@implementation PTHistoryCDTVC
+@implementation HistoryCDTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +35,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [VCHelper setBackground:self.view];
+    self.navigationItem.title = @"Activity History";
 }
 
 -(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {

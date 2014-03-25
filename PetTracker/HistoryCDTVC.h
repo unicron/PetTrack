@@ -8,6 +8,6 @@
 
 #import "CoreDataTableViewController.h"
 
-@interface PTHistoryCDTVC : CoreDataTableViewController
+@interface HistoryCDTVC : CoreDataTableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
