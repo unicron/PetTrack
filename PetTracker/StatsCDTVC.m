@@ -9,6 +9,7 @@
 #import "StatsCDTVC.h"
 #import "VCHelper.h"
 #import "PetActivity.h"
+#import "HistoryCDTVC.h"
 
 @interface StatsCDTVC ()
 
@@ -31,7 +32,7 @@
     // Do any additional setup after loading the view.
     
     [VCHelper setBackground:self.view];
-    //self.navigationItem.title = @"Activity History";
+    self.navigationItem.title = @"Statistics";
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +55,16 @@
                                                                                    cacheName:nil];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
+        HistoryCDTVC *view = (HistoryCDTVC *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        view.selectedIndexPath = indexPath;
+    }
+}
+
 #pragma mark - Table view data source
 //override
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -71,16 +82,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
-    
-//    PetActivity *pa = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
-//    [df setDateStyle:NSDateFormatterShortStyle];
-//    [df setTimeStyle:NSDateFormatterShortStyle];
-//    
-//    cell.textLabel.text = [df stringFromDate:pa.date];
     
     id<NSFetchedResultsSectionInfo> section = [[self.fetchedResultsController sections] objectAtIndex:indexPath.section];
     

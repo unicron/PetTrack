@@ -36,7 +36,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [VCHelper setBackground:self.view];
-    self.navigationItem.title = @"Activity History";
+    //self.navigationItem.title = @"Activity History";
 }
 
 -(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {

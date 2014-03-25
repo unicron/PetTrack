@@ -10,4 +10,5 @@
 
 @interface HistoryCDTVC : CoreDataTableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 @end
