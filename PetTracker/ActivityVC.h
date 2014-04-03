@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VCHelper.h"
 
 @interface ActivityVC : UIViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

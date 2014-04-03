@@ -9,9 +9,7 @@
 #import "PetActivity+Database.h"
 
 @implementation PetActivity (Database)
-+ (PetActivity *)create:(PetActivity *)pa
- inManagedObjectContext:(NSManagedObjectContext *)context {
-    
++ (PetActivity *)create:(PetActivity *)pa inManagedObjectContext:(NSManagedObjectContext *)context {
     PetActivity *newPa = [NSEntityDescription insertNewObjectForEntityForName:@"PetActivity"
                                                    inManagedObjectContext:context];
     
