@@ -10,6 +10,7 @@
 #import "VCHelper.h"
 #import "PetActivity.h"
 #import "HistoryCDTVC.h"
+#import "PTStatsTableViewCell.h"
 
 @interface StatsCDTVC ()
 @end
@@ -84,13 +85,14 @@
 //override
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    //return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
     //return 4;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
+    PTStatsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
     PetActivity *pa = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Configure the cell...
@@ -100,8 +102,9 @@
     [df setDateStyle:NSDateFormatterShortStyle];
     [df setTimeStyle:NSDateFormatterShortStyle];
     
-    cell.textLabel.text = pa.name;
-    cell.detailTextLabel.text = [df stringFromDate:pa.date];
+    //cell.textLabel.text = pa.name;
+    //cell.detailTextLabel.text = [df stringFromDate:pa.date];
+    cell.dayLabel.text = pa.name;
     
     return cell;
 }
