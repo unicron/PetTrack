@@ -17,7 +17,8 @@
 		DA1BCE3E18EE03F000991981 /* PetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE3D18EE03F000991981 /* PetActivity.m */; };
 		DA1BCE4118EE03F100991981 /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4018EE03F100991981 /* Pet.m */; };
 		DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */; };
-		DA6A230518E2103100B50155 /* StatsCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsCDTVC.m */; };
+		DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */; };
+		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -64,8 +65,10 @@
 		DA1BCE4018EE03F100991981 /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
 		DA1BCE4218EE0DC900991981 /* PTStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatsTableViewCell.h; sourceTree = "<group>"; };
 		DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsTableViewCell.m; sourceTree = "<group>"; };
-		DA6A230318E2103100B50155 /* StatsCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsCDTVC.h; sourceTree = "<group>"; };
-		DA6A230418E2103100B50155 /* StatsCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsCDTVC.m; sourceTree = "<group>"; };
+		DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatsObject.h; sourceTree = "<group>"; };
+		DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsObject.m; sourceTree = "<group>"; };
+		DA6A230318E2103100B50155 /* StatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableViewController.h; sourceTree = "<group>"; };
+		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,8 +170,8 @@
 				DA8D16A118CFFEAD008ACE5D /* ActivityVC.m */,
 				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
 				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
-				DA6A230318E2103100B50155 /* StatsCDTVC.h */,
-				DA6A230418E2103100B50155 /* StatsCDTVC.m */,
+				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
+				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
 				DA0A352D18E0E62D0097FD24 /* CoreDataTableViewController.h */,
 				DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */,
 				DA8D16A618CFFEAD008ACE5D /* Images.xcassets */,
@@ -177,6 +180,8 @@
 				DA8D168F18CFFEAD008ACE5D /* Supporting Files */,
 				DA1BCE4218EE0DC900991981 /* PTStatsTableViewCell.h */,
 				DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */,
+				DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */,
+				DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */,
 			);
 			path = PetTracker;
 			sourceTree = "<group>";
@@ -329,8 +334,9 @@
 				DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */,
 				DA1BCE3E18EE03F000991981 /* PetActivity.m in Sources */,
 				DA8D169918CFFEAD008ACE5D /* AppDelegate.m in Sources */,
-				DA6A230518E2103100B50155 /* StatsCDTVC.m in Sources */,
+				DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */,
 				DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */,
+				DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */,
 				DA8D16A218CFFEAD008ACE5D /* ActivityVC.m in Sources */,
 				DA1BCE2F18EE035100991981 /* PetTracker.xcdatamodeld in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "CoreDataTableViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface StatsCDTVC : CoreDataTableViewController
+@interface StatsTableViewController : UITableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

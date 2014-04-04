@@ -232,10 +232,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="516" y="14"/>
         </scene>
-        <!--StatsCDTVC - Statistics-->
+        <!--Stats Table View Controller - Statistics-->
         <scene sceneID="bpL-lh-8sX">
             <objects>
-                <tableViewController id="Gfm-0U-Sa6" customClass="StatsCDTVC" sceneMemberID="viewController">
+                <tableViewController id="Gfm-0U-Sa6" customClass="StatsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="100" rowHeight="100" sectionHeaderHeight="10" sectionFooterHeight="10" id="Toe-AU-inU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

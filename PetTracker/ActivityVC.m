@@ -10,7 +10,7 @@
 #import "PetActivity.h"
 #import "PetActivity+Database.h"
 #import "VCHelper.h"
-#import "StatsCDTVC.h"
+#import "StatsTableViewController.h"
 
 @interface ActivityVC ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
@@ -20,8 +20,8 @@
 @implementation ActivityVC
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[StatsCDTVC class]]) {
-        StatsCDTVC *view = (StatsCDTVC *)segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
+        StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
     }
 }
