@@ -117,12 +117,6 @@
     }
 }
 
--(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-    _managedObjectContext = managedObjectContext;
-    
-    [self setupArray];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
         HistoryCDTVC *view = (HistoryCDTVC *)segue.destinationViewController;
@@ -164,9 +158,9 @@
     [df setDateStyle:NSDateFormatterShortStyle];
     [df setTimeStyle:NSDateFormatterShortStyle];
     
-    cell.dayLabel.text = [NSString stringWithFormat:@"%d", stat.dayCount];
-    cell.weekLabel.text = [NSString stringWithFormat:@"%d", stat.weekCount];
-    cell.monthLabel.text = [NSString stringWithFormat:@"%d", stat.monthCount];
+    cell.dayLabel.text = [NSString stringWithFormat:@"Totay: %d", stat.dayCount];
+    cell.weekLabel.text = [NSString stringWithFormat:@"This Week: %d", stat.weekCount];
+    cell.monthLabel.text = [NSString stringWithFormat:@"This Month: %d", stat.monthCount];
     return cell;
 }
 
