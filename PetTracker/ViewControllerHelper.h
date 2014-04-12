@@ -6,6 +6,6 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-@interface VCHelper : NSObject
+@interface ViewControllerHelper : NSObject
 + (void)setBackground:(UIView *)view;
 @end

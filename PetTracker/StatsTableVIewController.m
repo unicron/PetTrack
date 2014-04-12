@@ -7,7 +7,7 @@
 //
 
 #import "StatsTableViewController.h"
-#import "VCHelper.h"
+#import "ViewControllerHelper.h"
 #import "PetActivity.h"
 #import "HistoryCDTVC.h"
 #import "PTStatsTableViewCell.h"

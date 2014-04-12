@@ -1,13 +1,13 @@
 //
-//  PTFirstViewController.h
+//  PTPetViewController.h
 //  PetTracker
 //
-//  Created by Hannemann on 3/11/14.
+//  Created by Hannemann on 4/4/14.
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ActivityVC : UIViewController
+@interface PTPetViewController : UIViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

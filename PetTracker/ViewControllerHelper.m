@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "VCHelper.h"
+#import "ViewControllerHelper.h"
 
-@interface VCHelper ()
+@interface ViewControllerHelper ()
 
 @end
 
-@implementation VCHelper
+@implementation ViewControllerHelper
 
 + (void)setBackground:(UIView *)view
 {

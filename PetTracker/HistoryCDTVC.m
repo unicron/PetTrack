@@ -8,7 +8,7 @@
 
 #import "HistoryCDTVC.h"
 #import "PetActivity.h"
-#import "VCHelper.h"
+#import "ViewControllerHelper.h"
 
 @interface HistoryCDTVC ()
 

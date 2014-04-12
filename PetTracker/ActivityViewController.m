@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "ActivityVC.h"
+#import "ActivityViewController.h"
 #import "PetActivity.h"
 #import "PetActivity+Database.h"
-#import "VCHelper.h"
+#import "ViewControllerHelper.h"
 #import "StatsTableViewController.h"
 
-@interface ActivityVC ()
+@interface ActivityViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
 @property (weak, nonatomic) IBOutlet UISwitch *setTime;
 @end
 
-@implementation ActivityVC
+@implementation ActivityViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
@@ -58,7 +58,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [VCHelper setBackground:self.view];
+    [ViewControllerHelper setBackground:self.view];
 }
 
 
