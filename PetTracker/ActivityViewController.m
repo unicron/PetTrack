@@ -9,7 +9,6 @@
 #import "ActivityViewController.h"
 #import "PetActivity.h"
 #import "PetActivity+Database.h"
-#import "ViewControllerHelper.h"
 #import "StatsTableViewController.h"
 
 @interface ActivityViewController ()
@@ -58,7 +57,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [ViewControllerHelper setBackground:self.view];
 }
 
 

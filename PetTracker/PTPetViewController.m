@@ -8,6 +8,7 @@
 
 #import "PTPetViewController.h"
 #import "ActivityViewController.h"
+#import "ViewControllerHelper.h"
 
 @interface PTPetViewController ()
 
@@ -28,6 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //use this as temporary image until user sets one
+    //[ViewControllerHelper setBackground:self.view];
 }
 
 - (void)didReceiveMemoryWarning
