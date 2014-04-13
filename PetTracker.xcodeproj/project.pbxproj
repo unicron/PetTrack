@@ -19,6 +19,7 @@
 		DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */; };
 		DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
+		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -26,7 +27,6 @@
 		DA8D169518CFFEAD008ACE5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D169418CFFEAD008ACE5D /* main.m */; };
 		DA8D169918CFFEAD008ACE5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D169818CFFEAD008ACE5D /* AppDelegate.m */; };
 		DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */; };
-		DA8D16A218CFFEAD008ACE5D /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16A118CFFEAD008ACE5D /* ActivityViewController.m */; };
 		DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16A618CFFEAD008ACE5D /* Images.xcassets */; };
 		DA8D16AE18CFFEAD008ACE5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D16AD18CFFEAD008ACE5D /* XCTest.framework */; };
 		DA8D16AF18CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
@@ -70,6 +70,8 @@
 		DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsObject.m; sourceTree = "<group>"; };
 		DA6A230318E2103100B50155 /* StatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableViewController.h; sourceTree = "<group>"; };
 		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
+		DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTActivityTableViewController.h; sourceTree = "<group>"; };
+		DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTActivityTableViewController.m; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,8 +83,6 @@
 		DA8D169718CFFEAD008ACE5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA8D169818CFFEAD008ACE5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA8D169B18CFFEAD008ACE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		DA8D16A018CFFEAD008ACE5D /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
-		DA8D16A118CFFEAD008ACE5D /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		DA8D16A618CFFEAD008ACE5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA8D16AC18CFFEAD008ACE5D /* PetTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D16AD18CFFEAD008ACE5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -236,8 +236,6 @@
 			children = (
 				DA0523E618D1471C001FEA41 /* ViewControllerHelper.h */,
 				DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */,
-				DA8D16A018CFFEAD008ACE5D /* ActivityViewController.h */,
-				DA8D16A118CFFEAD008ACE5D /* ActivityViewController.m */,
 				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
 				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
 				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
@@ -246,6 +244,8 @@
 				DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */,
 				DACDA0B918EF2408008589CD /* PTPetViewController.h */,
 				DACDA0BA18EF2408008589CD /* PTPetViewController.m */,
+				DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */,
+				DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -351,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */,
 				DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */,
 				DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */,
 				DA1BCE3E18EE03F000991981 /* PetActivity.m in Sources */,
@@ -358,7 +359,6 @@
 				DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */,
 				DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */,
 				DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */,
-				DA8D16A218CFFEAD008ACE5D /* ActivityViewController.m in Sources */,
 				DA1BCE2F18EE035100991981 /* PetTracker.xcdatamodeld in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
 				DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */,

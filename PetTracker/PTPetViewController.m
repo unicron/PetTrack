@@ -7,7 +7,7 @@
 //
 
 #import "PTPetViewController.h"
-#import "ActivityViewController.h"
+#import "PTActivityTableViewController.h"
 #import "ViewControllerHelper.h"
 
 @interface PTPetViewController ()
@@ -43,8 +43,8 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[ActivityViewController class]]) {
-        ActivityViewController *view = (ActivityViewController *)segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:[PTActivityTableViewController class]]) {
+        PTActivityTableViewController *view = (PTActivityTableViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
     }
 }
