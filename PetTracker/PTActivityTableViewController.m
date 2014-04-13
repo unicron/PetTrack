@@ -8,6 +8,8 @@
 
 #import "PTActivityTableViewController.h"
 #import "StatsTableViewController.h"
+#import "PetActivity.h"
+#import "PetActivity+Database.h"
 
 //@interface ActivityViewController ()
 //@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
@@ -17,27 +19,6 @@
 //@implementation ActivityViewController
 //
 //- (IBAction)buttonPush:(UIButton *)sender {
-//    NSManagedObjectContext *context = self.managedObjectContext;
-//    PetActivity *petActivity = [PetActivity create:nil
-//                            inManagedObjectContext:context];
-//    
-//    petActivity.name = sender.titleLabel.text;
-//    
-//    if (self.setTime.on) {
-//        petActivity.date = self.selectedDateTime.date;
-//    } else {
-//        petActivity.date = [[NSDate alloc] init];
-//    }
-//    
-//    // Save the context.
-//    NSError *error = nil;
-//    if (![context save:&error]) {
-//        // Replace this implementation with code to handle the error appropriately.
-//        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//        abort();
-//    }
-//}
 //
 //- (IBAction)setTimeToggle:(UISwitch *)sender {
 //    self.selectedDateTime.date = [[NSDate alloc] init];
@@ -83,12 +64,16 @@
 {
     // Return the number of sections.
     return 1;
+    //NSLog(@"Sections: %d", [tableView numberOfSections]);
+    //return [tableView numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return 8;
+    //NSLog(@"Rows: %d", [tableView numberOfRowsInSection:section]);
+    //return [tableView numberOfRowsInSection:section];
 }
 
 /*
@@ -101,6 +86,31 @@
     return cell;
 }
 */
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    PetActivity *petActivity = [PetActivity create:nil
+                            inManagedObjectContext:context];
+    
+    //petActivity.name = sender.titleLabel.text;
+    petActivity.name = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    
+    //if (self.setTime.on) {
+    //    petActivity.date = self.selectedDateTime.date;
+    //} else {
+        petActivity.date = [[NSDate alloc] init];
+    //}
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
