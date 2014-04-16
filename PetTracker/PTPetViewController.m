@@ -11,10 +11,12 @@
 #import "ViewControllerHelper.h"
 #import "Pet+Database.h"
 #import "StatsTableViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 
-@interface PTPetViewController ()
+@interface PTPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (strong, nonatomic) Pet *pet;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 
@@ -36,6 +38,35 @@
     
     //use this as temporary image until user sets one
     //[ViewControllerHelper setBackground:self.view];
+    
+    // Generate content for our scroll view using the frame height and width as the reference point    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Pet" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSError *error = nil;
+    NSArray *array = [context executeFetchRequest:request error:&error];
+    
+    // Adjust scroll view content size, set background colour and turn on paging
+    UIScrollView *scrollView = self.scrollView;
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [array count],
+                                        scrollView.frame.size.height);
+    scrollView.pagingEnabled=YES;
+    scrollView.backgroundColor = [UIColor whiteColor];
+    
+    int ii = 0;
+    for (Pet *pet in array) {
+        UIImage *image = [UIImage imageWithData:pet.picture];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(((scrollView.frame.size.width) * ii) + 5,
+                                                                               0,
+                                                                               (scrollView.frame.size.width) - 10,
+                                                                               scrollView.frame.size.height)];
+        
+        imageView.image = image;
+        [scrollView addSubview:imageView];
+        ii++;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +93,9 @@
         Pet *pet = [Pet create:nil inManagedObjectContext:managedObjectContext];
         pet.name = @"Zelda";
         
+        UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
+        pet.picture = [NSData dataWithData:UIImagePNGRepresentation(petImage)];
+        
         // Save the context.
         if (![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
@@ -72,6 +106,27 @@
         
         self.pet = pet;
     }
+}
+
+- (IBAction)cameraClicked:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.allowsEditing = YES;
+    
+    [self presentViewController:imagePicker animated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - Navigation

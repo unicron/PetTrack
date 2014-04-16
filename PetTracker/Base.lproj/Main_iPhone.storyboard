@@ -20,6 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy2-an-SR0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
                             <view opaque="NO" alpha="0.80000000000000027" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yRA-pv-mRR">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,8 +58,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="vtX-QE-Fsb">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="B2v-Mg-39Q"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="L8t-AD-PUO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="L8t-AD-PUO">
+                            <connections>
+                                <action selector="cameraClicked:" destination="uAW-Nz-r9y" id="RS3-gd-Zgw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="sy2-an-SR0" id="3XA-Ts-dYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3P-B0-kWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

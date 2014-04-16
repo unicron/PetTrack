@@ -119,16 +119,6 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
-        HistoryCDTVC *view = (HistoryCDTVC *)segue.destinationViewController;
-        view.managedObjectContext = self.managedObjectContext;
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        view.selectedIndexPath = indexPath;
-    }
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -166,16 +156,16 @@
     return cell;
 }
 
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
+        HistoryCDTVC *view = (HistoryCDTVC *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        view.selectedIndexPath = indexPath;
+    }
 }
-*/
 
 @end

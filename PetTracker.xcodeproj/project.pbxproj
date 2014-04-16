@@ -38,6 +38,7 @@
 		DAA8532818FEAEE00014483A /* Activity+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532718FEAEE00014483A /* Activity+Database.m */; };
 		DAA8532B18FEB1F60014483A /* PetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532A18FEB1F60014483A /* PetActivity.m */; };
 		DAA8533118FEC6770014483A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533018FEC6770014483A /* Activity.m */; };
+		DAA8533318FF047F0014483A /* IMG_1272.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA8533218FF047F0014483A /* IMG_1272.jpg */; };
 		DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA0BA18EF2408008589CD /* PTPetViewController.m */; };
 		DAF7F22F18E1CB69009FFADF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7F22E18E1CB69009FFADF /* CoreData.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		DAA8532A18FEB1F60014483A /* PetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetActivity.m; sourceTree = "<group>"; };
 		DAA8532F18FEC6770014483A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		DAA8533018FEC6770014483A /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		DAA8533218FF047F0014483A /* IMG_1272.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1272.jpg; sourceTree = "<group>"; };
 		DACDA0B918EF2408008589CD /* PTPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetViewController.h; sourceTree = "<group>"; };
 		DACDA0BA18EF2408008589CD /* PTPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetViewController.m; sourceTree = "<group>"; };
 		DAF7F22E18E1CB69009FFADF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 		DA0523EB18D14870001FEA41 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DAA8533218FF047F0014483A /* IMG_1272.jpg */,
 				DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */,
 				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
@@ -353,6 +356,7 @@
 				DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
 				DA8D169318CFFEAD008ACE5D /* InfoPlist.strings in Resources */,
+				DAA8533318FF047F0014483A /* IMG_1272.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
