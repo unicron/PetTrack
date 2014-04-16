@@ -10,6 +10,7 @@
 #import "PTActivityTableViewController.h"
 #import "ViewControllerHelper.h"
 #import "Pet+Database.h"
+#import "StatsTableViewController.h"
 
 
 @interface PTPetViewController ()
@@ -80,6 +81,11 @@
         PTActivityTableViewController *view = (PTActivityTableViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
         view.pet = self.pet;
+        
+    } else if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
+        StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
+        
     }
 }
 

@@ -24,8 +24,8 @@
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-4L-ZuV">
-                                        <rect key="frame" x="85" y="10" width="150" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-4L-ZuV">
+                                        <rect key="frame" x="150" y="10" width="150" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <state key="normal" title="Record Activity">
@@ -33,6 +33,17 @@
                                         </state>
                                         <connections>
                                             <segue destination="woM-a8-OOP" kind="push" identifier="Activity" id="8XA-AK-rIA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SF-8S-jDm">
+                                        <rect key="frame" x="20" y="10" width="150" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="View Statistics">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Gfm-0U-Sa6" kind="push" identifier="View Statistics" id="lnt-pB-5Az"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -59,15 +70,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Activity Cell" textLabel="O1p-gM-keA" style="IBUITableViewCellStyleDefault" id="f9U-GI-bMv">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Activity Cell" textLabel="O1p-gM-keA" style="IBUITableViewCellStyleDefault" id="f9U-GI-bMv">
                                 <rect key="frame" x="0.0" y="86" width="320" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9U-GI-bMv" id="ZW9-w5-ILm">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Walk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1p-gM-keA">
-                                            <rect key="frame" x="15" y="0.0" width="258" height="63"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,7 +89,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="EUg-FO-qzf" kind="modal" identifier="Record Activity" id="iJS-5l-8y5"/>
-                                    <segue destination="Gfm-0U-Sa6" kind="push" identifier="Statistics" trigger="accessoryAction" id="0jt-mJ-PfY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,7 +102,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1X-57-zKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="14"/>
+            <point key="canvasLocation" x="522" y="-321"/>
         </scene>
         <!--Record Activity View Controller - Record Activity-->
         <scene sceneID="iuj-P9-DC0">
@@ -195,7 +205,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwb-0w-cNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5MP-d7-1I3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="956" y="-165"/>
+            <point key="canvasLocation" x="956" y="-321"/>
         </scene>
         <!--Stats Table View Controller - Statistics-->
         <scene sceneID="bpL-lh-8sX">
@@ -251,7 +261,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7i-z8-etd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="500"/>
+            <point key="canvasLocation" x="522" y="378"/>
         </scene>
         <!--HistoryCDTVC - Activity History-->
         <scene sceneID="euB-nv-EWa">
@@ -296,7 +306,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSI-UC-dZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1739" y="14"/>
+            <point key="canvasLocation" x="956" y="378"/>
         </scene>
         <!--Navigation Controller - First-->
         <scene sceneID="BPu-Qy-KOq">
