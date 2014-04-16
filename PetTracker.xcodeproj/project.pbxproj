@@ -9,13 +9,10 @@
 /* Begin PBXBuildFile section */
 		DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */; };
 		DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */; };
-		DA0523EA18D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */; };
 		DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */; };
 		DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */; };
 		DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */; };
-		DA1BCE2F18EE035100991981 /* PetTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE2D18EE035100991981 /* PetTracker.xcdatamodeld */; };
-		DA1BCE3E18EE03F000991981 /* PetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE3D18EE03F000991981 /* PetActivity.m */; };
-		DA1BCE4118EE03F100991981 /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4018EE03F100991981 /* Pet.m */; };
+		DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */; };
 		DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */; };
 		DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
@@ -36,6 +33,8 @@
 		DA8D16B818CFFEAD008ACE5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */; };
 		DA8D16BA18CFFEAD008ACE5D /* PetTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */; };
 		DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */; };
+		DAA8531618FE2BC90014483A /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8531518FE2BC90014483A /* Pet.m */; };
+		DAA8531918FE2BC90014483A /* PetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8531818FE2BC90014483A /* PetActivity.m */; };
 		DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA0BA18EF2408008589CD /* PTPetViewController.m */; };
 		DAF7F22F18E1CB69009FFADF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7F22E18E1CB69009FFADF /* CoreData.framework */; };
 /* End PBXBuildFile section */
@@ -54,18 +53,13 @@
 		DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fur-wallpaper-8-1024x682.png"; sourceTree = "<group>"; };
 		DA0523E618D1471C001FEA41 /* ViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerHelper.h; sourceTree = "<group>"; };
 		DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerHelper.m; sourceTree = "<group>"; };
-		DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png"; sourceTree = "<group>"; };
 		DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCDTVC.h; sourceTree = "<group>"; };
 		DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCDTVC.m; sourceTree = "<group>"; };
 		DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PetActivity+Database.h"; sourceTree = "<group>"; };
 		DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PetActivity+Database.m"; sourceTree = "<group>"; };
 		DA0A352D18E0E62D0097FD24 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = PetTracker/CoreDataTableViewController.h; sourceTree = SOURCE_ROOT; };
 		DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = PetTracker/CoreDataTableViewController.m; sourceTree = SOURCE_ROOT; };
-		DA1BCE2E18EE035100991981 /* PetTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetTracker.xcdatamodel; sourceTree = "<group>"; };
-		DA1BCE3C18EE03F000991981 /* PetActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetActivity.h; sourceTree = "<group>"; };
-		DA1BCE3D18EE03F000991981 /* PetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetActivity.m; sourceTree = "<group>"; };
-		DA1BCE3F18EE03F100991981 /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
-		DA1BCE4018EE03F100991981 /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
+		DA0F5B4318FE288600A3A21C /* PetTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetTracker.xcdatamodel; sourceTree = "<group>"; };
 		DA1BCE4218EE0DC900991981 /* PTStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatsTableViewCell.h; sourceTree = "<group>"; };
 		DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsTableViewCell.m; sourceTree = "<group>"; };
 		DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatsObject.h; sourceTree = "<group>"; };
@@ -95,6 +89,10 @@
 		DA8D16B718CFFEAD008ACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetTrackerTests.m; sourceTree = "<group>"; };
 		DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon.png; sourceTree = "<group>"; };
+		DAA8531418FE2BC90014483A /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
+		DAA8531518FE2BC90014483A /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
+		DAA8531718FE2BC90014483A /* PetActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetActivity.h; sourceTree = "<group>"; };
+		DAA8531818FE2BC90014483A /* PetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetActivity.m; sourceTree = "<group>"; };
 		DACDA0B918EF2408008589CD /* PTPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetViewController.h; sourceTree = "<group>"; };
 		DACDA0BA18EF2408008589CD /* PTPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetViewController.m; sourceTree = "<group>"; };
 		DAF7F22E18E1CB69009FFADF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -131,7 +129,6 @@
 				DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */,
 				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
-				DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -214,13 +211,13 @@
 		DA8D16C318D00A1D008ACE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA1BCE2D18EE035100991981 /* PetTracker.xcdatamodeld */,
-				DA1BCE3C18EE03F000991981 /* PetActivity.h */,
-				DA1BCE3D18EE03F000991981 /* PetActivity.m */,
-				DA1BCE3F18EE03F100991981 /* Pet.h */,
-				DA1BCE4018EE03F100991981 /* Pet.m */,
 				DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */,
 				DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */,
+				DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */,
+				DAA8531718FE2BC90014483A /* PetActivity.h */,
+				DAA8531818FE2BC90014483A /* PetActivity.m */,
+				DAA8531418FE2BC90014483A /* Pet.h */,
+				DAA8531518FE2BC90014483A /* Pet.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 			files = (
 				DA78FC5A18FDE9C500582332 /* barking-dog-120 18-26-44-026.png in Resources */,
 				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
-				DA0523EA18D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
 				DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
@@ -364,15 +360,15 @@
 				DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */,
 				DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */,
 				DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */,
-				DA1BCE3E18EE03F000991981 /* PetActivity.m in Sources */,
 				DA8D169918CFFEAD008ACE5D /* AppDelegate.m in Sources */,
 				DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */,
 				DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */,
 				DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */,
-				DA1BCE2F18EE035100991981 /* PetTracker.xcdatamodeld in Sources */,
+				DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */,
+				DAA8531618FE2BC90014483A /* Pet.m in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
+				DAA8531918FE2BC90014483A /* PetActivity.m in Sources */,
 				DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */,
-				DA1BCE4118EE03F100991981 /* Pet.m in Sources */,
 				DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */,
 				DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */,
 			);
@@ -597,14 +593,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DA1BCE2D18EE035100991981 /* PetTracker.xcdatamodeld */ = {
+		DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DA1BCE2E18EE035100991981 /* PetTracker.xcdatamodel */,
+				DA0F5B4318FE288600A3A21C /* PetTracker.xcdatamodel */,
 			);
-			currentVersion = DA1BCE2E18EE035100991981 /* PetTracker.xcdatamodel */;
-			name = PetTracker.xcdatamodeld;
-			path = ../../../../.Trash/PetTracker.xcdatamodeld;
+			currentVersion = DA0F5B4318FE288600A3A21C /* PetTracker.xcdatamodel */;
+			path = PetTracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
