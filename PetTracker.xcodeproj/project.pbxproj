@@ -20,6 +20,8 @@
 		DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
+		DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */; };
+		DA78FC5A18FDE9C500582332 /* barking-dog-120 18-26-44-026.png in Resources */ = {isa = PBXBuildFile; fileRef = DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -72,6 +74,9 @@
 		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
 		DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTActivityTableViewController.h; sourceTree = "<group>"; };
 		DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTActivityTableViewController.m; sourceTree = "<group>"; };
+		DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRecordActivityViewController.h; sourceTree = "<group>"; };
+		DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRecordActivityViewController.m; sourceTree = "<group>"; };
+		DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barking-dog-120 18-26-44-026.png"; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,6 +128,7 @@
 		DA0523EB18D14870001FEA41 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */,
 				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
 				DA0523E918D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png */,
@@ -208,11 +214,11 @@
 		DA8D16C318D00A1D008ACE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA1BCE2D18EE035100991981 /* PetTracker.xcdatamodeld */,
 				DA1BCE3C18EE03F000991981 /* PetActivity.h */,
 				DA1BCE3D18EE03F000991981 /* PetActivity.m */,
 				DA1BCE3F18EE03F100991981 /* Pet.h */,
 				DA1BCE4018EE03F100991981 /* Pet.m */,
-				DA1BCE2D18EE035100991981 /* PetTracker.xcdatamodeld */,
 				DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */,
 				DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */,
 			);
@@ -246,6 +252,8 @@
 				DACDA0BA18EF2408008589CD /* PTPetViewController.m */,
 				DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */,
 				DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */,
+				DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */,
+				DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA78FC5A18FDE9C500582332 /* barking-dog-120 18-26-44-026.png in Resources */,
 				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
 				DA0523EA18D147E2001FEA41 /* view-large-brown-cat-fur-texture-free-high-resolution-dimensions_2162721.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
@@ -352,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */,
+				DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */,
 				DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */,
 				DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */,
 				DA1BCE3E18EE03F000991981 /* PetActivity.m in Sources */,

@@ -10,6 +10,7 @@
 #import "StatsTableViewController.h"
 #import "PetActivity.h"
 #import "PetActivity+Database.h"
+#import "PTRecordActivityViewController.h"
 
 //@interface ActivityViewController ()
 //@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
@@ -27,7 +28,7 @@
 
 
 @interface PTActivityTableViewController ()
-
+@property (strong, nonatomic) NSString *activityText;
 @end
 
 @implementation PTActivityTableViewController
@@ -88,28 +89,7 @@
 */
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSManagedObjectContext *context = self.managedObjectContext;
-    PetActivity *petActivity = [PetActivity create:nil
-                            inManagedObjectContext:context];
-    
-    //petActivity.name = sender.titleLabel.text;
-    petActivity.name = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    
-    //if (self.setTime.on) {
-    //    petActivity.date = self.selectedDateTime.date;
-    //} else {
-        petActivity.date = [[NSDate alloc] init];
-    //}
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    self.activityText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
 }
 
 /*
@@ -153,9 +133,10 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
-        StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:[PTRecordActivityViewController class]]) {
+        PTRecordActivityViewController *view = (PTRecordActivityViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
+        view.activityText = self.activityText;
     }
 }
 
