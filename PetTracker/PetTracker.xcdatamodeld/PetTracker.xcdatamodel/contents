@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Pet" representedClassName="Pet" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -8,10 +13,12 @@
     <entity name="PetActivity" representedClassName="PetActivity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Pet" inverseName="activities" inverseEntity="Pet" syncable="YES"/>
+        <relationship name="activity" maxCount="1" deletionRule="No Action" destinationEntity="Activity" syncable="YES"/>
+        <relationship name="pet" maxCount="1" deletionRule="No Action" destinationEntity="Pet" inverseName="activities" inverseEntity="Pet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PetActivity" positionX="279" positionY="-412" width="128" height="88"/>
         <element name="Pet" positionX="45" positionY="-480" width="128" height="88"/>
+        <element name="PetActivity" positionX="279" positionY="-412" width="128" height="103"/>
+        <element name="Activity" positionX="171" positionY="-405" width="128" height="88"/>
     </elements>
 </model>

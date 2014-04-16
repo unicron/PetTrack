@@ -1,5 +1,5 @@
 //
-//  PetActivity.h
+//  Activity.h
 //  PetTracker
 //
 //  Created by Hannemann on 4/16/14.
@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Activity, Pet;
 
-@interface PetActivity : NSManagedObject
+@interface Activity : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Pet *pet;
-@property (nonatomic, retain) Activity *activity;
+@property (nonatomic, retain) NSNumber * order;
+@property (nonatomic, retain) NSString * color;
 
 @end

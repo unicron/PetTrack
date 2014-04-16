@@ -1,19 +1,18 @@
 //
-//  Pet.m
+//  Activity.m
 //  PetTracker
 //
 //  Created by Hannemann on 4/16/14.
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
-#import "Pet.h"
-#import "PetActivity.h"
+#import "Activity.h"
 
 
-@implementation Pet
+@implementation Activity
 
 @dynamic name;
-@dynamic picture;
-@dynamic activities;
+@dynamic order;
+@dynamic color;
 
 @end
