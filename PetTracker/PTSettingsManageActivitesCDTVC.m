@@ -62,7 +62,8 @@
 	    abort();
 	}
     
-    [ViewControllerHelper setRowHeightForTable:self.tableView withCount:[[self.fetchedResultsController fetchedObjects] count]];
+    [ViewControllerHelper setRowHeightForTable:self.tableView
+                                     withCount:[[self.fetchedResultsController fetchedObjects] count]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
