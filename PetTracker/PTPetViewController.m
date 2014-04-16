@@ -108,6 +108,10 @@
     }
 }
 
+- (IBAction)done:(UIStoryboardSegue *)segue {
+    //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
+}
+
 - (IBAction)cameraClicked:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
