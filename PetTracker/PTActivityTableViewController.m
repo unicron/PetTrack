@@ -145,6 +145,10 @@
     }
 }
 
+- (IBAction)done:(UIStoryboardSegue *)segue {
+    //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
+}
+
 #pragma mark - Table view data source
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

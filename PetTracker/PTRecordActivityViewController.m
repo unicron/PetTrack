@@ -12,7 +12,9 @@
 
 
 @interface PTRecordActivityViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *petLabel;
 @end
 
 
@@ -24,13 +26,7 @@
     
     petActivity.pet = self.pet;
     petActivity.activity = self.activity;
-    //petActivity.name = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    
-    //if (self.setTime.on) {
-    //    petActivity.date = self.selectedDateTime.date;
-    //} else {
-    petActivity.date = [[NSDate alloc] init];
-    //}
+    petActivity.date = self.datePicker.date;
     
     // Save the context.
     NSError *error = nil;
@@ -55,6 +51,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.datePicker.date = [[NSDate alloc] init];
+    self.petLabel.text = self.pet.name;
+    self.activityLabel.text = self.activity.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +65,12 @@
 
 - (float)getLightenedValue:(NSNumber *) color {
     return (color.integerValue + (0.8 * (255 - color.integerValue))) / 255;
+}
+
+- (void)setPet:(Pet *)pet {
+    _pet = pet;
+    
+    self.petLabel.text = pet.name;
 }
 
 - (void)setActivity:(Activity *)activity {
@@ -81,9 +87,10 @@
         
     
     self.view.backgroundColor = bgColor;
+    
+    self.activityLabel.text = activity.name;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -92,6 +99,5 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end
