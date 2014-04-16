@@ -13,9 +13,11 @@
 #import "PTStatsTableViewCell.h"
 #import "PTStatsObject.h"
 
+
 @interface StatsTableViewController ()
 @property (strong, nonatomic) NSMutableArray *statsArray;
 @end
+
 
 @implementation StatsTableViewController
 

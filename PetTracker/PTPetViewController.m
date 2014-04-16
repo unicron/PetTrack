@@ -11,9 +11,11 @@
 #import "ViewControllerHelper.h"
 #import "Pet+Database.h"
 
+
 @interface PTPetViewController ()
 @property (strong, nonatomic) Pet *pet;
 @end
+
 
 @implementation PTPetViewController
 
@@ -33,24 +35,34 @@
     
     //use this as temporary image until user sets one
     //[ViewControllerHelper setBackground:self.view];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    _managedObjectContext = managedObjectContext;
     
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Pet" inManagedObjectContext:context];
+    //create or get a default Pet
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Pet" inManagedObjectContext:managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     
     NSError *error = nil;
-    NSArray *array = [context executeFetchRequest:request error:&error];
+    NSArray *array = [managedObjectContext executeFetchRequest:request error:&error];
     
     if (array && [array count] > 0) {
         self.pet = array.firstObject;
-    
+        
     } else {
-        Pet *pet = [Pet create:nil inManagedObjectContext:context];
+        Pet *pet = [Pet create:nil inManagedObjectContext:managedObjectContext];
         pet.name = @"Zelda";
         
         // Save the context.
-        if (![context save:&error]) {
+        if (![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -59,13 +71,6 @@
         
         self.pet = pet;
     }
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Navigation

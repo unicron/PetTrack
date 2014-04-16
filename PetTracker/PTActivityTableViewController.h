@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Pet.h"
+#import "CoreDataTableViewController.h"
 
-@interface PTActivityTableViewController : UITableViewController
+@interface PTActivityTableViewController : CoreDataTableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Pet *pet;
 @end

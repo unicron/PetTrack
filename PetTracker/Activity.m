@@ -13,6 +13,9 @@
 
 @dynamic name;
 @dynamic order;
-@dynamic color;
+@dynamic bggreen;
+@dynamic bgred;
+@dynamic bgblue;
+@dynamic bgalpha;
 
 @end

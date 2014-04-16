@@ -8,29 +8,14 @@
 
 #import "PTActivityTableViewController.h"
 #import "StatsTableViewController.h"
-#import "PetActivity.h"
 #import "PetActivity+Database.h"
 #import "PTRecordActivityViewController.h"
-#import "Activity.h"
-
-//@interface ActivityViewController ()
-//@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
-//@property (weak, nonatomic) IBOutlet UISwitch *setTime;
-//@end
-//
-//@implementation ActivityViewController
-//
-//- (IBAction)buttonPush:(UIButton *)sender {
-//
-//- (IBAction)setTimeToggle:(UISwitch *)sender {
-//    self.selectedDateTime.date = [[NSDate alloc] init];
-//    self.selectedDateTime.hidden = !self.selectedDateTime.hidden;
-//}
-
+#import "Activity+Database.h"
 
 @interface PTActivityTableViewController ()
 @property (strong, nonatomic) Activity *activity;
 @end
+
 
 @implementation PTActivityTableViewController
 
@@ -60,37 +45,150 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+-(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    _managedObjectContext = managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Activity"];
+    request.predicate = nil;
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"order"
+                                                              ascending:YES]];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    self.fetchedResultsController.delegate = self;
+    
+    NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    if (!self.fetchedResultsController || [[self.fetchedResultsController fetchedObjects] count] == 0) {
+        Activity *activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Walk";
+        activity.order = @0;
+        activity.bgred = @0;
+        activity.bggreen = @128;
+        activity.bgblue = @128;
+        activity.bgalpha = @0.5;
+        
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Nap";
+        activity.order = @1;
+        activity.bgred = @255;
+        activity.bggreen = @128;
+        activity.bgblue = @0;
+        activity.bgalpha = @0.5;
 
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Meal";
+        activity.order = @2;
+        activity.bgred = @64;
+        activity.bggreen = @0;
+        activity.bgblue = @128;
+        activity.bgalpha = @0.5;
+        
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Snack";
+        activity.order = @3;
+        activity.bgred = @128;
+        activity.bggreen = @0;
+        activity.bgblue = @0;
+        activity.bgalpha = @0.5;
+        
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Potty #1";
+        activity.order = @4;
+        activity.bgred = @25;
+        activity.bggreen = @25;
+        activity.bgblue = @25;
+        activity.bgalpha = @0.5;
+        
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Potty #2";
+        activity.order = @5;
+        activity.bgred = @0;
+        activity.bggreen = @0;
+        activity.bgblue = @255;
+        activity.bgalpha = @0.5;
+        
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Playtime";
+        activity.order = @6;
+        activity.bgred = @204;
+        activity.bggreen = @102;
+        activity.bgblue = @255;
+        activity.bgalpha = @0.5;
+        
+        activity = [Activity create:nil inManagedObjectContext:managedObjectContext];
+        activity.name = @"Sick";
+        activity.order = @7;
+        activity.bgred = @255;
+        activity.bggreen = @102;
+        activity.bgblue = @102;
+        activity.bgalpha = @0.5;
+        
+        //seems like this won't work without implementing a custom transformer
+//        NSData *theData = [NSKeyedArchiver archivedDataWithRootObject:[UIColor blackColor]];
+//        UIColor *theColor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theData];
+
+        // Save the context.
+        if (![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
+#pragma mark - Table view data source
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
-    //NSLog(@"Sections: %d", [tableView numberOfSections]);
-    //return [tableView numberOfSections];
+    //return 1;
+    NSLog(@"Sections: %d", [tableView numberOfSections]);
+    return [tableView numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 8;
-    //NSLog(@"Rows: %d", [tableView numberOfRowsInSection:section]);
-    //return [tableView numberOfRowsInSection:section];
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    //return 8;
+    NSLog(@"Rows: %d", [tableView numberOfRowsInSection:section]);
+    return [tableView numberOfRowsInSection:section];
 }
 */
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Activity Cell" forIndexPath:indexPath];
+    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Configure the cell...
+    UIColor *cellColor = [[UIColor alloc] initWithRed:activity.bgred.floatValue / 255
+                                                green:activity.bggreen.floatValue / 255
+                                                 blue:activity.bgblue.floatValue / 255
+                                                alpha:activity.bgalpha.floatValue];
+    
+    cell.backgroundColor = cellColor;
+    for ( UIView* view in cell.contentView.subviews )
+    {
+        view.backgroundColor = [ UIColor clearColor ];
+    }
+    
+    cell.textLabel.text = activity.name;
+    
+    return cell;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.activity = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    self.activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
 /*

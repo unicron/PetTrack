@@ -14,6 +14,9 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
-@property (nonatomic, retain) NSString * color;
+@property (nonatomic, retain) NSNumber * bggreen;
+@property (nonatomic, retain) NSNumber * bgred;
+@property (nonatomic, retain) NSNumber * bgblue;
+@property (nonatomic, retain) NSNumber * bgalpha;
 
 @end
