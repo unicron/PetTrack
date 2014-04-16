@@ -8,6 +8,7 @@
 
 #import "HistoryCDTVC.h"
 #import "PetActivity.h"
+#import "Activity.h"
 #import "ViewControllerHelper.h"
 
 @interface HistoryCDTVC ()
@@ -75,7 +76,7 @@
     [df setDateStyle:NSDateFormatterShortStyle];
     [df setTimeStyle:NSDateFormatterShortStyle];
     
-    cell.textLabel.text = pa.name;
+    cell.textLabel.text = pa.activity.name;
     cell.detailTextLabel.text = [df stringFromDate:pa.date];
     
     return cell;

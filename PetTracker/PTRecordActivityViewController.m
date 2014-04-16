@@ -18,10 +18,10 @@
 
 - (IBAction)saveActivity:(id)sender {
     NSManagedObjectContext *context = self.managedObjectContext;
-    PetActivity *petActivity = [PetActivity create:nil
-                            inManagedObjectContext:context];
+    PetActivity *petActivity = [PetActivity create:nil inManagedObjectContext:context];
     
-    petActivity.name = self.activityText;
+    petActivity.pet = self.pet;
+    petActivity.activity = self.activity;
     //petActivity.name = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     
     //if (self.setTime.on) {

@@ -11,6 +11,7 @@
 #import "PetActivity.h"
 #import "PetActivity+Database.h"
 #import "PTRecordActivityViewController.h"
+#import "Activity.h"
 
 //@interface ActivityViewController ()
 //@property (weak, nonatomic) IBOutlet UIDatePicker *selectedDateTime;
@@ -28,7 +29,7 @@
 
 
 @interface PTActivityTableViewController ()
-@property (strong, nonatomic) NSString *activityText;
+@property (strong, nonatomic) Activity *activity;
 @end
 
 @implementation PTActivityTableViewController
@@ -89,7 +90,7 @@
 */
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.activityText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    self.activity = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
 }
 
 /*
@@ -136,7 +137,8 @@
     if ([segue.destinationViewController isKindOfClass:[PTRecordActivityViewController class]]) {
         PTRecordActivityViewController *view = (PTRecordActivityViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
-        view.activityText = self.activityText;
+        view.pet = self.pet;
+        view.activity = self.activity;
     }
 }
 

@@ -79,7 +79,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="QpV-pT-3cS"/>
+                                            <segue destination="EUg-FO-qzf" kind="modal" id="iJS-5l-8y5"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="c4Y-HS-7Rv" rowHeight="63" style="IBUITableViewCellStyleDefault" id="UfY-Vl-2An">
@@ -99,9 +99,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="fii-0V-DBv"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="tYV-xm-m78" rowHeight="63" style="IBUITableViewCellStyleDefault" id="C7B-Gi-rSF">
                                         <rect key="frame" x="0.0" y="190" width="320" height="63"/>
@@ -120,9 +117,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="87n-oC-XCK"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wdk-EB-hI8" rowHeight="63" style="IBUITableViewCellStyleDefault" id="zJr-iR-kmf">
                                         <rect key="frame" x="0.0" y="253" width="320" height="63"/>
@@ -141,9 +135,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="pR6-Xa-aa3"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z1d-d5-gZ1" rowHeight="63" style="IBUITableViewCellStyleDefault" id="I7w-4V-yQs">
                                         <rect key="frame" x="0.0" y="316" width="320" height="63"/>
@@ -162,9 +153,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="R1A-CX-0wt"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="k3m-Sd-ElJ" rowHeight="63" style="IBUITableViewCellStyleDefault" id="eZr-Zg-BDe">
                                         <rect key="frame" x="0.0" y="379" width="320" height="63"/>
@@ -183,9 +171,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="H1k-Lt-dhu"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="X57-yA-kei" rowHeight="63" style="IBUITableViewCellStyleDefault" id="2qw-6U-RHB">
                                         <rect key="frame" x="0.0" y="442" width="320" height="63"/>
@@ -204,9 +189,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.80000001192092896" green="0.40000000596046448" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="n3A-oh-ALp"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="TWi-dt-q8p" rowHeight="63" style="IBUITableViewCellStyleDefault" id="tcY-Jl-nZ7">
                                         <rect key="frame" x="0.0" y="505" width="320" height="63"/>
@@ -225,9 +207,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="EUg-FO-qzf" kind="push" id="twC-HM-kcq"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -282,7 +261,7 @@
                                     <!--2014-04-15 22:28:41 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -300,7 +279,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-HJ-kmz">
@@ -453,7 +432,4 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="twC-HM-kcq"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
+#import "Activity.h"
 
 @interface PTRecordActivityViewController : UIViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSString *activityText;
+@property (strong, nonatomic) Pet *pet;
+@property (strong, nonatomic) Activity *activity;
 @end

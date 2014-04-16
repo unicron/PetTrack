@@ -14,7 +14,6 @@
 @interface PetActivity : NSManagedObject
 
 @property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Pet *pet;
 @property (nonatomic, retain) Activity *activity;
 

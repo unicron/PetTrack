@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
 
 @interface PTActivityTableViewController : UITableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) Pet *pet;
 @end

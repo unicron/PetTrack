@@ -14,7 +14,6 @@
 @implementation PetActivity
 
 @dynamic date;
-@dynamic name;
 @dynamic pet;
 @dynamic activity;
 
