@@ -238,7 +238,13 @@
         
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
         view.activity = activity;
+    
+    } else if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
+        StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
+        
     }
+    
 }
 
 @end

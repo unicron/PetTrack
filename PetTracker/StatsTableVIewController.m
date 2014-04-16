@@ -54,12 +54,12 @@
 - (void)setupArray {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
     request.predicate = nil;
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"activity.name"
                                                               ascending:YES]];
     
     NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:_managedObjectContext
-                                                                          sectionNameKeyPath:@"name"
+                                                                          sectionNameKeyPath:@"activity.name"
                                                                                    cacheName:nil];
     NSError *error = nil;
 	if (![frc performFetch:&error]) {
