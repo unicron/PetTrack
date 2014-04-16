@@ -63,6 +63,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (float)getLightenedValue:(NSNumber *) color {
+    return (color.integerValue + (0.8 * (255 - color.integerValue))) / 255;
+}
+
+- (void)setActivity:(Activity *)activity {
+    _activity = activity;
+    
+    float red = [self getLightenedValue:self.activity.bgred];
+    float green = [self getLightenedValue:self.activity.bggreen];
+    float blue = [self getLightenedValue:self.activity.bgblue];
+    
+    UIColor *bgColor = [[UIColor alloc] initWithRed:red
+                                         green:green
+                                          blue:blue
+                                         alpha:1];
+        
+    
+    self.view.backgroundColor = bgColor;
+}
+
 /*
 #pragma mark - Navigation
 

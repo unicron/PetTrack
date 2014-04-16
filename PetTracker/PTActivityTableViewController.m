@@ -13,7 +13,6 @@
 #import "Activity+Database.h"
 
 @interface PTActivityTableViewController ()
-@property (strong, nonatomic) Activity *activity;
 @end
 
 
@@ -187,10 +186,6 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
-}
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -236,7 +231,9 @@
         PTRecordActivityViewController *view = (PTRecordActivityViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
         view.pet = self.pet;
-        view.activity = self.activity;
+        
+        Activity *activity = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        view.activity = activity;
     }
 }
 
