@@ -11,6 +11,7 @@
 #import "ViewControllerHelper.h"
 #import "Pet+Database.h"
 #import "StatsTableViewController.h"
+#import "PTViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
@@ -143,6 +144,10 @@
         
     } else if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
         StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
+        
+    } else if ([segue.destinationViewController isKindOfClass:[PTViewController class]]) {
+        PTViewController *view = (PTViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
         
     }

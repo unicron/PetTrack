@@ -26,4 +26,11 @@
     [view sendSubviewToBack:backgroundView];
 }
 
++ (void)setRowHeightForTable:(UITableView *)table withCount:(int)count
+{
+    float rowHeight = (table.bounds.size.height - 60) / count;
+    if (rowHeight > 44)
+        table.rowHeight = rowHeight;
+}
+
 @end

@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-98" y="-321"/>
         </scene>
-        <!--Table View Controller - Settings-->
+        <!--Settings Table View Controller - Settings-->
         <scene sceneID="MOh-mf-n3b">
             <objects>
-                <tableViewController id="fsk-CX-kdV" sceneMemberID="viewController">
+                <tableViewController id="fsk-CX-kdV" customClass="PTSettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M6A-7L-83U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,12 +154,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="oWd-YE-Zdc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CeR-iA-3lc">
-                            <connections>
-                                <segue destination="eRh-wn-zyR" kind="unwind" unwindAction="done:" id="FMV-HL-9hW"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QBp-f3-F59">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QBp-f3-F59">
                             <connections>
                                 <segue destination="eRh-wn-zyR" kind="unwind" unwindAction="done:" id="0dQ-ld-awN"/>
                             </connections>
@@ -171,22 +166,33 @@
             </objects>
             <point key="canvasLocation" x="956" y="-1297"/>
         </scene>
-        <!--Table View Controller - Activities-->
+        <!--Settings Manage ActivitesCDTVC - Activities-->
         <scene sceneID="YwF-f2-vG7">
             <objects>
-                <tableViewController id="vcd-jh-0UV" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1W5-34-pB6">
+                <tableViewController id="vcd-jh-0UV" customClass="PTSettingsManageActivitesCDTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1W5-34-pB6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="01M-Y9-xvw">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Activity Cell" textLabel="XLZ-Cj-twj" style="IBUITableViewCellStyleDefault" id="01M-Y9-xvw">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="01M-Y9-xvw" id="qbB-O2-94B">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XLZ-Cj-twj">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -198,18 +204,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5N-a6-MLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-1025"/>
+            <point key="canvasLocation" x="1462" y="-983"/>
         </scene>
-        <!--Table View Controller - Pets-->
+        <!--Settings Manage PetsCDTVC - Pets-->
         <scene sceneID="ao9-On-VCo">
             <objects>
-                <tableViewController id="UjW-2F-vUt" sceneMemberID="viewController">
+                <tableViewController id="UjW-2F-vUt" customClass="PTSettingsManagePetsCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KdN-gU-Rf7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dFb-Ro-Xtg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Pet Cell" id="dFb-Ro-Xtg">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dFb-Ro-Xtg" id="zK4-pj-1wl">
@@ -227,26 +233,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmG-hg-ybf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-1704"/>
+            <point key="canvasLocation" x="1462" y="-1674"/>
         </scene>
         <!--Activity Table View Controller - Select Activity-->
         <scene sceneID="ukz-od-ibH">
             <objects>
                 <tableViewController id="woM-a8-OOP" customClass="PTActivityTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="gAN-cE-Yc5">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gAN-cE-Yc5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Activity Cell" textLabel="O1p-gM-keA" style="IBUITableViewCellStyleDefault" id="f9U-GI-bMv">
-                                <rect key="frame" x="0.0" y="86" width="320" height="63"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9U-GI-bMv" id="ZW9-w5-ILm">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Walk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1p-gM-keA">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="63"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -509,10 +515,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-545" y="-321"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--View Controller-->
         <scene sceneID="Z7R-bg-emv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W4A-Q7-cLa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W4A-Q7-cLa" customClass="PTViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qXc-Dw-0ze">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
