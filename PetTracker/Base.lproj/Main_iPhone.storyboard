@@ -253,7 +253,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ofb-23-I01" kind="modal" modalTransitionStyle="crossDissolve" id="AoZ-I0-k6S"/>
+                                    <segue destination="Ofb-23-I01" kind="modal" identifier="Edit Pet" modalTransitionStyle="crossDissolve" id="AoZ-I0-k6S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -265,7 +265,7 @@
                     <navigationItem key="navigationItem" title="Pets" id="2Eb-Eg-bSH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="a7W-X3-x4T">
                             <connections>
-                                <segue destination="Ofb-23-I01" kind="modal" id="Es4-jR-k15"/>
+                                <segue destination="Ofb-23-I01" kind="modal" identifier="Add Pet" id="Es4-jR-k15"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -293,7 +293,7 @@
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="XoQ-AD-fHI">
+                                    <navigationItem title="Edit Pet" id="XoQ-AD-fHI">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9HG-tz-GQn">
                                             <connections>
                                                 <action selector="cancelClicked:" destination="Ofb-23-I01" id="um0-zo-j5d"/>

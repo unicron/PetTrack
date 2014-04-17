@@ -96,7 +96,7 @@
     
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"Please enter a name for your Pet!"
+                                                        message:@"Please enter a name for your Pet"
                                                        delegate:nil
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"OK", nil];

@@ -7,7 +7,7 @@
 //
 
 #import "PTSettingsManagePetsCDTVC.h"
-#import "Pet.h"
+#import "Pet+Database.h"
 #import "PTSettingsPetViewController.h"
 
 @interface PTSettingsManagePetsCDTVC ()
@@ -62,7 +62,23 @@
 }
 
 - (IBAction)donePet:(UIStoryboardSegue *)segue {
-    //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
+    PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.sourceViewController; // get results out of vc, which I presented
+    Pet *pet = view.pet;
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+
+    if (pet) {
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    } else {
+        [context undo];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,9 +101,11 @@
 {
     if ([segue.destinationViewController isKindOfClass:[PTSettingsPetViewController class]]) {
         PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.destinationViewController;
-        view.managedObjectContext = self.managedObjectContext;
         
         Pet *pet = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        if (!pet)
+            pet = [Pet create:nil inManagedObjectContext:self.managedObjectContext];
+        
         view.pet = pet;
     }
 }
