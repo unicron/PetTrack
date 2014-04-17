@@ -8,6 +8,7 @@
 
 #import "PTSettingsManagePetsCDTVC.h"
 #import "Pet.h"
+#import "PTSettingsPetViewController.h"
 
 @interface PTSettingsManagePetsCDTVC ()
 
@@ -60,6 +61,10 @@
     
 }
 
+- (IBAction)donePet:(UIStoryboardSegue *)segue {
+    //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Pet Cell" forIndexPath:indexPath];
@@ -73,15 +78,18 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[PTSettingsPetViewController class]]) {
+        PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
+        
+        Pet *pet = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        view.pet = pet;
+    }
 }
-*/
 
 @end
