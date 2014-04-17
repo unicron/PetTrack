@@ -81,6 +81,10 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (IBAction)deletePet:(id)sender {
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
