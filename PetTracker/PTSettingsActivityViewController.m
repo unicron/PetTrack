@@ -79,7 +79,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     self.activity.name = self.nameText.text;
-//    self.pet.picture = [NSData dataWithData:UIImagePNGRepresentation(self.imageView.image)];
+    
+    const CGFloat *colorComponents = CGColorGetComponents(self.colorResult.backgroundColor.CGColor);
+    
+    self.activity.bgred = [NSNumber numberWithFloat:colorComponents[0] * 255];
+    self.activity.bggreen = [NSNumber numberWithFloat:colorComponents[1] * 255];
+    self.activity.bgblue = [NSNumber numberWithFloat:colorComponents[2] * 255];
+    self.activity.bgalpha = [NSNumber numberWithFloat:colorComponents[3]];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {

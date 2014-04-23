@@ -178,7 +178,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="qbU-DF-QGH" kind="push" id="SRR-V9-rmH"/>
+                                    <segue destination="qbU-DF-QGH" kind="modal" modalTransitionStyle="crossDissolve" id="SRR-V9-rmH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -737,7 +737,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hSE-yG-qkv"/>
+        <segue reference="SRR-V9-rmH"/>
         <segue reference="AoZ-I0-k6S"/>
     </inferredMetricsTieBreakers>
 </document>
