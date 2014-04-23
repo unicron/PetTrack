@@ -253,19 +253,19 @@
 		DA8D16C318D00A1D008ACE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */,
 				DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */,
 				DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */,
-				DAA8532918FEB1F60014483A /* PetActivity.h */,
-				DAA8532A18FEB1F60014483A /* PetActivity.m */,
-				DAA8532F18FEC6770014483A /* Activity.h */,
-				DAA8533018FEC6770014483A /* Activity.m */,
-				DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */,
-				DAA8531D18FEA8970014483A /* Pet.h */,
-				DAA8531E18FEA8970014483A /* Pet.m */,
 				DAA8532318FEAC440014483A /* Pet+Database.h */,
 				DAA8532418FEAC440014483A /* Pet+Database.m */,
 				DAA8532618FEAEE00014483A /* Activity+Database.h */,
 				DAA8532718FEAEE00014483A /* Activity+Database.m */,
+				DAA8532918FEB1F60014483A /* PetActivity.h */,
+				DAA8532A18FEB1F60014483A /* PetActivity.m */,
+				DAA8532F18FEC6770014483A /* Activity.h */,
+				DAA8533018FEC6770014483A /* Activity.m */,
+				DAA8531D18FEA8970014483A /* Pet.h */,
+				DAA8531E18FEA8970014483A /* Pet.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";

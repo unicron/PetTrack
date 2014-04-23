@@ -15,9 +15,10 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
-@interface PTPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PTPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 @property (strong, nonatomic) Pet *pet;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @end
 
 
@@ -65,9 +66,23 @@
                                                                                scrollView.frame.size.height)];
         
         imageView.image = image;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:imageView];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.center.x - 50,
+                                                                   imageView.center.y,
+                                                                   100,
+                                                                   25)];
+        
+        label.text = pet.name;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.numberOfLines = 2;
+        [scrollView addSubview:label];
+        
         ii++;
     }
+    
+    self.pageControl.numberOfPages = [array count];
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,6 +122,22 @@
         
         self.pet = pet;
     }
+}
+
+- (IBAction)changePage {
+    // update the scroll view to the appropriate page
+    CGRect frame;
+    frame.origin.x = self.scrollView.frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.scrollView.frame.size;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Update the page when more than 50% of the previous/next page is visible
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
 }
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
