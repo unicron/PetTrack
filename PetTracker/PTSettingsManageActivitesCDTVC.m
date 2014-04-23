@@ -9,6 +9,7 @@
 #import "PTSettingsManageActivitesCDTVC.h"
 #import "Activity.h"
 #import "ViewControllerHelper.h"
+#import "PTSettingsActivityViewController.h"
 
 @interface PTSettingsManageActivitesCDTVC ()
 
@@ -64,6 +65,26 @@
     
     [ViewControllerHelper setRowHeightForTable:self.tableView
                                      withCount:[[self.fetchedResultsController fetchedObjects] count]];
+}
+
+- (IBAction)doneActivity:(UIStoryboardSegue *)segue {
+    PTSettingsActivityViewController *view = (PTSettingsActivityViewController *)segue.sourceViewController; // get results out of vc, which I presented
+    Activity *activity = view.activity;
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    
+    if (activity) {
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    } else {
+        [context undo];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

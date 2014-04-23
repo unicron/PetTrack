@@ -13,6 +13,8 @@
 @interface PTSettingsPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navTitle;
 @end
 
 
@@ -50,6 +52,10 @@
         
         if (pet.picture)
             self.imageView.image = [[UIImage alloc] initWithData:pet.picture];
+    
+    } else {
+        self.navTitle.title = @"Add Pet";
+        self.deleteButton.hidden = YES;
     }
 }
 

@@ -15,6 +15,7 @@
 		DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */; };
 		DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */; };
 		DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */; };
+		DA5A863419085EC5009E847C /* PTSettingsActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
 		DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */; };
@@ -73,6 +74,8 @@
 		DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsTableViewCell.m; sourceTree = "<group>"; };
 		DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatsObject.h; sourceTree = "<group>"; };
 		DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsObject.m; sourceTree = "<group>"; };
+		DA5A863219085EC5009E847C /* PTSettingsActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSettingsActivityViewController.h; sourceTree = "<group>"; };
+		DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSettingsActivityViewController.m; sourceTree = "<group>"; };
 		DA6A230318E2103100B50155 /* StatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableViewController.h; sourceTree = "<group>"; };
 		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
 		DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTActivityTableViewController.h; sourceTree = "<group>"; };
@@ -272,14 +275,14 @@
 			children = (
 				DA0523E618D1471C001FEA41 /* ViewControllerHelper.h */,
 				DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */,
-				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
-				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
-				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
-				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
 				DA0A352D18E0E62D0097FD24 /* CoreDataTableViewController.h */,
 				DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */,
 				DACDA0B918EF2408008589CD /* PTPetViewController.h */,
 				DACDA0BA18EF2408008589CD /* PTPetViewController.m */,
+				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
+				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
+				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
+				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
 				DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */,
 				DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */,
 				DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */,
@@ -294,6 +297,8 @@
 				DAA853411900075B0014483A /* PTSettingsPetViewController.m */,
 				DAA8533718FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.h */,
 				DAA8533818FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m */,
+				DA5A863219085EC5009E847C /* PTSettingsActivityViewController.h */,
+				DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				DAA8532818FEAEE00014483A /* Activity+Database.m in Sources */,
 				DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */,
 				DAA8532518FEAC440014483A /* Pet+Database.m in Sources */,
+				DA5A863419085EC5009E847C /* PTSettingsActivityViewController.m in Sources */,
 				DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */,
 				DAA8533918FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m in Sources */,
 				DA8D169918CFFEAD008ACE5D /* AppDelegate.m in Sources */,
