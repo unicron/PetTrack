@@ -16,6 +16,10 @@
 		DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */; };
 		DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */; };
 		DA5A863419085EC5009E847C /* PTSettingsActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */; };
+		DA5A863719086704009E847C /* NKOColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A863619086704009E847C /* NKOColorPickerView.m */; };
+		DA5A863C19086712009E847C /* nko_brightness_guide.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863919086712009E847C /* nko_brightness_guide.png */; };
+		DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */; };
+		DA5A863E19086712009E847C /* nko_colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863B19086712009E847C /* nko_colormap.png */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
 		DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */; };
@@ -76,6 +80,11 @@
 		DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsObject.m; sourceTree = "<group>"; };
 		DA5A863219085EC5009E847C /* PTSettingsActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSettingsActivityViewController.h; sourceTree = "<group>"; };
 		DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSettingsActivityViewController.m; sourceTree = "<group>"; };
+		DA5A863519086704009E847C /* NKOColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKOColorPickerView.h; sourceTree = "<group>"; };
+		DA5A863619086704009E847C /* NKOColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKOColorPickerView.m; sourceTree = "<group>"; };
+		DA5A863919086712009E847C /* nko_brightness_guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nko_brightness_guide.png; path = Assets/nko_brightness_guide.png; sourceTree = "<group>"; };
+		DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nko_brightness_guide@2x.png"; path = "Assets/nko_brightness_guide@2x.png"; sourceTree = "<group>"; };
+		DA5A863B19086712009E847C /* nko_colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nko_colormap.png; path = Assets/nko_colormap.png; sourceTree = "<group>"; };
 		DA6A230318E2103100B50155 /* StatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableViewController.h; sourceTree = "<group>"; };
 		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
 		DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTActivityTableViewController.h; sourceTree = "<group>"; };
@@ -155,6 +164,9 @@
 		DA0523EB18D14870001FEA41 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA5A863B19086712009E847C /* nko_colormap.png */,
+				DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */,
+				DA5A863919086712009E847C /* nko_brightness_guide.png */,
 				DAA8533218FF047F0014483A /* IMG_1272.jpg */,
 				DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */,
 				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
@@ -262,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				DA8D169A18CFFEAD008ACE5D /* Main_iPhone.storyboard */,
+				DA5A863519086704009E847C /* NKOColorPickerView.h */,
+				DA5A863619086704009E847C /* NKOColorPickerView.m */,
 				DA1BCE4218EE0DC900991981 /* PTStatsTableViewCell.h */,
 				DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */,
 				DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */,
@@ -380,9 +394,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */,
+				DA5A863C19086712009E847C /* nko_brightness_guide.png in Resources */,
 				DA78FC5A18FDE9C500582332 /* barking-dog-120 18-26-44-026.png in Resources */,
 				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
+				DA5A863E19086712009E847C /* nko_colormap.png in Resources */,
 				DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
 				DA8D169318CFFEAD008ACE5D /* InfoPlist.strings in Resources */,
@@ -428,6 +445,7 @@
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
 				DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */,
 				DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */,
+				DA5A863719086704009E847C /* NKOColorPickerView.m in Sources */,
 				DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 //
 
 #import "PTSettingsManageActivitesCDTVC.h"
-#import "Activity.h"
+#import "Activity+Database.h"
 #import "ViewControllerHelper.h"
 #import "PTSettingsActivityViewController.h"
 
@@ -122,15 +122,21 @@
     return NO;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[PTSettingsActivityViewController class]]) {
+        PTSettingsActivityViewController *view = (PTSettingsActivityViewController *)segue.destinationViewController;
+        
+        Activity *activity = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        if (!activity)
+            activity = [Activity create:nil inManagedObjectContext:self.managedObjectContext];
+        
+        view.activity = activity;
+    }
 }
-*/
 
 @end

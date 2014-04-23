@@ -7,10 +7,12 @@
 //
 
 #import "PTSettingsActivityViewController.h"
+#import "NKOColorPickerView.h"
 
 @interface PTSettingsActivityViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
-
+@property (weak, nonatomic) IBOutlet NKOColorPickerView *colorPicker;
+@property (weak, nonatomic) IBOutlet UIView *colorResult;
 @end
 
 @implementation PTSettingsActivityViewController
@@ -28,12 +30,39 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setActivity:self.activity];
+    
+    NKOColorPickerDidChangeColorBlock colorPickerChangeBlock = ^(UIColor *color) {
+        //Your code handling a color change in the picker view.
+        color = [color colorWithAlphaComponent:0.5];
+        self.colorResult.backgroundColor = color;
+    };
+    
+    [self.colorPicker setDidChangeColorBlock:colorPickerChangeBlock];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setActivity:(Activity *)activity {
+    _activity = activity;
+    
+    if (activity) {
+        self.nameText.text = activity.name;
+        
+        UIColor *colorToSet = [[UIColor alloc] initWithRed:activity.bgred.floatValue / 255
+                                                green:activity.bggreen.floatValue / 255
+                                                 blue:activity.bgblue.floatValue / 255
+                                                alpha:activity.bgalpha.floatValue];
+        
+        [self.colorPicker setColor:colorToSet];
+        self.colorResult.backgroundColor = colorToSet;
+    }
+        
 }
 
 - (IBAction)cancelClicked:(id)sender {
