@@ -13,30 +13,12 @@
 
 @interface PTRecordActivityViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *petLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @end
 
 
 @implementation PTRecordActivityViewController
-
-- (IBAction)saveActivity:(id)sender {
-    NSManagedObjectContext *context = self.managedObjectContext;
-    PetActivity *petActivity = [PetActivity create:nil inManagedObjectContext:context];
-    
-    petActivity.pet = self.pet;
-    petActivity.activity = self.activity;
-    petActivity.date = self.datePicker.date;
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -96,8 +78,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.returnDate = self.datePicker.date;
 }
 
 @end

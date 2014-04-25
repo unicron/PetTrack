@@ -20,10 +20,11 @@
 		DA5A863C19086712009E847C /* nko_brightness_guide.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863919086712009E847C /* nko_brightness_guide.png */; };
 		DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */; };
 		DA5A863E19086712009E847C /* nko_colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863B19086712009E847C /* nko_colormap.png */; };
+		DA5A8640190AEDCB009E847C /* dog-120 icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863F190AEDCB009E847C /* dog-120 icon 2.png */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
 		DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */; };
-		DA78FC5A18FDE9C500582332 /* barking-dog-120 18-26-44-026.png in Resources */ = {isa = PBXBuildFile; fileRef = DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */; };
+		DA78FC5A18FDE9C500582332 /* barking-dog-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DA78FC5918FDE9C500582332 /* barking-dog-120.png */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -85,13 +86,14 @@
 		DA5A863919086712009E847C /* nko_brightness_guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nko_brightness_guide.png; path = Assets/nko_brightness_guide.png; sourceTree = "<group>"; };
 		DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nko_brightness_guide@2x.png"; path = "Assets/nko_brightness_guide@2x.png"; sourceTree = "<group>"; };
 		DA5A863B19086712009E847C /* nko_colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nko_colormap.png; path = Assets/nko_colormap.png; sourceTree = "<group>"; };
+		DA5A863F190AEDCB009E847C /* dog-120 icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dog-120 icon 2.png"; sourceTree = "<group>"; };
 		DA6A230318E2103100B50155 /* StatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableViewController.h; sourceTree = "<group>"; };
 		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
 		DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTActivityTableViewController.h; sourceTree = "<group>"; };
 		DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTActivityTableViewController.m; sourceTree = "<group>"; };
 		DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRecordActivityViewController.h; sourceTree = "<group>"; };
 		DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRecordActivityViewController.m; sourceTree = "<group>"; };
-		DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barking-dog-120 18-26-44-026.png"; sourceTree = "<group>"; };
+		DA78FC5918FDE9C500582332 /* barking-dog-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barking-dog-120.png"; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,11 +166,12 @@
 		DA0523EB18D14870001FEA41 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA5A863F190AEDCB009E847C /* dog-120 icon 2.png */,
+				DA78FC5918FDE9C500582332 /* barking-dog-120.png */,
 				DA5A863B19086712009E847C /* nko_colormap.png */,
 				DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */,
 				DA5A863919086712009E847C /* nko_brightness_guide.png */,
 				DAA8533218FF047F0014483A /* IMG_1272.jpg */,
-				DA78FC5918FDE9C500582332 /* barking-dog-120 18-26-44-026.png */,
 				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
 			);
@@ -396,7 +399,8 @@
 			files = (
 				DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */,
 				DA5A863C19086712009E847C /* nko_brightness_guide.png in Resources */,
-				DA78FC5A18FDE9C500582332 /* barking-dog-120 18-26-44-026.png in Resources */,
+				DA5A8640190AEDCB009E847C /* dog-120 icon 2.png in Resources */,
+				DA78FC5A18FDE9C500582332 /* barking-dog-120.png in Resources */,
 				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
 				DA5A863E19086712009E847C /* nko_colormap.png in Resources */,

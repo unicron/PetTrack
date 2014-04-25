@@ -575,7 +575,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PCo-Uw-mxr"/>
                                     <barButtonItem title="Save" id="qKN-9v-wWL">
                                         <connections>
-                                            <action selector="saveActivity:" destination="EUg-FO-qzf" id="pfw-Qo-PYu"/>
                                             <segue destination="5MP-d7-1I3" kind="unwind" unwindAction="done:" id="QjK-Lp-ADa"/>
                                         </connections>
                                     </barButtonItem>
@@ -586,7 +585,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Record Activity" id="X70-eZ-ISn"/>
                     <connections>
                         <outlet property="activityLabel" destination="MHS-HJ-kmz" id="Ras-Hh-aBp"/>
-                        <outlet property="datePicker" destination="tP4-Vd-VVp" id="ykz-Hx-WBE"/>
+                        <outlet property="datePicker" destination="tP4-Vd-VVp" id="MQU-E8-EX0"/>
                         <outlet property="petLabel" destination="c94-zc-1je" id="AYe-FV-xbV"/>
                     </connections>
                 </viewController>
