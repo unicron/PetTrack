@@ -151,21 +151,19 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
     PTRecordActivityViewController *vc = (PTRecordActivityViewController *)segue.sourceViewController; // get results out of vc, which I presented
-    
-    NSManagedObjectContext *context = self.managedObjectContext;
-    PetActivity *petActivity = [PetActivity create:nil inManagedObjectContext:context];
-    
-    petActivity.pet = vc.pet;
-    petActivity.activity = vc.activity;
-    petActivity.date = vc.returnDate;
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+    if (vc.returnPetActivity) {
+        
+        NSManagedObjectContext *context = self.managedObjectContext;
+        if (context) {
+            // Save the context.
+            NSError *error = nil;
+            if (![context save:&error]) {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+        }
     }
 }
 
@@ -199,7 +197,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[PTRecordActivityViewController class]]) {
         PTRecordActivityViewController *view = (PTRecordActivityViewController *)segue.destinationViewController;
-        view.managedObjectContext = self.managedObjectContext;
         view.pet = self.pet;
         
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];

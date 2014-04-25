@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *petLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic) PetActivity *returnPetActivity;
+
 @end
 
 
@@ -78,7 +80,16 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.returnDate = self.datePicker.date;
+    if ([segue.identifier isEqual:@"Unwind Save"]) {
+        NSManagedObjectContext *context = self.pet.managedObjectContext;
+        PetActivity *petActivity = [PetActivity create:nil inManagedObjectContext:context];
+        
+        petActivity.pet = self.pet;
+        petActivity.activity = self.activity;
+        petActivity.date = self.datePicker.date;
+        
+        self.returnPetActivity = petActivity;
+    }
 }
 
 @end

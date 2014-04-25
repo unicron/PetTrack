@@ -242,6 +242,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qbU-DF-QGH" id="Dqv-fs-qc7"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE3-vg-EwH">
                                 <rect key="frame" x="20" y="82" width="55" height="21"/>
@@ -391,6 +394,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ofb-23-I01" id="tD2-gl-p1r"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDi-Uz-HHP">
                                 <rect key="frame" x="20" y="82" width="55" height="21"/>
@@ -569,13 +575,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <items>
                                     <barButtonItem title="Cancel" id="xFF-zG-Euh">
                                         <connections>
-                                            <segue destination="5MP-d7-1I3" kind="unwind" unwindAction="done:" id="ro2-aP-mZm"/>
+                                            <segue destination="5MP-d7-1I3" kind="unwind" identifier="Unwind Cancel" unwindAction="done:" id="ttd-h6-OcD"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PCo-Uw-mxr"/>
                                     <barButtonItem title="Save" id="qKN-9v-wWL">
                                         <connections>
-                                            <segue destination="5MP-d7-1I3" kind="unwind" unwindAction="done:" id="QjK-Lp-ADa"/>
+                                            <segue destination="5MP-d7-1I3" kind="unwind" identifier="Unwind Save" unwindAction="done:" id="zgO-Cf-TAE"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

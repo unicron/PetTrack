@@ -9,7 +9,7 @@
 #import "PTSettingsActivityViewController.h"
 #import "NKOColorPickerView.h"
 
-@interface PTSettingsActivityViewController ()
+@interface PTSettingsActivityViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet NKOColorPickerView *colorPicker;
 @property (weak, nonatomic) IBOutlet UIView *colorResult;
@@ -63,6 +63,11 @@
         self.colorResult.backgroundColor = colorToSet;
     }
         
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (IBAction)cancelClicked:(id)sender {

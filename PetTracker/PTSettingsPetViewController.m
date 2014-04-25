@@ -10,7 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
-@interface PTSettingsPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PTSettingsPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
@@ -57,6 +57,11 @@
         self.navTitle.title = @"Add Pet";
         self.deleteButton.hidden = YES;
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (IBAction)cancelClicked:(id)sender {
