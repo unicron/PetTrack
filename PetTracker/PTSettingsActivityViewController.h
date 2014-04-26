@@ -10,5 +10,9 @@
 #import "Activity.h"
 
 @interface PTSettingsActivityViewController : UIViewController
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Activity *activity;
+
+//out
+@property (strong, nonatomic, readonly) Activity *returnActivity;
 @end

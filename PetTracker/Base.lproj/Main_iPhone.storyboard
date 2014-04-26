@@ -232,9 +232,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteActivity:" destination="qbU-DF-QGH" eventType="touchUpInside" id="L1s-TK-zpq"/>
-                                    <action selector="deletePet:" destination="Ofb-23-I01" eventType="touchUpInside" id="Dhg-aK-H9W"/>
-                                    <segue destination="QKw-cn-Rbf" kind="unwind" unwindAction="doneActivity:" id="2OP-8Y-dFC"/>
+                                    <segue destination="QKw-cn-Rbf" kind="unwind" identifier="Unwind Delete" unwindAction="doneActivity:" id="2OP-8Y-dFC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0e-jV-ksX">
@@ -260,12 +258,12 @@
                                     <navigationItem title="Edit Activity" id="Um1-Bf-3dw">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jti-Xy-00c">
                                             <connections>
-                                                <action selector="cancelClicked:" destination="qbU-DF-QGH" id="nuS-ii-wDo"/>
+                                                <segue destination="QKw-cn-Rbf" kind="unwind" identifier="Unwind Cancel" unwindAction="doneActivity:" id="2dE-8Q-jUk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="bbv-dm-wH4">
                                             <connections>
-                                                <segue destination="QKw-cn-Rbf" kind="unwind" unwindAction="doneActivity:" id="fEY-kB-K9J"/>
+                                                <segue destination="QKw-cn-Rbf" kind="unwind" identifier="Unwind Done" unwindAction="doneActivity:" id="fEY-kB-K9J"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -301,7 +299,9 @@
                     <connections>
                         <outlet property="colorPicker" destination="9gR-td-Fc2" id="Hdt-st-5L3"/>
                         <outlet property="colorResult" destination="6kQ-im-pRF" id="1Rc-Aa-mxe"/>
+                        <outlet property="deleteButton" destination="LIT-nX-ObW" id="oqp-po-WxL"/>
                         <outlet property="nameText" destination="E0e-jV-ksX" id="mKo-iW-ezM"/>
+                        <outlet property="navTitle" destination="Um1-Bf-3dw" id="I6Z-VB-RCl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOF-op-MIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,12 +378,12 @@
                                     <navigationItem title="Edit Pet" id="XoQ-AD-fHI">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9HG-tz-GQn">
                                             <connections>
-                                                <action selector="cancelClicked:" destination="Ofb-23-I01" id="um0-zo-j5d"/>
+                                                <segue destination="SZV-dd-FXb" kind="unwind" identifier="Unwind Cancel" unwindAction="donePet:" id="pda-xk-tPJ"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="OB9-fN-MuA">
                                             <connections>
-                                                <segue destination="SZV-dd-FXb" kind="unwind" unwindAction="donePet:" id="86g-8Z-pQk"/>
+                                                <segue destination="SZV-dd-FXb" kind="unwind" identifier="Unwind Done" unwindAction="donePet:" id="86g-8Z-pQk"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -432,7 +432,7 @@
                                 </state>
                                 <connections>
                                     <action selector="deletePet:" destination="Ofb-23-I01" eventType="touchUpInside" id="hXk-kC-Q3y"/>
-                                    <segue destination="SZV-dd-FXb" kind="unwind" unwindAction="donePet:" id="b8H-YJ-VuK"/>
+                                    <segue destination="SZV-dd-FXb" kind="unwind" identifier="Unwind Delete" unwindAction="donePet:" id="b8H-YJ-VuK"/>
                                 </connections>
                             </button>
                         </subviews>

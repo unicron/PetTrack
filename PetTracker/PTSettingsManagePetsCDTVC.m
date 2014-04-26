@@ -62,12 +62,11 @@
 }
 
 - (IBAction)donePet:(UIStoryboardSegue *)segue {
-    PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.sourceViewController; // get results out of vc, which I presented
-    Pet *pet = view.pet;
+    //    PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.sourceViewController; // get results out of vc, which I presented
+    //    Pet *pet = view.returnPet;
     
     NSManagedObjectContext *context = self.managedObjectContext;
-
-    if (pet) {
+    if (context) {
         // Save the context.
         NSError *error = nil;
         if (![context save:&error]) {
@@ -76,8 +75,6 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-    } else {
-        [context undo];
     }
 }
 
@@ -101,11 +98,9 @@
 {
     if ([segue.destinationViewController isKindOfClass:[PTSettingsPetViewController class]]) {
         PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
         
-        Pet *pet = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        if (!pet)
-            pet = [Pet create:nil inManagedObjectContext:self.managedObjectContext];
-        
+        Pet *pet = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];        
         view.pet = pet;
     }
 }

@@ -10,5 +10,9 @@
 #import "Pet.h"
 
 @interface PTSettingsPetViewController : UIViewController
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Pet *pet;
+
+//out
+@property (strong, nonatomic, readonly) Pet *returnPet;
 @end

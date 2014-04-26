@@ -80,7 +80,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqual:@"Unwind Save"]) {
+    if ([segue.identifier isEqualToString:@"Unwind Save"]) {
         NSManagedObjectContext *context = self.pet.managedObjectContext;
         PetActivity *petActivity = [PetActivity create:nil inManagedObjectContext:context];
         

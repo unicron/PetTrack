@@ -35,6 +35,11 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setRowHeight];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -63,17 +68,20 @@
 	    abort();
 	}
     
+    [self setRowHeight];
+}
+
+- (void)setRowHeight{
     [ViewControllerHelper setRowHeightForTable:self.tableView
                                      withCount:[[self.fetchedResultsController fetchedObjects] count]];
 }
 
 - (IBAction)doneActivity:(UIStoryboardSegue *)segue {
-    PTSettingsActivityViewController *view = (PTSettingsActivityViewController *)segue.sourceViewController; // get results out of vc, which I presented
-    Activity *activity = view.activity;
+//    PTSettingsActivityViewController *view = (PTSettingsActivityViewController *)segue.sourceViewController; // get results out of vc, which I presented
+//    Activity *activity = view.activity;
     
     NSManagedObjectContext *context = self.managedObjectContext;
-    
-    if (activity) {
+    if (context) {
         // Save the context.
         NSError *error = nil;
         if (![context save:&error]) {
@@ -82,8 +90,6 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-    } else {
-        [context undo];
     }
 }
 
@@ -130,11 +136,9 @@
 {
     if ([segue.destinationViewController isKindOfClass:[PTSettingsActivityViewController class]]) {
         PTSettingsActivityViewController *view = (PTSettingsActivityViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
         
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        if (!activity)
-            activity = [Activity create:nil inManagedObjectContext:self.managedObjectContext];
-        
         view.activity = activity;
     }
 }
