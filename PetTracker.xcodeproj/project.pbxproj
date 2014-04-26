@@ -178,6 +178,71 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		DA5A8641190B3834009E847C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */,
+				DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */,
+				DAA8532318FEAC440014483A /* Pet+Database.h */,
+				DAA8532418FEAC440014483A /* Pet+Database.m */,
+				DAA8532618FEAEE00014483A /* Activity+Database.h */,
+				DAA8532718FEAEE00014483A /* Activity+Database.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		DA5A8642190B3842009E847C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DAA8533D18FF25240014483A /* PTSettingsNavigationViewController.h */,
+				DAA8533E18FF25240014483A /* PTSettingsNavigationViewController.m */,
+				DAA8533A18FF1EF10014483A /* PTSettingsTableViewController.h */,
+				DAA8533B18FF1EF10014483A /* PTSettingsTableViewController.m */,
+				DAA8533418FF1E9A0014483A /* PTSettingsManagePetsCDTVC.h */,
+				DAA8533518FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m */,
+				DAA853401900075B0014483A /* PTSettingsPetViewController.h */,
+				DAA853411900075B0014483A /* PTSettingsPetViewController.m */,
+				DAA8533718FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.h */,
+				DAA8533818FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m */,
+				DA5A863219085EC5009E847C /* PTSettingsActivityViewController.h */,
+				DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		DA5A8643190B384B009E847C /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
+				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
+				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
+				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
+			);
+			name = Stats;
+			sourceTree = "<group>";
+		};
+		DA5A8644190B3852009E847C /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */,
+				DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */,
+				DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */,
+				DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
+		DA5A8645190B386B009E847C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DA0523E618D1471C001FEA41 /* ViewControllerHelper.h */,
+				DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */,
+				DA0A352D18E0E62D0097FD24 /* CoreDataTableViewController.h */,
+				DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		DA8D167C18CFFEAD008ACE5D = {
 			isa = PBXGroup;
 			children = (
@@ -257,12 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */,
-				DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */,
-				DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */,
-				DAA8532318FEAC440014483A /* Pet+Database.h */,
-				DAA8532418FEAC440014483A /* Pet+Database.m */,
-				DAA8532618FEAEE00014483A /* Activity+Database.h */,
-				DAA8532718FEAEE00014483A /* Activity+Database.m */,
+				DA5A8641190B3834009E847C /* Categories */,
 				DAA8532918FEB1F60014483A /* PetActivity.h */,
 				DAA8532A18FEB1F60014483A /* PetActivity.m */,
 				DAA8532F18FEC6770014483A /* Activity.h */,
@@ -290,32 +350,12 @@
 		DACDA0B818EF063D008589CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DA0523E618D1471C001FEA41 /* ViewControllerHelper.h */,
-				DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */,
-				DA0A352D18E0E62D0097FD24 /* CoreDataTableViewController.h */,
-				DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */,
 				DACDA0B918EF2408008589CD /* PTPetViewController.h */,
 				DACDA0BA18EF2408008589CD /* PTPetViewController.m */,
-				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
-				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
-				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
-				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
-				DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */,
-				DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */,
-				DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */,
-				DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */,
-				DAA8533D18FF25240014483A /* PTSettingsNavigationViewController.h */,
-				DAA8533E18FF25240014483A /* PTSettingsNavigationViewController.m */,
-				DAA8533A18FF1EF10014483A /* PTSettingsTableViewController.h */,
-				DAA8533B18FF1EF10014483A /* PTSettingsTableViewController.m */,
-				DAA8533418FF1E9A0014483A /* PTSettingsManagePetsCDTVC.h */,
-				DAA8533518FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m */,
-				DAA853401900075B0014483A /* PTSettingsPetViewController.h */,
-				DAA853411900075B0014483A /* PTSettingsPetViewController.m */,
-				DAA8533718FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.h */,
-				DAA8533818FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m */,
-				DA5A863219085EC5009E847C /* PTSettingsActivityViewController.h */,
-				DA5A863319085EC5009E847C /* PTSettingsActivityViewController.m */,
+				DA5A8645190B386B009E847C /* Helpers */,
+				DA5A8643190B384B009E847C /* Stats */,
+				DA5A8644190B3852009E847C /* Record */,
+				DA5A8642190B3842009E847C /* Settings */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
