@@ -131,7 +131,7 @@
             return YES;
             
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Edit Activity"
                                                             message:@"Please enter a name for this Activity"
                                                            delegate:nil
                                                   cancelButtonTitle:nil

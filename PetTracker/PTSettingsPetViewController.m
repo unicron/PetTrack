@@ -125,12 +125,29 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"Unwind Done"]) {
-        if ([self.nameText.text length])
+        BOOL shouldSave = NO;
+        NSMutableString *msg = [[NSMutableString alloc] init];
+        
+        if ([self.nameText.text length]) {
+            shouldSave = YES;
+        
+            if (!self.imageView.image) {
+                shouldSave = NO;
+                [msg setString:@"Please choose a picture for your Pet"];
+            }
+            
+        } else {
+            [msg setString:@"Please enter a name for your Pet"];
+        }
+        
+        
+        
+        if (shouldSave) {
             return YES;
         
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:@"Please enter a name for your Pet"
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Edit Pet"
+                                                            message:msg
                                                            delegate:nil
                                                   cancelButtonTitle:nil
                                                   otherButtonTitles:@"OK", nil];
