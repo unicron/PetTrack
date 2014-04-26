@@ -45,6 +45,7 @@
     
     [self.colorPicker setDidChangeColorBlock:colorPickerChangeBlock];
     
+    //set a default color
     UIColor *colorToSet = [[UIColor alloc] initWithRed:(128.0 / 255)
                                                  green:(255.0 / 255)
                                                   blue:(213.0 / 255)
@@ -79,8 +80,6 @@
         self.navTitle.title = @"Add Activity";
         self.deleteButton.hidden = YES;
     }
-    
-
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

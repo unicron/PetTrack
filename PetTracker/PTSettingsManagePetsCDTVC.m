@@ -29,6 +29,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                   target:self
+                                                                                   action:@selector(doModal:)];
+    
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, addButtonItem];
+}
+
+- (void)doModal:(id)sender {
+    [self performSegueWithIdentifier:@"Add Pet" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,7 +53,7 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Pet"];
     request.predicate = nil;
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"order"
                                                               ascending:YES]];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -89,6 +100,48 @@
     cell.imageView.image = [[UIImage alloc] initWithData:pet.picture];
     
     return cell;
+}
+
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    // Bypass the delegates temporarily
+    self.fetchedResultsController.delegate = nil;
+    
+    // Get a handle to the playlist we're moving
+    NSMutableArray *pets = [NSMutableArray arrayWithArray:[self.fetchedResultsController fetchedObjects]];
+    
+    // Get a handle to the call we're moving
+    Pet *petToMove = [pets objectAtIndex:fromIndexPath.row];
+    
+    // Remove the object from it's current position
+    [pets removeObjectAtIndex:fromIndexPath.row];
+    
+    // Insert it at it's new position
+    [pets insertObject:petToMove atIndex:toIndexPath.row];
+    
+    // Update the order of them all according to their index in the mutable array
+    [pets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Pet *p = (Pet *)obj;
+        p.order = [NSNumber numberWithInt:idx];
+    }];
+    
+    // Save the managed object context
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context save:nil];
+    
+    // Allow the delegates to work now
+    self.fetchedResultsController.delegate = self;
+    
+    [self.fetchedResultsController performFetch:nil];
+    [tableView reloadData];
+}
+
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
 }
 
 #pragma mark - Navigation

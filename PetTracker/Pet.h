@@ -2,7 +2,7 @@
 //  Pet.h
 //  PetTracker
 //
-//  Created by Hannemann on 4/16/14.
+//  Created by Hannemann on 4/26/14.
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * picture;
+@property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) NSSet *activities;
 @end
 

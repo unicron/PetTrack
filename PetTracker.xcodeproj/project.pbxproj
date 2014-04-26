@@ -21,6 +21,7 @@
 		DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */; };
 		DA5A863E19086712009E847C /* nko_colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863B19086712009E847C /* nko_colormap.png */; };
 		DA5A8640190AEDCB009E847C /* dog-120 icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5A863F190AEDCB009E847C /* dog-120 icon 2.png */; };
+		DA5A864B190C0CF2009E847C /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5A864A190C0CF2009E847C /* Pet.m */; };
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
 		DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */; };
@@ -39,7 +40,6 @@
 		DA8D16B818CFFEAD008ACE5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */; };
 		DA8D16BA18CFFEAD008ACE5D /* PetTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */; };
 		DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */; };
-		DAA8531F18FEA8970014483A /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8531E18FEA8970014483A /* Pet.m */; };
 		DAA8532518FEAC440014483A /* Pet+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532418FEAC440014483A /* Pet+Database.m */; };
 		DAA8532818FEAEE00014483A /* Activity+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532718FEAEE00014483A /* Activity+Database.m */; };
 		DAA8532B18FEB1F60014483A /* PetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532A18FEB1F60014483A /* PetActivity.m */; };
@@ -87,6 +87,8 @@
 		DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nko_brightness_guide@2x.png"; path = "Assets/nko_brightness_guide@2x.png"; sourceTree = "<group>"; };
 		DA5A863B19086712009E847C /* nko_colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nko_colormap.png; path = Assets/nko_colormap.png; sourceTree = "<group>"; };
 		DA5A863F190AEDCB009E847C /* dog-120 icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dog-120 icon 2.png"; sourceTree = "<group>"; };
+		DA5A8649190C0CF2009E847C /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
+		DA5A864A190C0CF2009E847C /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
 		DA6A230318E2103100B50155 /* StatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableViewController.h; sourceTree = "<group>"; };
 		DA6A230418E2103100B50155 /* StatsTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableVIewController.m; sourceTree = "<group>"; };
 		DA78FC4718F9AB4D00582332 /* PTActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTActivityTableViewController.h; sourceTree = "<group>"; };
@@ -112,8 +114,6 @@
 		DA8D16B718CFFEAD008ACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetTrackerTests.m; sourceTree = "<group>"; };
 		DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon.png; sourceTree = "<group>"; };
-		DAA8531D18FEA8970014483A /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
-		DAA8531E18FEA8970014483A /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
 		DAA8532318FEAC440014483A /* Pet+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pet+Database.h"; sourceTree = "<group>"; };
 		DAA8532418FEAC440014483A /* Pet+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pet+Database.m"; sourceTree = "<group>"; };
 		DAA8532618FEAEE00014483A /* Activity+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+Database.h"; sourceTree = "<group>"; };
@@ -321,14 +321,14 @@
 		DA8D16C318D00A1D008ACE5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA5A8649190C0CF2009E847C /* Pet.h */,
+				DA5A864A190C0CF2009E847C /* Pet.m */,
 				DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */,
 				DA5A8641190B3834009E847C /* Categories */,
 				DAA8532918FEB1F60014483A /* PetActivity.h */,
 				DAA8532A18FEB1F60014483A /* PetActivity.m */,
 				DAA8532F18FEC6770014483A /* Activity.h */,
 				DAA8533018FEC6770014483A /* Activity.m */,
-				DAA8531D18FEA8970014483A /* Pet.h */,
-				DAA8531E18FEA8970014483A /* Pet.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -470,6 +470,7 @@
 				DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */,
 				DAA8533F18FF25240014483A /* PTSettingsNavigationViewController.m in Sources */,
 				DAA8532818FEAEE00014483A /* Activity+Database.m in Sources */,
+				DA5A864B190C0CF2009E847C /* Pet.m in Sources */,
 				DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */,
 				DAA8532518FEAC440014483A /* Pet+Database.m in Sources */,
 				DA5A863419085EC5009E847C /* PTSettingsActivityViewController.m in Sources */,
@@ -482,7 +483,6 @@
 				DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */,
 				DAA8533118FEC6770014483A /* Activity.m in Sources */,
 				DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */,
-				DAA8531F18FEA8970014483A /* Pet.m in Sources */,
 				DAA8533618FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m in Sources */,
 				DAA8533C18FF1EF10014483A /* PTSettingsTableViewController.m in Sources */,
 				DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */,

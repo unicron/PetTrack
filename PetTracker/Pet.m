@@ -2,7 +2,7 @@
 //  Pet.m
 //  PetTracker
 //
-//  Created by Hannemann on 4/16/14.
+//  Created by Hannemann on 4/26/14.
 //  Copyright (c) 2014 Hannemann. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 @dynamic name;
 @dynamic picture;
+@dynamic order;
 @dynamic activities;
 
 @end

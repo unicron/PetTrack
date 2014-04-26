@@ -202,7 +202,7 @@
                     <navigationItem key="navigationItem" title="Activities" id="qPY-Uq-jsi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Qz-ep-ELD">
                             <connections>
-                                <segue destination="qbU-DF-QGH" kind="modal" id="hSE-yG-qkv"/>
+                                <segue destination="qbU-DF-QGH" kind="modal" identifier="Add Activity" id="hSE-yG-qkv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -752,7 +752,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SRR-V9-rmH"/>
-        <segue reference="AoZ-I0-k6S"/>
+        <segue reference="hSE-yG-qkv"/>
+        <segue reference="Es4-jR-k15"/>
     </inferredMetricsTieBreakers>
 </document>

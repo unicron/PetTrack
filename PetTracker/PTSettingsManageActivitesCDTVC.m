@@ -12,7 +12,6 @@
 #import "PTSettingsActivityViewController.h"
 
 @interface PTSettingsManageActivitesCDTVC ()
-
 @end
 
 @implementation PTSettingsManageActivitesCDTVC
@@ -32,7 +31,15 @@
     // Do any additional setup after loading the view.
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                   target:self
+                                                                                   action:@selector(doModal:)];
+    
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, addButtonItem];
+}
+
+- (void)doModal:(id)sender {
+    [self performSegueWithIdentifier:@"Add Activity" sender:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -118,16 +125,44 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    // Bypass the delegates temporarily
+    self.fetchedResultsController.delegate = nil;
     
+    // Get a handle to the playlist we're moving
+    NSMutableArray *activities = [NSMutableArray arrayWithArray:[self.fetchedResultsController fetchedObjects]];
+    
+    // Get a handle to the call we're moving
+    Activity *activityToMove = [activities objectAtIndex:fromIndexPath.row];
+    
+    // Remove the object from it's current position
+    [activities removeObjectAtIndex:fromIndexPath.row];
+    
+    // Insert it at it's new position
+    [activities insertObject:activityToMove atIndex:toIndexPath.row];
+    
+    // Update the order of them all according to their index in the mutable array
+    [activities enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Activity *act = (Activity *)obj;
+        act.order = [NSNumber numberWithInt:idx];
+    }];
+    
+    // Save the managed object context
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context save:nil];
+    
+    // Allow the delegates to work now
+    self.fetchedResultsController.delegate = self;
+    
+    [self.fetchedResultsController performFetch:nil];
+    [tableView reloadData];
 }
 
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
-    return NO;
+    return YES;
 }
-
 
 #pragma mark - Navigation
 
