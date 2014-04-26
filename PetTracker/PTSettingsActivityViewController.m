@@ -44,6 +44,15 @@
     };
     
     [self.colorPicker setDidChangeColorBlock:colorPickerChangeBlock];
+    
+    UIColor *colorToSet = [[UIColor alloc] initWithRed:(128.0 / 255)
+                                                 green:(128.0 / 255)
+                                                  blue:(128.0 / 255)
+                                                 alpha:1];
+    
+    [self.colorPicker setColor:colorToSet];
+    [self setActivity:self.activity];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +79,8 @@
         self.navTitle.title = @"Add Activity";
         self.deleteButton.hidden = YES;
     }
-        
+    
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
