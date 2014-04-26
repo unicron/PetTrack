@@ -46,9 +46,9 @@
     [self.colorPicker setDidChangeColorBlock:colorPickerChangeBlock];
     
     UIColor *colorToSet = [[UIColor alloc] initWithRed:(128.0 / 255)
-                                                 green:(128.0 / 255)
-                                                  blue:(128.0 / 255)
-                                                 alpha:1];
+                                                 green:(255.0 / 255)
+                                                  blue:(213.0 / 255)
+                                                 alpha:1.0];
     
     [self.colorPicker setColor:colorToSet];
     [self setActivity:self.activity];
