@@ -7,7 +7,7 @@
         <!--Pet View Controller-->
         <scene sceneID="wD3-SM-WNi">
             <objects>
-                <viewController id="uAW-Nz-r9y" customClass="PTPetViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="uAW-Nz-r9y" customClass="PTPetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hAX-Jg-w3F"/>
                         <viewControllerLayoutGuide type="bottom" id="Hwe-db-abl"/>
@@ -51,16 +51,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vtX-QE-Fsb">
-                        <barButtonItem key="backBarButtonItem" title="Pets" id="z7t-QG-APg"/>
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="B2v-Mg-39Q">
+                    <navigationItem key="navigationItem" id="tS7-3I-Hi3">
+                        <barButtonItem key="backBarButtonItem" title="Pets" id="9MA-0N-YWq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="5nF-3r-TW8">
                             <connections>
-                                <segue destination="W4A-Q7-cLa" kind="modal" identifier="Settings" modalTransitionStyle="flipHorizontal" id="0CA-Hb-lCZ"/>
+                                <segue destination="W4A-Q7-cLa" kind="modal" identifier="Settings" modalTransitionStyle="flipHorizontal" id="QCk-Ft-Nkd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="L8t-AD-PUO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="oOZ-bW-1c5">
                             <connections>
-                                <action selector="cameraClicked:" destination="uAW-Nz-r9y" id="RS3-gd-Zgw"/>
+                                <action selector="cameraClicked:" destination="uAW-Nz-r9y" id="RmV-ce-LR7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

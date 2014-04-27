@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) NSMutableArray *pets;
+@property (nonatomic) BOOL pageControlBeingUsed;
 @end
 
 
@@ -42,7 +43,9 @@
     //use this as temporary image until user sets one
     //[ViewControllerHelper setBackground:self.view];
     
-    // Generate content for our scroll view using the frame height and width as the reference point    
+    // Generate content for our scroll view using the frame height and width as the reference point
+    self.pageControlBeingUsed = NO;
+    
     NSManagedObjectContext *context = self.managedObjectContext;
     [self getOrCreatePets:context];
     
@@ -50,30 +53,33 @@
     UIScrollView *scrollView = self.scrollView;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [self.pets count],
                                         scrollView.frame.size.height);
-    scrollView.pagingEnabled=YES;
+
     scrollView.backgroundColor = [UIColor whiteColor];
     
     int ii = 0;
     for (Pet *pet in self.pets) {
         UIImage *image = [UIImage imageWithData:pet.picture];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(((scrollView.frame.size.width) * ii) + 5,
-                                                                               0,
-                                                                               (scrollView.frame.size.width) - 10,
-                                                                               scrollView.frame.size.height)];
+        UIImageView *imageView = [[UIImageView alloc]
+                                  initWithFrame:CGRectMake(((scrollView.frame.size.width) * ii),
+                                                           0,
+                                                           (scrollView.frame.size.width),
+                                                           scrollView.frame.size.height)];
         
+        imageView.userInteractionEnabled = NO;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.image = image;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.backgroundColor = [UIColor redColor];
         [scrollView addSubview:imageView];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.center.x - 50,
-                                                                   imageView.center.y,
-                                                                   100,
-                                                                   25)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x,
+                                                                   (imageView.frame.origin.y + 64),
+                                                                   imageView.frame.size.width,
+                                                                   37)];
         
         label.text = pet.name;
         label.textAlignment = NSTextAlignmentCenter;
         label.numberOfLines = 2;
-        label.backgroundColor = [[UIColor alloc] initWithWhite:1.0 alpha:0.5];
+        label.backgroundColor = [[UIColor alloc] initWithWhite:1.0 alpha:0.6];
         [scrollView addSubview:label];
         
         ii++;
@@ -137,6 +143,14 @@
 }
 
 #pragma mark - Scrolling/Pages
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.pageControlBeingUsed = NO;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.pageControlBeingUsed = NO;
+}
+
 - (IBAction)changePage {
     // update the scroll view to the appropriate page
     CGRect frame;
@@ -145,10 +159,14 @@
     frame.size = self.scrollView.frame.size;
     [self.scrollView scrollRectToVisible:frame animated:YES];
 
+    self.pageControlBeingUsed = YES;
     [self setCurrentPet];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.pageControlBeingUsed)
+        return;
+    
     // Update the page when more than 50% of the previous/next page is visible
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
