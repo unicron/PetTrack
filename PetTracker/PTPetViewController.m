@@ -43,6 +43,21 @@
     //use this as temporary image until user sets one
     //[ViewControllerHelper setBackground:self.view];
     
+    [self setupScrollView];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)setupScrollView {
+    //clear the scrollview first
+    for (UIView *view in [self.scrollView subviews]) {
+        [view removeFromSuperview];
+    }
+    
     // Generate content for our scroll view using the frame height and width as the reference point
     self.pageControlBeingUsed = NO;
     
@@ -53,7 +68,7 @@
     UIScrollView *scrollView = self.scrollView;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [self.pets count],
                                         scrollView.frame.size.height);
-
+    
     scrollView.backgroundColor = [UIColor whiteColor];
     
     int ii = 0;
@@ -86,12 +101,6 @@
     }
     
     self.pageControl.numberOfPages = [self.pets count];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)getOrCreatePets:(NSManagedObjectContext *)context {
@@ -199,6 +208,9 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
     if (!image) image = info[UIImagePickerControllerOriginalImage];
+    
+    self.pet.picture = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    [self setupScrollView];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
