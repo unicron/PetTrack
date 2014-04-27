@@ -19,6 +19,7 @@
 @property (strong, nonatomic) Pet *pet;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) NSMutableArray *pets;
 @end
 
 
@@ -43,22 +44,17 @@
     
     // Generate content for our scroll view using the frame height and width as the reference point    
     NSManagedObjectContext *context = self.managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Pet" inManagedObjectContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    NSError *error = nil;
-    NSArray *array = [context executeFetchRequest:request error:&error];
+    [self getOrCreatePets:context];
     
     // Adjust scroll view content size, set background colour and turn on paging
     UIScrollView *scrollView = self.scrollView;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [array count],
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [self.pets count],
                                         scrollView.frame.size.height);
     scrollView.pagingEnabled=YES;
     scrollView.backgroundColor = [UIColor whiteColor];
     
     int ii = 0;
-    for (Pet *pet in array) {
+    for (Pet *pet in self.pets) {
         UIImage *image = [UIImage imageWithData:pet.picture];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(((scrollView.frame.size.width) * ii) + 5,
                                                                                0,
@@ -77,12 +73,13 @@
         label.text = pet.name;
         label.textAlignment = NSTextAlignmentCenter;
         label.numberOfLines = 2;
+        label.backgroundColor = [[UIColor alloc] initWithWhite:1.0 alpha:0.5];
         [scrollView addSubview:label];
         
         ii++;
     }
     
-    self.pageControl.numberOfPages = [array count];
+    self.pageControl.numberOfPages = [self.pets count];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,39 +88,55 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-    _managedObjectContext = managedObjectContext;
-    
-    //create or get a default Pet
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Pet" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    NSError *error = nil;
-    NSArray *array = [managedObjectContext executeFetchRequest:request error:&error];
-    
-    if (array && [array count] > 0) {
-        self.pet = array.firstObject;
+- (void)getOrCreatePets:(NSManagedObjectContext *)context {
+    if (context) {
         
-    } else {
-        Pet *pet = [Pet create:nil inManagedObjectContext:managedObjectContext];
-        pet.name = @"Zelda";
+        //create or get a default Pet
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Pet"];
+        request.predicate = nil;
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"order"
+                                                                  ascending:YES]];
         
-        UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
-        pet.picture = [NSData dataWithData:UIImagePNGRepresentation(petImage)];
+        NSError *error = nil;
+        self.pets = [[NSMutableArray alloc] initWithArray:[context executeFetchRequest:request error:&error]];
         
-        // Save the context.
-        if (![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+        if (self.pets && [self.pets count] > 0) {
+            self.pet = self.pets.firstObject;
+            
+        } else {
+            Pet *pet = [Pet create:nil inManagedObjectContext:context];
+            pet.name = @"Zelda";
+            pet.order = @0;
+            
+            UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
+            pet.picture = [NSData dataWithData:UIImagePNGRepresentation(petImage)];
+            
+            // Save the context.
+            if (![context save:&error]) {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+            
+            [self.pets addObject:pet];
+            self.pet = pet;
         }
-        
-        self.pet = pet;
     }
 }
 
+-(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    _managedObjectContext = managedObjectContext;
+    
+    [self getOrCreatePets:managedObjectContext];
+}
+
+- (void)setCurrentPet {
+    Pet *pet = [self.pets objectAtIndex:self.pageControl.currentPage];
+    self.pet = pet;
+}
+
+#pragma mark - Scrolling/Pages
 - (IBAction)changePage {
     // update the scroll view to the appropriate page
     CGRect frame;
@@ -131,19 +144,26 @@
     frame.origin.y = 0;
     frame.size = self.scrollView.frame.size;
     [self.scrollView scrollRectToVisible:frame animated:YES];
+
+    [self setCurrentPet];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Update the page when more than 50% of the previous/next page is visible
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
+    
+    if (page != self.pageControl.currentPage) {
+        self.pageControl.currentPage = page;
+        [self setCurrentPet];
+    }
 }
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
     //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
 }
 
+#pragma mark - Camera Button
 - (IBAction)cameraClicked:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
