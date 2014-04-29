@@ -324,11 +324,11 @@
 				DA5A8649190C0CF2009E847C /* Pet.h */,
 				DA5A864A190C0CF2009E847C /* Pet.m */,
 				DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */,
-				DA5A8641190B3834009E847C /* Categories */,
 				DAA8532918FEB1F60014483A /* PetActivity.h */,
 				DAA8532A18FEB1F60014483A /* PetActivity.m */,
 				DAA8532F18FEC6770014483A /* Activity.h */,
 				DAA8533018FEC6770014483A /* Activity.m */,
+				DA5A8641190B3834009E847C /* Categories */,
 			);
 			name = Model;
 			sourceTree = "<group>";

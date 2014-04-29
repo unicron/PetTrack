@@ -9,4 +9,6 @@
 @interface ViewControllerHelper : NSObject
 + (void)setBackground:(UIView *)view;
 + (void)setRowHeightForTable:(UITableView *)table withCount:(int)count;
++ (void)createDefaultActivitiesWithManagedObjectContextContext:(NSManagedObjectContext *)context;
+
 @end

@@ -49,7 +49,7 @@
 
 - (void)showResetAlert {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                    message:@"Message"
+                                                    message:@"This will delete all of your custom Pets and Activities, along with all data you have recorded using the app.  Are you sure you wish to proceed?"
                                                    delegate:self
                                           cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"OK", nil];
