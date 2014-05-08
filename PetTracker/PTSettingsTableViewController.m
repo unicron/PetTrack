@@ -9,6 +9,7 @@
 #import "PTSettingsTableViewController.h"
 #import "PTSettingsManagePetsCDTVC.h"
 #import "PTSettingsManageActivitesCDTVC.h"
+#import "ViewControllerHelper.h"
 
 @interface PTSettingsTableViewController () <UIAlertViewDelegate>
 
@@ -43,8 +44,20 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    if (buttonIndex == 1)
-//      [self resetAllData];
+    if (buttonIndex == 1) {
+        [ViewControllerHelper resetContext:self.managedObjectContext];
+        [self showResetCompleteAlert];
+    }
+}
+
+- (void)showResetCompleteAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                    message:@"Reset All Complete!"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (void)showResetAlert {

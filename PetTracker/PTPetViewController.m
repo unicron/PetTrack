@@ -12,6 +12,7 @@
 #import "Pet+Database.h"
 #import "StatsTableViewController.h"
 #import "PTSettingsNavigationViewController.h"
+#import "PTSettingsPetViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
@@ -40,10 +41,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //use this as temporary image until user sets one
-    //[ViewControllerHelper setBackground:self.view];
-    
+//    [self getOrCreatePets];
     [self setupScrollView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self getOrCreatePets];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,9 +65,6 @@
     
     // Generate content for our scroll view using the frame height and width as the reference point
     self.pageControlBeingUsed = NO;
-    
-    NSManagedObjectContext *context = self.managedObjectContext;
-    [self getOrCreatePets:context];
     
     // Adjust scroll view content size, set background colour and turn on paging
     UIScrollView *scrollView = self.scrollView;
@@ -83,7 +85,7 @@
         imageView.userInteractionEnabled = NO;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.image = image;
-        imageView.backgroundColor = [UIColor redColor];
+//        imageView.backgroundColor = [UIColor redColor];
         [scrollView addSubview:imageView];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x,
@@ -103,9 +105,9 @@
     self.pageControl.numberOfPages = [self.pets count];
 }
 
-- (void)getOrCreatePets:(NSManagedObjectContext *)context {
+- (void)getOrCreatePets {
+    NSManagedObjectContext *context = self.managedObjectContext;
     if (context) {
-        
         //create or get a default Pet
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Pet"];
         request.predicate = nil;
@@ -119,39 +121,24 @@
             self.pet = self.pets.firstObject;
             
         } else {
-            Pet *pet = [Pet create:nil inManagedObjectContext:context];
-            pet.name = @"Zelda";
-            pet.order = @0;
-            
-            UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
-            pet.picture = [NSData dataWithData:UIImagePNGRepresentation(petImage)];
-            
-            // Save the context.
-            if (![context save:&error]) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                abort();
+            if (self.isViewLoaded && self.view.window) {
+                [self performSegueWithIdentifier:@"Initial Pet" sender:self];
             }
-            
-            [self.pets addObject:pet];
-            self.pet = pet;
         }
     }
 }
 
 -(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     _managedObjectContext = managedObjectContext;
-    
-    [self getOrCreatePets:managedObjectContext];
+    [self getOrCreatePets];
 }
 
+#pragma mark - Scrolling/Pages
 - (void)setCurrentPet {
     Pet *pet = [self.pets objectAtIndex:self.pageControl.currentPage];
     self.pet = pet;
 }
 
-#pragma mark - Scrolling/Pages
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.pageControlBeingUsed = NO;
 }
@@ -188,6 +175,28 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
     //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
+}
+
+- (IBAction)donePet:(UIStoryboardSegue *)segue {
+    PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.sourceViewController; // get results out of vc, which I presented
+    Pet *pet = view.returnPet;
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    if (pet && context) {
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        
+        [self.pets addObject:pet];
+        self.pet = pet;
+    }
+    
+    [self setupScrollView];
 }
 
 #pragma mark - Camera Button
@@ -231,6 +240,9 @@
         PTSettingsNavigationViewController *view = (PTSettingsNavigationViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
         
+    } else if ([segue.destinationViewController isKindOfClass:[PTSettingsPetViewController class]]) {
+        PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.destinationViewController;
+        view.managedObjectContext = self.managedObjectContext;
     }
 }
 

@@ -33,6 +33,63 @@
         table.rowHeight = rowHeight;
 }
 
++ (void)resetContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Pet"];
+    NSArray *items = [context executeFetchRequest:request error:nil];
+    for (id item in items)
+         [context deleteObject:item];
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Activity"];
+    items = [context executeFetchRequest:request error:nil];
+    for (id item in items)
+        [context deleteObject:item];
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
+    items = [context executeFetchRequest:request error:nil];
+    for (id item in items)
+        [context deleteObject:item];
+    
+    // Save the context.
+    NSError *error;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    [context reset];
+}
+
++ (Pet *)createDefaultPetWithManagedObjectContextContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Pet"];
+    NSArray *pets = [context executeFetchRequest:request error:nil];
+    
+    Pet *pet;
+    if ([pets count] == 0) {
+        
+        pet = [Pet create:nil inManagedObjectContext:context];
+        pet.name = @"Zelda";
+        pet.order = @0;
+        
+        UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
+        pet.picture = [NSData dataWithData:UIImagePNGRepresentation(petImage)];
+        
+        // Save the context.
+        NSError *error;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    } else {
+        pet = [pets firstObject];
+    }
+    
+    return pet;
+}
+
 + (void)createDefaultActivitiesWithManagedObjectContextContext:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Activity"];
     NSArray *activities = [context executeFetchRequest:request error:nil];

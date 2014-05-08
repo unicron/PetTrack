@@ -7,13 +7,15 @@
 //
 
 #import "PTSettingsPetViewController.h"
-#import <MobileCoreServices/MobileCoreServices.h>
 #import "Pet+Database.h"
+#import "PTPetViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface PTSettingsPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navTitle;
 @property (strong, nonatomic, readwrite) Pet *returnPet;
 @end
@@ -88,10 +90,6 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (IBAction)deletePet:(id)sender {
-    
-}
-
 #pragma mark - Navigation
 
 - (void)setPropertiesOnPet:(Pet *)pet
@@ -131,16 +129,14 @@
         if ([self.nameText.text length]) {
             shouldSave = YES;
         
-            if (!self.imageView.image) {
-                shouldSave = NO;
-                [msg setString:@"Please choose a picture for your Pet"];
-            }
+//            if (!self.imageView.image) {
+//                shouldSave = NO;
+//                [msg setString:@"Please choose a picture for your Pet"];
+//            }
             
         } else {
             [msg setString:@"Please enter a name for your Pet"];
         }
-        
-        
         
         if (shouldSave) {
             return YES;

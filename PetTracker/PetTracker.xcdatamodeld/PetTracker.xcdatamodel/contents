@@ -7,13 +7,13 @@
         <attribute name="bgred" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PetActivity" inverseName="activity" inverseEntity="PetActivity" syncable="YES"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PetActivity" inverseName="activity" inverseEntity="PetActivity" syncable="YES"/>
     </entity>
     <entity name="Pet" representedClassName="Pet" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PetActivity" inverseName="pet" inverseEntity="PetActivity" syncable="YES"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PetActivity" inverseName="pet" inverseEntity="PetActivity" syncable="YES"/>
     </entity>
     <entity name="PetActivity" representedClassName="PetActivity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -21,8 +21,8 @@
         <relationship name="pet" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="activities" inverseEntity="Pet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="45" positionY="-373" width="128" height="148"/>
-        <element name="Pet" positionX="45" positionY="-480" width="128" height="103"/>
-        <element name="PetActivity" positionX="457" positionY="-261" width="128" height="88"/>
+        <element name="Activity" positionX="52" positionY="-540" width="128" height="148"/>
+        <element name="Pet" positionX="54" positionY="-346" width="128" height="103"/>
+        <element name="PetActivity" positionX="423" positionY="-378" width="128" height="88"/>
     </elements>
 </model>
