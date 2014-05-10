@@ -71,50 +71,54 @@
     
     _statsArray = [[NSMutableArray alloc] init];
     for (id<NSFetchedResultsSectionInfo> section in [frc sections]) {
-        NSCalendar *cal = [NSCalendar currentCalendar];
-        NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
-                                              fromDate:[NSDate date]];
-        
-        NSDate *today = [cal dateFromComponents:components];
-        
-        components = [[NSDateComponents alloc] init];
-        [components setWeek:-1];
-        NSDate *lastWeek = [cal dateByAddingComponents:components
-                                                toDate:today
-                                               options:0];
-        
-        components = [[NSDateComponents alloc] init];
-        [components setMonth:-1];
-        NSDate *lastMonth = [cal dateByAddingComponents:components
-                                                 toDate:today
-                                                options:0];
-        
-        
-        int todayCount = 0;
-        int weekCount = 0;
-        int monthCount = 0;
-        for (PetActivity *pa in [section objects]) {
-            components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
-                                fromDate:pa.date];
-            NSDate *otherDate = [cal dateFromComponents:components];
-            if([today isEqualToDate:otherDate]) {
-                todayCount++;
-            }
-            if ([pa.date compare:lastWeek] == NSOrderedDescending) {
-                weekCount++;
-            }
-            if ([pa.date compare:lastMonth] == NSOrderedDescending) {
-                monthCount++;
-            }
-        }
-        
-        //        int totalCount = [section numberOfObjects];
         
         PTStatsObject *stat = [[PTStatsObject alloc] init];
-        stat.sectionName = [section name];
-        stat.dayCount = todayCount;
-        stat.weekCount = weekCount;
-        stat.monthCount = monthCount;
+        stat.titleText = [section name];
+        stat.detailText = [@([[section objects] count]) stringValue];
+        
+        
+//        NSCalendar *cal = [NSCalendar currentCalendar];
+//        NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
+//                                              fromDate:[NSDate date]];
+//        
+//        NSDate *today = [cal dateFromComponents:components];
+//        
+//        components = [[NSDateComponents alloc] init];
+//        [components setWeek:-1];
+//        NSDate *lastWeek = [cal dateByAddingComponents:components
+//                                                toDate:today
+//                                               options:0];
+//        
+//        components = [[NSDateComponents alloc] init];
+//        [components setMonth:-1];
+//        NSDate *lastMonth = [cal dateByAddingComponents:components
+//                                                 toDate:today
+//                                                options:0];
+        
+        
+//        int todayCount = 0;
+//        int weekCount = 0;
+//        int monthCount = 0;
+//        for (PetActivity *pa in [section objects]) {
+//            components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
+//                                fromDate:pa.date];
+//            NSDate *otherDate = [cal dateFromComponents:components];
+//            if([today isEqualToDate:otherDate]) {
+//                todayCount++;
+//            }
+//            if ([pa.date compare:lastWeek] == NSOrderedDescending) {
+//                weekCount++;
+//            }
+//            if ([pa.date compare:lastMonth] == NSOrderedDescending) {
+//                monthCount++;
+//            }
+//        }
+        
+//        stat.sectionName = [section name];
+//        stat.dayCount = todayCount;
+//        stat.weekCount = weekCount;
+//        stat.monthCount = monthCount;
+        
         [self.statsArray addObject:stat];
     }
 }
@@ -123,36 +127,47 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	return [[self.statsArray objectAtIndex:section] sectionName];
+//	return [[self.statsArray objectAtIndex:section] sectionName];
+//    return @"Daily Average Times";
+    return @"Total Counts";
+
 }
 
 //override
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.statsArray count];
+//    return [self.statsArray count];
+    return 1;
 }
 
 //override
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+//    return 1;
+    return [self.statsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PTStatsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
-    PTStatsObject *stat = [self.statsArray objectAtIndex:indexPath.section];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
+    PTStatsObject *stat = [self.statsArray objectAtIndex:indexPath.row];
     
     // Configure the cell...
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
-    [df setDateStyle:NSDateFormatterShortStyle];
     [df setTimeStyle:NSDateFormatterShortStyle];
     
-    cell.dayLabel.text = [NSString stringWithFormat:@"Totay: %d", stat.dayCount];
-    cell.weekLabel.text = [NSString stringWithFormat:@"This Week: %d", stat.weekCount];
-    cell.monthLabel.text = [NSString stringWithFormat:@"This Month: %d", stat.monthCount];
+    cell.textLabel.text = stat.titleText;
+    cell.detailTextLabel.text = stat.detailText;
+    
+    //    PTStatsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
+    //    PTStatsObject *stat = [self.statsArray objectAtIndex:indexPath.section];
+    
+    //    cell.dayLabel.text = [NSString stringWithFormat:@"Totay: %d", stat.dayCount];
+    //    cell.weekLabel.text = [NSString stringWithFormat:@"This Week: %d", stat.weekCount];
+    //    cell.monthLabel.text = [NSString stringWithFormat:@"This Month: %d", stat.monthCount];
+    
     return cell;
 }
 

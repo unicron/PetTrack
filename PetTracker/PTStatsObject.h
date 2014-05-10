@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface PTStatsObject : NSObject
-@property (strong, nonatomic) NSString *sectionName;
-@property (nonatomic) NSInteger dayCount;
-@property (nonatomic) NSInteger weekCount;
-@property (nonatomic) NSInteger monthCount;
+//@property (strong, nonatomic) NSString *sectionName;
+//@property (nonatomic) NSInteger dayCount;
+//@property (nonatomic) NSInteger weekCount;
+//@property (nonatomic) NSInteger monthCount;
+
+@property (strong, nonatomic) NSString *titleText;
+@property (strong, nonatomic) NSString *detailText;
 @end
