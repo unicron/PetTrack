@@ -235,6 +235,7 @@
     } else if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
         StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
+        view.pet = self.pet;
         
     } else if ([segue.destinationViewController isKindOfClass:[PTSettingsNavigationViewController class]]) {
         PTSettingsNavigationViewController *view = (PTSettingsNavigationViewController *)segue.destinationViewController;

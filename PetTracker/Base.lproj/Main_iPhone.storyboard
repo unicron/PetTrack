@@ -657,7 +657,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <outlet property="dayLabel" destination="Yio-5Z-G2q" id="BrT-HW-xcT"/>
                                     <outlet property="monthLabel" destination="0Ej-P9-2Zu" id="ak5-xK-ScJ"/>
                                     <outlet property="weekLabel" destination="ahv-pF-tCn" id="K42-0r-S7a"/>
-                                    <segue destination="u5S-1X-Iqg" kind="push" id="z6n-qJ-Ehb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -667,7 +666,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="Gfm-0U-Sa6" id="V2U-R7-8ne"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Statistics" id="bas-Eh-cDc"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="bas-Eh-cDc">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="svs-9H-w4N">
+                            <connections>
+                                <segue destination="u5S-1X-Iqg" kind="push" identifier="History" id="6Ji-az-TNW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7i-z8-etd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -844,7 +849,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hSE-yG-qkv"/>
         <segue reference="Es4-jR-k15"/>
+        <segue reference="hSE-yG-qkv"/>
     </inferredMetricsTieBreakers>
 </document>
