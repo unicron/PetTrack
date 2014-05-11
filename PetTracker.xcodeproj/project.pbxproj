@@ -10,6 +10,7 @@
 		DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */; };
 		DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */; };
 		DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */; };
+		DA09FDFE1920178D00BE8ABF /* PTStatsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */; };
 		DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */; };
 		DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A352E18E0E62D0097FD24 /* CoreDataTableViewController.m */; };
 		DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0F5B4218FE288600A3A21C /* PetTracker.xcdatamodeld */; };
@@ -70,6 +71,8 @@
 		DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerHelper.m; sourceTree = "<group>"; };
 		DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCDTVC.h; sourceTree = "<group>"; };
 		DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCDTVC.m; sourceTree = "<group>"; };
+		DA09FDFC1920178D00BE8ABF /* PTStatsSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTStatsSection.h; sourceTree = "<group>"; };
+		DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTStatsSection.m; sourceTree = "<group>"; };
 		DA0A352618E0DCDC0097FD24 /* PetActivity+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PetActivity+Database.h"; sourceTree = "<group>"; };
 		DA0A352718E0DCDC0097FD24 /* PetActivity+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PetActivity+Database.m"; sourceTree = "<group>"; };
 		DA0A352D18E0E62D0097FD24 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = PetTracker/CoreDataTableViewController.h; sourceTree = SOURCE_ROOT; };
@@ -343,6 +346,8 @@
 				DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */,
 				DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */,
 				DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */,
+				DA09FDFC1920178D00BE8ABF /* PTStatsSection.h */,
+				DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */,
 				DA5A863719086704009E847C /* NKOColorPickerView.m in Sources */,
 				DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */,
+				DA09FDFE1920178D00BE8ABF /* PTStatsSection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
