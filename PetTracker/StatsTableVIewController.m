@@ -72,9 +72,36 @@
     _statsArray = [[NSMutableArray alloc] init];
     for (id<NSFetchedResultsSectionInfo> section in [frc sections]) {
         
+        NSTimeInterval totalTi = 0;
+        int count = 0;
+        NSDate *date2;
+        for (PetActivity *pa in [section objects]) {
+            
+            //get the hour/min/sec from each date and compare them to midnight
+            NSCalendar *cal = [NSCalendar currentCalendar];
+            NSDateComponents *components = [cal components:(NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit)
+                                                  fromDate:pa.date];
+            NSDate *date = [cal dateFromComponents:components];
+            
+            NSDateComponents *components2 = [cal components:(NSDayCalendarUnit)
+                                                   fromDate:pa.date];
+            date2 = [cal dateFromComponents:components2];
+            
+            totalTi = totalTi + [date timeIntervalSinceDate:date2];
+            count++;
+        }
+        
+        NSTimeInterval averageTi = totalTi / count;
+        
+        NSDate *finalDate = [[NSDate alloc] initWithTimeInterval:averageTi sinceDate:date2];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
+        [df setTimeStyle:NSDateFormatterShortStyle];
+        
+        
         PTStatsObject *stat = [[PTStatsObject alloc] init];
-        stat.titleText = [section name];
-        stat.detailText = [@([[section objects] count]) stringValue];
+        stat.titleText = [NSString stringWithFormat:@"%d - %@", [[section objects] count], [section name]];
+        stat.detailText = [NSString stringWithFormat:@"%@", [df stringFromDate:finalDate]];
         
         
 //        NSCalendar *cal = [NSCalendar currentCalendar];
@@ -129,7 +156,8 @@
 {
 //	return [[self.statsArray objectAtIndex:section] sectionName];
 //    return @"Daily Average Times";
-    return @"Total Counts";
+//    return @"Total Counts";
+    return @"Average Time Summary";
 
 }
 
