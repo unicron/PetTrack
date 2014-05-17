@@ -58,9 +58,9 @@
                                                               ascending:YES]];
     
     NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:_managedObjectContext
-                                                                          sectionNameKeyPath:@"activity.name"
-                                                                                   cacheName:nil];
+                                                                          managedObjectContext:_managedObjectContext
+                                                                            sectionNameKeyPath:@"activity.name"
+                                                                                     cacheName:nil];
     NSError *error = nil;
 	if (![frc performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -69,16 +69,31 @@
 	    abort();
 	}
     
-    PTStatsSection *statsSection = [[PTStatsSection alloc] init];
-    statsSection.statsObjects = [[NSMutableArray alloc] init];
+    //find the earlist day for any activity and the number of days since
+    NSFetchRequest *requestForMinDate = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
+    NSArray *minDateArray = [_managedObjectContext executeFetchRequest:requestForMinDate error:nil];
+    NSDate *earliestDate = [minDateArray valueForKeyPath:@"@min.date"];
+    NSDateComponents *nowAndEnd = [[NSCalendar currentCalendar] components:NSDayCalendarUnit
+                                                                  fromDate:earliestDate
+                                                                    toDate:[[NSDate alloc] init]
+                                                                   options:0];
+    
     _statsSectionArray = [[NSMutableArray alloc] init];
     
-    for (id<NSFetchedResultsSectionInfo> section in [frc sections]) {
+    PTStatsSection *statsSectionAverageTime = [[PTStatsSection alloc] init];
+    statsSectionAverageTime.sectionName = @"Average Time of Day";
+    statsSectionAverageTime.statsObjects = [[NSMutableArray alloc] init];
+    
+    PTStatsSection *statsSectionNumberPerDay = [[PTStatsSection alloc] init];
+    statsSectionNumberPerDay.sectionName = @"Number per Day";
+    statsSectionNumberPerDay.statsObjects = [[NSMutableArray alloc] init];
+    
+    for (id<NSFetchedResultsSectionInfo> querySection in [frc sections]) {
         
         NSDate *midnight;
         NSTimeInterval totalTi = 0;
         int count = 0;
-        for (PetActivity *pa in [section objects]) {
+        for (PetActivity *pa in [querySection objects]) {
             
             //get the hour/min/sec from each date and compare them to midnight
             NSCalendar *cal = [NSCalendar currentCalendar];
@@ -103,10 +118,21 @@
         [df setTimeStyle:NSDateFormatterShortStyle];
         
         //set the stats object for display
-        PTStatsObject *stat = [[PTStatsObject alloc] init];
-        stat.titleText = [NSString stringWithFormat:@"%d - %@", [[section objects] count], [section name]];
-        stat.detailText = [NSString stringWithFormat:@"%@", [df stringFromDate:finalTime]];
+        PTStatsObject *statAverageTime = [[PTStatsObject alloc] init];
+        //statAverageTime.titleText = [NSString stringWithFormat:@"%d - %@", [[querySection objects] count], querySection.name];
+        statAverageTime.titleText = querySection.name;
+        statAverageTime.detailText = [NSString stringWithFormat:@"%@", [df stringFromDate:finalTime]];
+        [statsSectionAverageTime.statsObjects addObject:statAverageTime];
+
+        //calculate the number of times this activity occurs / number of days
+        double num = [[querySection objects] count];
+        num = num / [nowAndEnd day];
         
+        //set the stats object for display
+        PTStatsObject *statNumberPerDay = [[PTStatsObject alloc] init];
+        statNumberPerDay.titleText = querySection.name;
+        statNumberPerDay.detailText = [NSString stringWithFormat:@"%f", num];
+        [statsSectionNumberPerDay.statsObjects addObject:statNumberPerDay];
         
 //        NSCalendar *cal = [NSCalendar currentCalendar];
 //        NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
@@ -145,16 +171,11 @@
 //            }
 //        }
         
-//        stat.sectionName = [section name];
-//        stat.dayCount = todayCount;
-//        stat.weekCount = weekCount;
-//        stat.monthCount = monthCount;
-        
-        [statsSection.statsObjects addObject:stat];
+//        [statsSection.statsObjects addObject:stat];
     }
     
-    statsSection.sectionName = @"Average Time Summary";
-    [self.statsSectionArray addObject:statsSection];
+    [self.statsSectionArray addObject:statsSectionAverageTime];
+    [self.statsSectionArray addObject:statsSectionNumberPerDay];
 }
 
 #pragma mark - UITableViewDataSource
@@ -198,13 +219,6 @@
     
     cell.textLabel.text = stat.titleText;
     cell.detailTextLabel.text = stat.detailText;
-    
-    //    PTStatsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Stats Cell"];
-    //    PTStatsObject *stat = [self.statsArray objectAtIndex:indexPath.section];
-    
-    //    cell.dayLabel.text = [NSString stringWithFormat:@"Totay: %d", stat.dayCount];
-    //    cell.weekLabel.text = [NSString stringWithFormat:@"This Week: %d", stat.weekCount];
-    //    cell.monthLabel.text = [NSString stringWithFormat:@"This Month: %d", stat.monthCount];
     
     return cell;
 }
