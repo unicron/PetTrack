@@ -53,6 +53,7 @@
 		DAA853421900075B0014483A /* PTSettingsPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA853411900075B0014483A /* PTSettingsPetViewController.m */; };
 		DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA0BA18EF2408008589CD /* PTPetViewController.m */; };
 		DAF7F22F18E1CB69009FFADF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7F22E18E1CB69009FFADF /* CoreData.framework */; };
+		DAFAEA32192A83A700C68649 /* PTKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFAEA31192A83A700C68649 /* PTKeyValuePair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,8 @@
 		DACDA0B918EF2408008589CD /* PTPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetViewController.h; sourceTree = "<group>"; };
 		DACDA0BA18EF2408008589CD /* PTPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetViewController.m; sourceTree = "<group>"; };
 		DAF7F22E18E1CB69009FFADF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DAFAEA30192A83A700C68649 /* PTKeyValuePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyValuePair.h; sourceTree = "<group>"; };
+		DAFAEA31192A83A700C68649 /* PTKeyValuePair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyValuePair.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +223,8 @@
 				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
 				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
 				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
+				DAFAEA30192A83A700C68649 /* PTKeyValuePair.h */,
+				DAFAEA31192A83A700C68649 /* PTKeyValuePair.m */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */,
 				DA5A863719086704009E847C /* NKOColorPickerView.m in Sources */,
 				DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */,
+				DAFAEA32192A83A700C68649 /* PTKeyValuePair.m in Sources */,
 				DA09FDFE1920178D00BE8ABF /* PTStatsSection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

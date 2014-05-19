@@ -13,6 +13,7 @@
 #import "PTStatsTableViewCell.h"
 #import "PTStatsObject.h"
 #import "PTStatsSection.h"
+#import "PTKeyValuePair.h"
 
 @interface StatsTableViewController ()
 @property (strong, nonatomic) NSMutableArray *statsSectionArray;
@@ -88,11 +89,14 @@
     statsSectionNumberPerDay.sectionName = @"Number per Day";
     statsSectionNumberPerDay.statsObjects = [[NSMutableArray alloc] init];
     
+    PTStatsSection *statsSectionMostFrequent = [[PTStatsSection alloc] init];
+    statsSectionMostFrequent.sectionName = @"Most Frequent";
+    statsSectionMostFrequent.statsObjects = [[NSMutableArray alloc] init];
+    
+    PTKeyValuePair *frequentActivity = [[PTKeyValuePair alloc] init];
     for (id<NSFetchedResultsSectionInfo> querySection in [frc sections]) {
-        
         NSDate *midnight;
         NSTimeInterval totalTi = 0;
-        int count = 0;
         for (PetActivity *pa in [querySection objects]) {
             
             //get the hour/min/sec from each date and compare them to midnight
@@ -105,11 +109,10 @@
             
             //add up the difference from midnight
             totalTi += [compareTime timeIntervalSinceDate:midnight];
-            count++;
         }
         
         //take an average time of day
-        NSTimeInterval averageTi = totalTi / count;
+        NSTimeInterval averageTi = totalTi / [[querySection objects] count];
         
         //calculate the date object with the avg time of day
         NSDate *finalTime = [[NSDate alloc] initWithTimeInterval:averageTi sinceDate:midnight];
@@ -119,7 +122,6 @@
         
         //set the stats object for display
         PTStatsObject *statAverageTime = [[PTStatsObject alloc] init];
-        //statAverageTime.titleText = [NSString stringWithFormat:@"%d - %@", [[querySection objects] count], querySection.name];
         statAverageTime.titleText = querySection.name;
         statAverageTime.detailText = [NSString stringWithFormat:@"%@", [df stringFromDate:finalTime]];
         [statsSectionAverageTime.statsObjects addObject:statAverageTime];
@@ -133,6 +135,12 @@
         statNumberPerDay.titleText = querySection.name;
         statNumberPerDay.detailText = [NSString stringWithFormat:@"%f", num];
         [statsSectionNumberPerDay.statsObjects addObject:statNumberPerDay];
+        
+        //keep track of the highest count for activity
+        if ([[querySection objects] count] > frequentActivity.valueInt) {
+            frequentActivity.keyString = querySection.name;
+            frequentActivity.valueInt = [[querySection objects] count];
+        }
         
 //        NSCalendar *cal = [NSCalendar currentCalendar];
 //        NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
@@ -174,8 +182,14 @@
 //        [statsSection.statsObjects addObject:stat];
     }
     
+    PTStatsObject *statMostFrequentActivity = [[PTStatsObject alloc] init];
+    statMostFrequentActivity.titleText = frequentActivity.keyString;
+    statMostFrequentActivity.detailText = [NSString stringWithFormat:@"%d", frequentActivity.valueInt];
+    [statsSectionMostFrequent.statsObjects addObject:statMostFrequentActivity];
+    
     [self.statsSectionArray addObject:statsSectionAverageTime];
     [self.statsSectionArray addObject:statsSectionNumberPerDay];
+    [self.statsSectionArray addObject:statsSectionMostFrequent];
 }
 
 #pragma mark - UITableViewDataSource
