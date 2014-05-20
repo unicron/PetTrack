@@ -94,7 +94,9 @@
     statsSectionMostFrequent.statsObjects = [[NSMutableArray alloc] init];
     
     PTKeyValuePair *frequentActivity = [[PTKeyValuePair alloc] init];
+    NSMutableDictionary *frequentDays = [[NSMutableDictionary alloc] init];
     for (id<NSFetchedResultsSectionInfo> querySection in [frc sections]) {
+        
         NSDate *midnight;
         NSTimeInterval totalTi = 0;
         for (PetActivity *pa in [querySection objects]) {
@@ -109,6 +111,14 @@
             
             //add up the difference from midnight
             totalTi += [compareTime timeIntervalSinceDate:midnight];
+            
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"EEEE"];
+            NSString *day = [dateFormatter stringFromDate:[NSDate date]];
+            NSNumber *dayCount = [frequentDays objectForKey:day];
+            if (!dayCount)
+                dayCount = [[NSNumber alloc] initWithInt:0];
+            [frequentDays setValue:([NSNumber numberWithInt:dayCount.intValue + 1]) forKey:day];
         }
         
         //take an average time of day
@@ -183,9 +193,27 @@
     }
     
     PTStatsObject *statMostFrequentActivity = [[PTStatsObject alloc] init];
-    statMostFrequentActivity.titleText = frequentActivity.keyString;
-    statMostFrequentActivity.detailText = [NSString stringWithFormat:@"%d", frequentActivity.valueInt];
+    statMostFrequentActivity.titleText = @"Activity";
+    statMostFrequentActivity.detailText = frequentActivity.keyString;
+    //statMostFrequentActivity.detailText = [NSString stringWithFormat:@"%d", frequentActivity.valueInt];
     [statsSectionMostFrequent.statsObjects addObject:statMostFrequentActivity];
+    
+    PTStatsObject *statMostFrequentDay = [[PTStatsObject alloc] init];
+    statMostFrequentDay.titleText = @"Day of week";
+    
+    NSEnumerator *enumerator = [frequentDays keyEnumerator];
+    id key;
+    PTKeyValuePair *frequentDayCount = [[PTKeyValuePair alloc] init];
+    while ((key = [enumerator nextObject])) {
+        NSNumber *dayCount = [frequentDays objectForKey:key];
+        if (dayCount.intValue > frequentDayCount.valueInt) {
+            frequentDayCount.keyString = key;
+            frequentDayCount.valueInt = dayCount.intValue;
+        }
+    }
+    
+    statMostFrequentDay.detailText = frequentDayCount.keyString;
+    [statsSectionMostFrequent.statsObjects addObject:statMostFrequentDay];
     
     [self.statsSectionArray addObject:statsSectionAverageTime];
     [self.statsSectionArray addObject:statsSectionNumberPerDay];
