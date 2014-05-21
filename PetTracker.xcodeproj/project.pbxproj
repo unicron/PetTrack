@@ -26,7 +26,6 @@
 		DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6A230418E2103100B50155 /* StatsTableVIewController.m */; };
 		DA78FC4918F9AB4D00582332 /* PTActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */; };
 		DA78FC4C18FAF02900582332 /* PTRecordActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */; };
-		DA78FC5A18FDE9C500582332 /* barking-dog-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DA78FC5918FDE9C500582332 /* barking-dog-120.png */; };
 		DA8D168918CFFEAD008ACE5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168818CFFEAD008ACE5D /* Foundation.framework */; };
 		DA8D168B18CFFEAD008ACE5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */; };
 		DA8D168D18CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
@@ -40,12 +39,10 @@
 		DA8D16B018CFFEAD008ACE5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D168C18CFFEAD008ACE5D /* UIKit.framework */; };
 		DA8D16B818CFFEAD008ACE5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16B618CFFEAD008ACE5D /* InfoPlist.strings */; };
 		DA8D16BA18CFFEAD008ACE5D /* PetTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */; };
-		DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */; };
 		DAA8532518FEAC440014483A /* Pet+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532418FEAC440014483A /* Pet+Database.m */; };
 		DAA8532818FEAEE00014483A /* Activity+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532718FEAEE00014483A /* Activity+Database.m */; };
 		DAA8532B18FEB1F60014483A /* PetActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8532A18FEB1F60014483A /* PetActivity.m */; };
 		DAA8533118FEC6770014483A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533018FEC6770014483A /* Activity.m */; };
-		DAA8533318FF047F0014483A /* IMG_1272.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA8533218FF047F0014483A /* IMG_1272.jpg */; };
 		DAA8533618FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533518FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m */; };
 		DAA8533918FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533818FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m */; };
 		DAA8533C18FF1EF10014483A /* PTSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533B18FF1EF10014483A /* PTSettingsTableViewController.m */; };
@@ -99,7 +96,6 @@
 		DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTActivityTableViewController.m; sourceTree = "<group>"; };
 		DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRecordActivityViewController.h; sourceTree = "<group>"; };
 		DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRecordActivityViewController.m; sourceTree = "<group>"; };
-		DA78FC5918FDE9C500582332 /* barking-dog-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barking-dog-120.png"; sourceTree = "<group>"; };
 		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,7 +113,6 @@
 		DA8D16B518CFFEAD008ACE5D /* PetTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		DA8D16B718CFFEAD008ACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA8D16B918CFFEAD008ACE5D /* PetTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetTrackerTests.m; sourceTree = "<group>"; };
-		DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon.png; sourceTree = "<group>"; };
 		DAA8532318FEAC440014483A /* Pet+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pet+Database.h"; sourceTree = "<group>"; };
 		DAA8532418FEAC440014483A /* Pet+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pet+Database.m"; sourceTree = "<group>"; };
 		DAA8532618FEAEE00014483A /* Activity+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+Database.h"; sourceTree = "<group>"; };
@@ -126,7 +121,6 @@
 		DAA8532A18FEB1F60014483A /* PetActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetActivity.m; sourceTree = "<group>"; };
 		DAA8532F18FEC6770014483A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		DAA8533018FEC6770014483A /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		DAA8533218FF047F0014483A /* IMG_1272.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1272.jpg; sourceTree = "<group>"; };
 		DAA8533418FF1E9A0014483A /* PTSettingsManagePetsCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSettingsManagePetsCDTVC.h; sourceTree = "<group>"; };
 		DAA8533518FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSettingsManagePetsCDTVC.m; sourceTree = "<group>"; };
 		DAA8533718FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSettingsManageActivitesCDTVC.h; sourceTree = "<group>"; };
@@ -173,12 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				DA5A863F190AEDCB009E847C /* dog-120 icon 2.png */,
-				DA78FC5918FDE9C500582332 /* barking-dog-120.png */,
 				DA5A863B19086712009E847C /* nko_colormap.png */,
 				DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */,
 				DA5A863919086712009E847C /* nko_brightness_guide.png */,
-				DAA8533218FF047F0014483A /* IMG_1272.jpg */,
-				DA8D16C718D0C4AB008ACE5D /* iphone_icon.png */,
 				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
 			);
 			name = Images;
@@ -450,14 +441,11 @@
 				DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */,
 				DA5A863C19086712009E847C /* nko_brightness_guide.png in Resources */,
 				DA5A8640190AEDCB009E847C /* dog-120 icon 2.png in Resources */,
-				DA78FC5A18FDE9C500582332 /* barking-dog-120.png in Resources */,
 				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
 				DA5A863E19086712009E847C /* nko_colormap.png in Resources */,
-				DA8D16C818D0C4AB008ACE5D /* iphone_icon.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
 				DA8D169318CFFEAD008ACE5D /* InfoPlist.strings in Resources */,
-				DAA8533318FF047F0014483A /* IMG_1272.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
