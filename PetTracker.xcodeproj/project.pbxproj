@@ -96,7 +96,7 @@
 		DA78FC4818F9AB4D00582332 /* PTActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTActivityTableViewController.m; sourceTree = "<group>"; };
 		DA78FC4A18FAF02900582332 /* PTRecordActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRecordActivityViewController.h; sourceTree = "<group>"; };
 		DA78FC4B18FAF02900582332 /* PTRecordActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRecordActivityViewController.m; sourceTree = "<group>"; };
-		DA8D168518CFFEAD008ACE5D /* PetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8D168518CFFEAD008ACE5D /* PetTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D168818CFFEAD008ACE5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA8D168A18CFFEAD008ACE5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DA8D168C18CFFEAD008ACE5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -255,7 +255,7 @@
 		DA8D168618CFFEAD008ACE5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA8D168518CFFEAD008ACE5D /* PetTracker.app */,
+				DA8D168518CFFEAD008ACE5D /* PetTrack.app */,
 				DA8D16AC18CFFEAD008ACE5D /* PetTrackerTests.xctest */,
 			);
 			name = Products;
@@ -378,7 +378,7 @@
 			);
 			name = PetTracker;
 			productName = PetTracker;
-			productReference = DA8D168518CFFEAD008ACE5D /* PetTracker.app */;
+			productReference = DA8D168518CFFEAD008ACE5D /* PetTrack.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DA8D16AB18CFFEAD008ACE5D /* PetTrackerTests */ = {
@@ -625,7 +625,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetTracker/PetTracker-Prefix.pch";
 				INFOPLIST_FILE = "PetTracker/PetTracker-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PetTrack;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -642,7 +642,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetTracker/PetTracker-Prefix.pch";
 				INFOPLIST_FILE = "PetTracker/PetTracker-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PetTrack;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

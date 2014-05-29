@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DA8D168418CFFEAD008ACE5D"
-               BuildableName = "PetTracker.app"
+               BuildableName = "PetTrack.app"
                BlueprintName = "PetTracker"
                ReferencedContainer = "container:PetTracker.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DA8D168418CFFEAD008ACE5D"
-            BuildableName = "PetTracker.app"
+            BuildableName = "PetTrack.app"
             BlueprintName = "PetTracker"
             ReferencedContainer = "container:PetTracker.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DA8D168418CFFEAD008ACE5D"
-            BuildableName = "PetTracker.app"
+            BuildableName = "PetTrack.app"
             BlueprintName = "PetTracker"
             ReferencedContainer = "container:PetTracker.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DA8D168418CFFEAD008ACE5D"
-            BuildableName = "PetTracker.app"
+            BuildableName = "PetTrack.app"
             BlueprintName = "PetTracker"
             ReferencedContainer = "container:PetTracker.xcodeproj">
          </BuildableReference>
