@@ -16,12 +16,13 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
-@interface PTPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+@interface PTPetViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UIActionSheetDelegate>
 @property (strong, nonatomic) Pet *pet;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) NSMutableArray *pets;
 @property (nonatomic) BOOL pageControlBeingUsed;
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
 @end
 
 
@@ -201,13 +202,29 @@
 
 #pragma mark - Camera Button
 - (IBAction)cameraClicked:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.allowsEditing = YES;
+//    self.imagePicker = [[UIImagePickerController alloc] init];
+//    self.imagePicker.delegate = self;
+//    self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+//    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    self.imagePicker.allowsEditing = YES;
+//    
+//    [self presentViewController:self.imagePicker animated:YES completion:NULL];
     
-    [self presentViewController:imagePicker animated:YES completion:NULL];
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    [self.imagePicker setDelegate:self];
+    self.imagePicker.allowsEditing = YES;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"Take Photo", @"Choose from Library", nil];
+        [actionSheet showInView:self.view];
+    } else {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:self.imagePicker animated:YES completion:NULL];
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -222,6 +239,18 @@
     [self setupScrollView];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if (buttonIndex == 1) {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    } else if (buttonIndex == 2) {
+        return;
+    }
+
+    [self presentViewController:self.imagePicker animated:YES completion:NULL];
 }
 
 #pragma mark - Navigation

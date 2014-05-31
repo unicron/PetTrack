@@ -70,6 +70,12 @@
 	    abort();
 	}
     
+    //make sure there are even activities at all...
+    if ([[frc sections] count] < 1) {
+        self.statsSectionArray = nil;
+        return;
+    }
+    
     //find the earlist day for any activity and the number of days since
     NSFetchRequest *requestForMinDate = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
     NSArray *minDateArray = [_managedObjectContext executeFetchRequest:requestForMinDate error:nil];
@@ -138,7 +144,9 @@
 
         //calculate the number of times this activity occurs / number of days
         double num = [[querySection objects] count];
-        num = num / [nowAndEnd day];
+        NSInteger days = [nowAndEnd day];
+        if (days > 0)
+            num = num / days;
         
         //set the stats object for display
         PTStatsObject *statNumberPerDay = [[PTStatsObject alloc] init];
