@@ -203,25 +203,18 @@
 
 #pragma mark - Camera Button
 - (IBAction)cameraClicked:(id)sender {
-//    self.imagePicker = [[UIImagePickerController alloc] init];
-//    self.imagePicker.delegate = self;
-//    self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
-//    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    self.imagePicker.allowsEditing = YES;
-//    
-//    [self presentViewController:self.imagePicker animated:YES completion:NULL];
-    
     self.imagePicker = [[UIImagePickerController alloc] init];
     [self.imagePicker setDelegate:self];
-    self.imagePicker.allowsEditing = YES;
+    self.imagePicker.allowsEditing = NO;
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                                  delegate:self
                                                         cancelButtonTitle:@"Cancel"
                                                    destructiveButtonTitle:nil
-                                                        otherButtonTitles:@"Take Photo", @"Choose from Library", nil];
+                                                        otherButtonTitles:@"Take Photo", @"Choose Existing", nil];
         [actionSheet showInView:self.view];
+        
     } else {
         self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         [self presentViewController:self.imagePicker animated:YES completion:NULL];
