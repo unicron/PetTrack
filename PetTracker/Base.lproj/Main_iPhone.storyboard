@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy2-an-SR0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="459"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="uAW-Nz-r9y" id="Nmw-0n-c6y"/>
@@ -45,7 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="vr1-pM-yEt"/>
+                                    <constraint firstAttribute="height" constant="37" id="10x-tV-aG1"/>
                                 </constraints>
                                 <connections>
                                     <action selector="changePage" destination="uAW-Nz-r9y" eventType="valueChanged" id="0SZ-Zj-1bU"/>
@@ -54,23 +54,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DlF-oe-EIE" firstAttribute="leading" secondItem="lPa-4V-em3" secondAttribute="leading" id="DmV-xh-GDe"/>
-                            <constraint firstItem="rPX-ub-YaU" firstAttribute="leading" secondItem="DlF-oe-EIE" secondAttribute="leading" id="J77-lZ-Nwv"/>
-                            <constraint firstItem="sy2-an-SR0" firstAttribute="bottom" secondItem="DlF-oe-EIE" secondAttribute="bottom" id="N7m-Pr-I8f"/>
-                            <constraint firstItem="sy2-an-SR0" firstAttribute="top" secondItem="lPa-4V-em3" secondAttribute="top" id="TgX-GB-jYZ"/>
-                            <constraint firstAttribute="trailing" secondItem="rPX-ub-YaU" secondAttribute="trailing" id="UpY-M2-9na"/>
-                            <constraint firstItem="DlF-oe-EIE" firstAttribute="trailing" secondItem="sy2-an-SR0" secondAttribute="trailing" id="Xhr-uE-FVN"/>
-                            <constraint firstAttribute="bottom" secondItem="DlF-oe-EIE" secondAttribute="bottom" id="i3J-ON-M7v"/>
-                            <constraint firstItem="rPX-ub-YaU" firstAttribute="trailing" secondItem="DlF-oe-EIE" secondAttribute="trailing" id="pCw-XL-nIj"/>
-                            <constraint firstItem="DlF-oe-EIE" firstAttribute="top" secondItem="rPX-ub-YaU" secondAttribute="bottom" id="r3v-rQ-31S"/>
-                            <constraint firstItem="DlF-oe-EIE" firstAttribute="leading" secondItem="sy2-an-SR0" secondAttribute="leading" id="uUL-az-fg3"/>
+                            <constraint firstItem="sy2-an-SR0" firstAttribute="top" secondItem="hAX-Jg-w3F" secondAttribute="bottom" constant="1" id="Jpq-IQ-OGD"/>
+                            <constraint firstItem="DlF-oe-EIE" firstAttribute="leading" secondItem="rPX-ub-YaU" secondAttribute="leading" id="MXZ-GW-o4x"/>
+                            <constraint firstAttribute="bottom" secondItem="DlF-oe-EIE" secondAttribute="bottom" id="Nul-dW-xvy"/>
+                            <constraint firstItem="rPX-ub-YaU" firstAttribute="leading" secondItem="sy2-an-SR0" secondAttribute="leading" id="QAu-k5-rK6"/>
+                            <constraint firstItem="DlF-oe-EIE" firstAttribute="trailing" secondItem="rPX-ub-YaU" secondAttribute="trailing" id="XOM-A9-PHP"/>
+                            <constraint firstItem="sy2-an-SR0" firstAttribute="trailing" secondItem="rPX-ub-YaU" secondAttribute="trailing" id="cvK-RL-NX4"/>
+                            <constraint firstAttribute="trailing" secondItem="rPX-ub-YaU" secondAttribute="trailing" id="j3d-Eo-4J6"/>
+                            <constraint firstItem="rPX-ub-YaU" firstAttribute="leading" secondItem="lPa-4V-em3" secondAttribute="leading" id="kmr-Wg-S6H"/>
+                            <constraint firstItem="DlF-oe-EIE" firstAttribute="top" secondItem="rPX-ub-YaU" secondAttribute="bottom" id="nJk-V4-WHQ"/>
+                            <constraint firstItem="DlF-oe-EIE" firstAttribute="top" secondItem="sy2-an-SR0" secondAttribute="bottom" id="qlV-2d-ud1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tS7-3I-Hi3">
                         <barButtonItem key="backBarButtonItem" title="Pets" id="9MA-0N-YWq"/>
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="5nF-3r-TW8">
                             <connections>
-                                <segue destination="W4A-Q7-cLa" kind="modal" identifier="Settings" modalTransitionStyle="flipHorizontal" id="QCk-Ft-Nkd"/>
+                                <segue destination="W4A-Q7-cLa" kind="modal" identifier="Settings" id="QCk-Ft-Nkd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="oOZ-bW-1c5">

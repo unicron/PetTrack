@@ -86,11 +86,10 @@
         imageView.userInteractionEnabled = NO;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.image = image;
-//        imageView.backgroundColor = [UIColor redColor];
         [scrollView addSubview:imageView];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x,
-                                                                   (imageView.frame.origin.y + 64),
+                                                                   (imageView.frame.origin.y),
                                                                    imageView.frame.size.width,
                                                                    37)];
         
@@ -176,6 +175,8 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
     //MyModalVC *vc = (MyModalVC *)segue.sourceViewController; // get results out of vc, which I presented
+    [self getOrCreatePets];
+    [self setupScrollView];
 }
 
 - (IBAction)donePet:(UIStoryboardSegue *)segue {
