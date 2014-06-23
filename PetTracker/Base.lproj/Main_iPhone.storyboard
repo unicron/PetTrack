@@ -40,7 +40,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <pageControl opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="rPX-ub-YaU">
+                            <pageControl opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="rPX-ub-YaU">
                                 <rect key="frame" x="0.0" y="487" width="320" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -479,7 +479,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="takePicture:" destination="Ofb-23-I01" eventType="touchUpInside" id="VzO-hG-RUa"/>
+                                    <action selector="cameraClicked:" destination="Ofb-23-I01" eventType="touchUpInside" id="7FP-YS-FUn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dO-Tg-1O7">
@@ -918,7 +918,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="takePicture:" destination="hb1-NR-e2S" eventType="touchUpInside" id="puf-WA-gv6"/>
+                                    <action selector="cameraClicked:" destination="hb1-NR-e2S" eventType="touchUpInside" id="pJa-Eg-RkY"/>
                                 </connections>
                             </button>
                         </subviews>

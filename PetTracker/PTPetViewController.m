@@ -82,16 +82,17 @@
                                                            0,
                                                            (scrollView.frame.size.width),
                                                            scrollView.frame.size.height)];
-        
+
         imageView.userInteractionEnabled = NO;
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;  //force content to scroll page bounds
+        imageView.contentMode = UIViewContentModeScaleAspectFill;   //Fit here will show the full image with borders
         imageView.image = image;
         [scrollView addSubview:imageView];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x,
                                                                    (imageView.frame.origin.y),
                                                                    imageView.frame.size.width,
-                                                                   37)];
+                                                                   36)];
         
         label.text = pet.name;
         label.textAlignment = NSTextAlignmentCenter;
@@ -227,12 +228,29 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
-    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    if (!image)
+        image = info[UIImagePickerControllerOriginalImage];
+    
+//    image = [self croppedImage:image.CGImage withBounds:CGRectMake(
+//                                                                   image.size.width / 4,
+//                                                                   image.size.height / 4,
+//                                                                   image.size.height,
+//                                                                   image.size.width - 500)];
     
     self.pet.picture = [NSData dataWithData:UIImagePNGRepresentation(image)];
     [self setupScrollView];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+// Returns a copy of this image that is cropped to the given bounds.
+// The bounds will be adjusted using CGRectIntegral.
+// This method ignores the image's imageOrientation setting.
+- (UIImage *)croppedImage:(CGImageRef)image withBounds:(CGRect)bounds {
+    CGImageRef imageRef = CGImageCreateWithImageInRect(image, bounds);
+    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
+    
+    return croppedImage;
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {

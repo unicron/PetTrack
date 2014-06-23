@@ -48,6 +48,20 @@
 		DAA8533C18FF1EF10014483A /* PTSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533B18FF1EF10014483A /* PTSettingsTableViewController.m */; };
 		DAA8533F18FF25240014483A /* PTSettingsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA8533E18FF25240014483A /* PTSettingsNavigationViewController.m */; };
 		DAA853421900075B0014483A /* PTSettingsPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA853411900075B0014483A /* PTSettingsPetViewController.m */; };
+		DAC8B562195786540083420B /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B54E195786540083420B /* GKCropBorderView.m */; };
+		DAC8B563195786540083420B /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B550195786540083420B /* GKImageCropOverlayView.m */; };
+		DAC8B564195786540083420B /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B552195786540083420B /* GKImageCropView.m */; };
+		DAC8B565195786540083420B /* GKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B554195786540083420B /* GKImageCropViewController.m */; };
+		DAC8B566195786540083420B /* GKImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B556195786540083420B /* GKImagePicker.m */; };
+		DAC8B567195786540083420B /* GKResizeableCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B558195786540083420B /* GKResizeableCropOverlayView.m */; };
+		DAC8B568195786540083420B /* PLCameraSheetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55A195786540083420B /* PLCameraSheetButton.png */; };
+		DAC8B569195786540083420B /* PLCameraSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55B195786540083420B /* PLCameraSheetButton@2x.png */; };
+		DAC8B56A195786540083420B /* PLCameraSheetButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55C195786540083420B /* PLCameraSheetButtonPressed.png */; };
+		DAC8B56B195786540083420B /* PLCameraSheetButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55D195786540083420B /* PLCameraSheetButtonPressed@2x.png */; };
+		DAC8B56C195786540083420B /* PLCameraSheetDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55E195786540083420B /* PLCameraSheetDoneButton.png */; };
+		DAC8B56D195786540083420B /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55F195786540083420B /* PLCameraSheetDoneButton@2x.png */; };
+		DAC8B56E195786540083420B /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B560195786540083420B /* PLCameraSheetDoneButtonPressed.png */; };
+		DAC8B56F195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B561195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png */; };
 		DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA0BA18EF2408008589CD /* PTPetViewController.m */; };
 		DAF7F22F18E1CB69009FFADF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7F22E18E1CB69009FFADF /* CoreData.framework */; };
 		DAFAEA32192A83A700C68649 /* PTKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFAEA31192A83A700C68649 /* PTKeyValuePair.m */; };
@@ -131,6 +145,26 @@
 		DAA8533E18FF25240014483A /* PTSettingsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSettingsNavigationViewController.m; sourceTree = "<group>"; };
 		DAA853401900075B0014483A /* PTSettingsPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSettingsPetViewController.h; sourceTree = "<group>"; };
 		DAA853411900075B0014483A /* PTSettingsPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSettingsPetViewController.m; sourceTree = "<group>"; };
+		DAC8B54D195786540083420B /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
+		DAC8B54E195786540083420B /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
+		DAC8B54F195786540083420B /* GKImageCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropOverlayView.h; sourceTree = "<group>"; };
+		DAC8B550195786540083420B /* GKImageCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropOverlayView.m; sourceTree = "<group>"; };
+		DAC8B551195786540083420B /* GKImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropView.h; sourceTree = "<group>"; };
+		DAC8B552195786540083420B /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
+		DAC8B553195786540083420B /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
+		DAC8B554195786540083420B /* GKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropViewController.m; sourceTree = "<group>"; };
+		DAC8B555195786540083420B /* GKImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImagePicker.h; sourceTree = "<group>"; };
+		DAC8B556195786540083420B /* GKImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImagePicker.m; sourceTree = "<group>"; };
+		DAC8B557195786540083420B /* GKResizeableCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKResizeableCropOverlayView.h; sourceTree = "<group>"; };
+		DAC8B558195786540083420B /* GKResizeableCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKResizeableCropOverlayView.m; sourceTree = "<group>"; };
+		DAC8B55A195786540083420B /* PLCameraSheetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButton.png; sourceTree = "<group>"; };
+		DAC8B55B195786540083420B /* PLCameraSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButton@2x.png"; sourceTree = "<group>"; };
+		DAC8B55C195786540083420B /* PLCameraSheetButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButtonPressed.png; sourceTree = "<group>"; };
+		DAC8B55D195786540083420B /* PLCameraSheetButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButtonPressed@2x.png"; sourceTree = "<group>"; };
+		DAC8B55E195786540083420B /* PLCameraSheetDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButton.png; sourceTree = "<group>"; };
+		DAC8B55F195786540083420B /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
+		DAC8B560195786540083420B /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
+		DAC8B561195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
 		DACDA0B918EF2408008589CD /* PTPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetViewController.h; sourceTree = "<group>"; };
 		DACDA0BA18EF2408008589CD /* PTPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetViewController.m; sourceTree = "<group>"; };
 		DAF7F22E18E1CB69009FFADF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -332,6 +366,40 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		DAC8B54C195786540083420B /* GKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				DAC8B54D195786540083420B /* GKCropBorderView.h */,
+				DAC8B54E195786540083420B /* GKCropBorderView.m */,
+				DAC8B54F195786540083420B /* GKImageCropOverlayView.h */,
+				DAC8B550195786540083420B /* GKImageCropOverlayView.m */,
+				DAC8B551195786540083420B /* GKImageCropView.h */,
+				DAC8B552195786540083420B /* GKImageCropView.m */,
+				DAC8B553195786540083420B /* GKImageCropViewController.h */,
+				DAC8B554195786540083420B /* GKImageCropViewController.m */,
+				DAC8B555195786540083420B /* GKImagePicker.h */,
+				DAC8B556195786540083420B /* GKImagePicker.m */,
+				DAC8B557195786540083420B /* GKResizeableCropOverlayView.h */,
+				DAC8B558195786540083420B /* GKResizeableCropOverlayView.m */,
+			);
+			path = GKClasses;
+			sourceTree = "<group>";
+		};
+		DAC8B559195786540083420B /* GKImages */ = {
+			isa = PBXGroup;
+			children = (
+				DAC8B55A195786540083420B /* PLCameraSheetButton.png */,
+				DAC8B55B195786540083420B /* PLCameraSheetButton@2x.png */,
+				DAC8B55C195786540083420B /* PLCameraSheetButtonPressed.png */,
+				DAC8B55D195786540083420B /* PLCameraSheetButtonPressed@2x.png */,
+				DAC8B55E195786540083420B /* PLCameraSheetDoneButton.png */,
+				DAC8B55F195786540083420B /* PLCameraSheetDoneButton@2x.png */,
+				DAC8B560195786540083420B /* PLCameraSheetDoneButtonPressed.png */,
+				DAC8B561195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png */,
+			);
+			path = GKImages;
+			sourceTree = "<group>";
+		};
 		DACDA0B718EF061E008589CD /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +412,8 @@
 				DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */,
 				DA09FDFC1920178D00BE8ABF /* PTStatsSection.h */,
 				DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */,
+				DAC8B559195786540083420B /* GKImages */,
+				DAC8B54C195786540083420B /* GKClasses */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -441,13 +511,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC8B568195786540083420B /* PLCameraSheetButton.png in Resources */,
 				DA5A863D19086712009E847C /* nko_brightness_guide@2x.png in Resources */,
+				DAC8B56C195786540083420B /* PLCameraSheetDoneButton.png in Resources */,
 				DA5A863C19086712009E847C /* nko_brightness_guide.png in Resources */,
+				DAC8B56A195786540083420B /* PLCameraSheetButtonPressed.png in Resources */,
+				DAC8B569195786540083420B /* PLCameraSheetButton@2x.png in Resources */,
 				DA5A8640190AEDCB009E847C /* dog-120 icon 2.png in Resources */,
 				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
+				DAC8B56F195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
 				DA5A863E19086712009E847C /* nko_colormap.png in Resources */,
 				DA8D169C18CFFEAD008ACE5D /* Main_iPhone.storyboard in Resources */,
+				DAC8B56E195786540083420B /* PLCameraSheetDoneButtonPressed.png in Resources */,
+				DAC8B56D195786540083420B /* PLCameraSheetDoneButton@2x.png in Resources */,
+				DAC8B56B195786540083420B /* PLCameraSheetButtonPressed@2x.png in Resources */,
 				DA8D169318CFFEAD008ACE5D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,24 +552,30 @@
 				DA5A864B190C0CF2009E847C /* Pet.m in Sources */,
 				DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */,
 				DAA8532518FEAC440014483A /* Pet+Database.m in Sources */,
+				DAC8B567195786540083420B /* GKResizeableCropOverlayView.m in Sources */,
 				DA5A863419085EC5009E847C /* PTSettingsActivityViewController.m in Sources */,
 				DA0A352818E0DCDC0097FD24 /* PetActivity+Database.m in Sources */,
 				DAA8533918FF1EAF0014483A /* PTSettingsManageActivitesCDTVC.m in Sources */,
+				DAC8B565195786540083420B /* GKImageCropViewController.m in Sources */,
 				DA8D169918CFFEAD008ACE5D /* AppDelegate.m in Sources */,
 				DAA8532B18FEB1F60014483A /* PetActivity.m in Sources */,
 				DAA853421900075B0014483A /* PTSettingsPetViewController.m in Sources */,
 				DA6A230518E2103100B50155 /* StatsTableVIewController.m in Sources */,
+				DAC8B563195786540083420B /* GKImageCropOverlayView.m in Sources */,
 				DA0A352F18E0E62D0097FD24 /* CoreDataTableViewController.m in Sources */,
 				DAA8533118FEC6770014483A /* Activity.m in Sources */,
+				DAC8B562195786540083420B /* GKCropBorderView.m in Sources */,
 				DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */,
 				DAA8533618FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m in Sources */,
 				DAA8533C18FF1EF10014483A /* PTSettingsTableViewController.m in Sources */,
 				DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
 				DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */,
+				DAC8B564195786540083420B /* GKImageCropView.m in Sources */,
 				DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */,
 				DA5A863719086704009E847C /* NKOColorPickerView.m in Sources */,
 				DA1BCE4418EE0DC900991981 /* PTStatsTableViewCell.m in Sources */,
+				DAC8B566195786540083420B /* GKImagePicker.m in Sources */,
 				DAFAEA32192A83A700C68649 /* PTKeyValuePair.m in Sources */,
 				DA09FDFE1920178D00BE8ABF /* PTStatsSection.m in Sources */,
 			);

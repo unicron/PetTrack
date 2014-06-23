@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navTitle;
 @property (strong, nonatomic, readwrite) Pet *returnPet;
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
 @end
 
 
@@ -67,14 +68,24 @@
     return YES;
 }
 
-- (IBAction)takePicture:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.allowsEditing = YES;
+#pragma mark - Camera Button
+- (IBAction)cameraClicked:(id)sender {
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    [self.imagePicker setDelegate:self];
+    self.imagePicker.allowsEditing = NO;
     
-    [self presentViewController:imagePicker animated:YES completion:NULL];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"Take Photo", @"Choose Existing", nil];
+        [actionSheet showInView:self.view];
+        
+    } else {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:self.imagePicker animated:YES completion:NULL];
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -83,11 +94,25 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
-    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    if (!image)
+        image = info[UIImagePickerControllerOriginalImage];
     
+    self.pet.picture = [NSData dataWithData:UIImagePNGRepresentation(image)];
     self.imageView.image = image;
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if (buttonIndex == 1) {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    } else if (buttonIndex == 2) {
+        return;
+    }
+    
+    [self presentViewController:self.imagePicker animated:YES completion:NULL];
 }
 
 #pragma mark - Navigation
