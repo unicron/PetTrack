@@ -231,6 +231,7 @@
     if (!image)
         image = info[UIImagePickerControllerOriginalImage];
     
+    //crop from center of image?
 //    image = [self croppedImage:image.CGImage withBounds:CGRectMake(
 //                                                                   image.size.width / 4,
 //                                                                   image.size.height / 4,

@@ -46,7 +46,7 @@
     _managedObjectContext = managedObjectContext;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
-    request.predicate = nil;
+    request.predicate = [NSPredicate predicateWithFormat:@"pet == %@", self.pet];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date"
                                                               ascending:NO]];
     

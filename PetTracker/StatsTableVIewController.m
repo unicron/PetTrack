@@ -54,7 +54,7 @@
 
 - (void)setupArray {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
-    request.predicate = nil;
+    request.predicate = [NSPredicate predicateWithFormat:@"pet == %@", self.pet];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"activity.name"
                                                               ascending:YES]];
     
@@ -278,10 +278,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[HistoryCDTVC class]]) {
         HistoryCDTVC *view = (HistoryCDTVC *)segue.destinationViewController;
+        view.pet = self.pet;
         view.managedObjectContext = self.managedObjectContext;
+
         
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        view.selectedIndexPath = indexPath;
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //view.selectedIndexPath = indexPath;
     }
 }
 

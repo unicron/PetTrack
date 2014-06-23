@@ -7,8 +7,10 @@
 //
 
 #import "CoreDataTableViewController.h"
+#import "Pet.h"
 
 @interface HistoryCDTVC : CoreDataTableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) Pet *pet;
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 @end
