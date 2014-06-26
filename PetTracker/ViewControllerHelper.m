@@ -73,7 +73,7 @@
         pet.order = @0;
         
         UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
-        pet.picture = [NSData dataWithData:UIImagePNGRepresentation(petImage)];
+        pet.picture = [NSData dataWithData:UIImageJPEGRepresentation(petImage, 0.8)];
         
         // Save the context.
         NSError *error;

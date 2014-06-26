@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navTitle;
-@property (strong, nonatomic, readwrite) Pet *returnPet;
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 @end
 
@@ -99,7 +98,7 @@
     if (!image)
         image = info[UIImagePickerControllerOriginalImage];
     
-    self.pet.picture = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    self.pet.picture = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.8)];
     self.imageView.image = image;
     
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -122,9 +121,7 @@
 - (void)setPropertiesOnPet:(Pet *)pet
 {
     pet.name = self.nameText.text;
-    pet.picture = [NSData dataWithData:UIImagePNGRepresentation(self.imageView.image)];
-    
-    self.returnPet = pet;
+    pet.picture = [NSData dataWithData:UIImageJPEGRepresentation(self.imageView.image, 1.0)];
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -144,7 +141,9 @@
         NSManagedObjectContext *context = self.managedObjectContext;
         [context deleteObject:self.pet];
         self.pet = nil;
-        self.returnPet = nil;
+        
+    } else if ([segue.identifier isEqualToString:@"Unwind Cancel"]) {
+        [self.managedObjectContext rollback];
     }
 }
 

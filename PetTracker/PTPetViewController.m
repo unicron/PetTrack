@@ -76,7 +76,8 @@
     
     int ii = 0;
     for (Pet *pet in self.pets) {
-        UIImage *image = [UIImage imageWithData:pet.picture];
+        UIImage *image = [[UIImage alloc] initWithData:pet.picture];
+        
         UIImageView *imageView = [[UIImageView alloc]
                                   initWithFrame:CGRectMake(((scrollView.frame.size.width) * ii),
                                                            0,
@@ -238,7 +239,20 @@
 //                                                                   image.size.height,
 //                                                                   image.size.width - 500)];
     
-    self.pet.picture = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    self.pet.picture = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.8)];
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    if (context) {
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+    
     [self setupScrollView];
     
     [self dismissViewControllerAnimated:YES completion:NULL];

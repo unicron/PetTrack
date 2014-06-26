@@ -78,6 +78,7 @@
     
     //find the earlist day for any activity and the number of days since
     NSFetchRequest *requestForMinDate = [NSFetchRequest fetchRequestWithEntityName:@"PetActivity"];
+    requestForMinDate.predicate = [NSPredicate predicateWithFormat:@"pet == %@", self.pet];
     NSArray *minDateArray = [_managedObjectContext executeFetchRequest:requestForMinDate error:nil];
     NSDate *earliestDate = [minDateArray valueForKeyPath:@"@min.date"];
     NSDateComponents *nowAndEnd = [[NSCalendar currentCalendar] components:NSDayCalendarUnit

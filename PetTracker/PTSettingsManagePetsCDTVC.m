@@ -73,9 +73,6 @@
 }
 
 - (IBAction)donePet:(UIStoryboardSegue *)segue {
-    //    PTSettingsPetViewController *view = (PTSettingsPetViewController *)segue.sourceViewController; // get results out of vc, which I presented
-    //    Pet *pet = view.returnPet;
-    
     NSManagedObjectContext *context = self.managedObjectContext;
     if (context) {
         // Save the context.
