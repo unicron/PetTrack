@@ -9,6 +9,7 @@
 #import "StatsTableViewController.h"
 #import "ViewControllerHelper.h"
 #import "PetActivity.h"
+#import "Activity.h"
 #import "HistoryCDTVC.h"
 #import "PTStatsTableViewCell.h"
 #import "PTStatsObject.h"
@@ -36,7 +37,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[VCHelper setBackground:self.view];
     self.navigationItem.title = @"Statistics";
 }
 
@@ -50,6 +50,29 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString *)getHumanReadableFrequency:(double)num {
+    NSString *numHumanReadable = @"Almost Never";
+    
+    if (num > 0.1)
+        numHumanReadable = @"Occasionally";
+    if (num > 0.25)
+        numHumanReadable = @"Sometimes";
+    if (num > 0.5)
+        numHumanReadable = @"Every Other Day";
+    if (num > 0.75)
+        numHumanReadable = @"Often";
+    if (num > 1.0)
+        numHumanReadable = @"Daily";
+    if (num > 1.5)
+        numHumanReadable = @"Frequently";
+    if (num > 2.0)
+        numHumanReadable = @"Multiple Per Day";
+    if (num > 3.0)
+        numHumanReadable = @"All The Time";
+    
+    return numHumanReadable;
 }
 
 - (void)setupArray {
@@ -81,19 +104,27 @@
     requestForMinDate.predicate = [NSPredicate predicateWithFormat:@"pet == %@", self.pet];
     NSArray *minDateArray = [_managedObjectContext executeFetchRequest:requestForMinDate error:nil];
     NSDate *earliestDate = [minDateArray valueForKeyPath:@"@min.date"];
+    NSDate *nowDate = [[NSDate alloc] init];
     NSDateComponents *nowAndEnd = [[NSCalendar currentCalendar] components:NSDayCalendarUnit
                                                                   fromDate:earliestDate
-                                                                    toDate:[[NSDate alloc] init]
+                                                                    toDate:nowDate
                                                                    options:0];
     
     _statsSectionArray = [[NSMutableArray alloc] init];
+    
+    PTStatsSection *statsSectionNormalDay = [[PTStatsSection alloc] init];
+    statsSectionNormalDay.sectionName = @"Normal Day";
+    statsSectionNormalDay.statsObjects = [[NSMutableArray alloc] init];
+    
+    //this will hold the "normal" day activity breakdown that is human-readable
+    NSMutableDictionary *normalDay = [[NSMutableDictionary alloc] init];
     
     PTStatsSection *statsSectionAverageTime = [[PTStatsSection alloc] init];
     statsSectionAverageTime.sectionName = @"Average Time of Day";
     statsSectionAverageTime.statsObjects = [[NSMutableArray alloc] init];
     
     PTStatsSection *statsSectionNumberPerDay = [[PTStatsSection alloc] init];
-    statsSectionNumberPerDay.sectionName = @"Number per Day";
+    statsSectionNumberPerDay.sectionName = @"Frequency";
     statsSectionNumberPerDay.statsObjects = [[NSMutableArray alloc] init];
     
     PTStatsSection *statsSectionMostFrequent = [[PTStatsSection alloc] init];
@@ -102,12 +133,25 @@
     
     PTKeyValuePair *frequentActivity = [[PTKeyValuePair alloc] init];
     NSMutableDictionary *frequentDays = [[NSMutableDictionary alloc] init];
+    
     for (id<NSFetchedResultsSectionInfo> querySection in [frc sections]) {
+        //calculate the number of times this activity occurs / number of days
+        double num = [[querySection objects] count];
+        NSInteger days = [nowAndEnd day];
+        if (days > 0)
+            num = num / days;
+        
+        NSString *numHumanReadable = [self getHumanReadableFrequency:num];
+        
+        //set the stats object for display of num per day
+        PTStatsObject *statNumberPerDay = [[PTStatsObject alloc] init];
+        statNumberPerDay.titleText = querySection.name;
+        statNumberPerDay.detailText = [NSString stringWithFormat:@"%@ (%.02f)",numHumanReadable, num];
+        [statsSectionNumberPerDay.statsObjects addObject:statNumberPerDay];
         
         NSDate *midnight;
         NSTimeInterval totalTi = 0;
         for (PetActivity *pa in [querySection objects]) {
-            
             //get the hour/min/sec from each date and compare them to midnight
             NSCalendar *cal = [NSCalendar currentCalendar];
             NSDateComponents *components = [cal components:(NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:pa.date];
@@ -117,7 +161,8 @@
             midnight = [cal dateFromComponents:components2];
             
             //add up the difference from midnight
-            totalTi += [compareTime timeIntervalSinceDate:midnight];
+            NSTimeInterval diffSinceMidnight = [compareTime timeIntervalSinceDate:midnight];
+            totalTi += diffSinceMidnight;
             
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"EEEE"];
@@ -125,7 +170,10 @@
             NSNumber *dayCount = [frequentDays objectForKey:day];
             if (!dayCount)
                 dayCount = [[NSNumber alloc] initWithInt:0];
+            
             [frequentDays setValue:([NSNumber numberWithInt:dayCount.intValue + 1]) forKey:day];
+            
+            [self addActivity:pa toNormalDay:normalDay];
         }
         
         //take an average time of day
@@ -137,69 +185,24 @@
         //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
         [df setTimeStyle:NSDateFormatterShortStyle];
         
-        //set the stats object for display
+        //set the stats object for display of average time
         PTStatsObject *statAverageTime = [[PTStatsObject alloc] init];
         statAverageTime.titleText = querySection.name;
         statAverageTime.detailText = [NSString stringWithFormat:@"%@", [df stringFromDate:finalTime]];
         [statsSectionAverageTime.statsObjects addObject:statAverageTime];
 
-        //calculate the number of times this activity occurs / number of days
-        double num = [[querySection objects] count];
-        NSInteger days = [nowAndEnd day];
-        if (days > 0)
-            num = num / days;
-        
-        //set the stats object for display
-        PTStatsObject *statNumberPerDay = [[PTStatsObject alloc] init];
-        statNumberPerDay.titleText = querySection.name;
-        statNumberPerDay.detailText = [NSString stringWithFormat:@"%f", num];
-        [statsSectionNumberPerDay.statsObjects addObject:statNumberPerDay];
-        
         //keep track of the highest count for activity
         if ([[querySection objects] count] > frequentActivity.valueInt) {
             frequentActivity.keyString = querySection.name;
             frequentActivity.valueInt = [[querySection objects] count];
         }
-        
-//        NSCalendar *cal = [NSCalendar currentCalendar];
-//        NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
-//                                              fromDate:[NSDate date]];
-//        
-//        NSDate *today = [cal dateFromComponents:components];
-//        
-//        components = [[NSDateComponents alloc] init];
-//        [components setWeek:-1];
-//        NSDate *lastWeek = [cal dateByAddingComponents:components
-//                                                toDate:today
-//                                               options:0];
-//        
-//        components = [[NSDateComponents alloc] init];
-//        [components setMonth:-1];
-//        NSDate *lastMonth = [cal dateByAddingComponents:components
-//                                                 toDate:today
-//                                                options:0];
-        
-        
-//        int todayCount = 0;
-//        int weekCount = 0;
-//        int monthCount = 0;
-//        for (PetActivity *pa in [section objects]) {
-//            components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
-//                                fromDate:pa.date];
-//            NSDate *otherDate = [cal dateFromComponents:components];
-//            if([today isEqualToDate:otherDate]) {
-//                todayCount++;
-//            }
-//            if ([pa.date compare:lastWeek] == NSOrderedDescending) {
-//                weekCount++;
-//            }
-//            if ([pa.date compare:lastMonth] == NSOrderedDescending) {
-//                monthCount++;
-//            }
-//        }
-        
-//        [statsSection.statsObjects addObject:stat];
     }
+    
+//    //iterate days
+//    NSDate *nextDate;
+//    for (nextDate = earliestDate; [nextDate compare:nowDate] < 0; nextDate = [nextDate dateByAddingTimeInterval:24*60*60]) {
+//        [frc fetchedObjects];
+//    }
     
     PTStatsObject *statMostFrequentActivity = [[PTStatsObject alloc] init];
     statMostFrequentActivity.titleText = @"Activity";
@@ -224,9 +227,68 @@
     statMostFrequentDay.detailText = frequentDayCount.keyString;
     [statsSectionMostFrequent.statsObjects addObject:statMostFrequentDay];
     
-    [self.statsSectionArray addObject:statsSectionAverageTime];
-    [self.statsSectionArray addObject:statsSectionNumberPerDay];
-    [self.statsSectionArray addObject:statsSectionMostFrequent];
+    enumerator = [normalDay keyEnumerator];
+    while ((key = [enumerator nextObject])) {
+        NSDictionary *activityCount = [normalDay objectForKey:key];
+        PTStatsObject *statNormalDayActivity = [[PTStatsObject alloc] init];
+        statNormalDayActivity.titleText = key;
+        statNormalDayActivity.detailText = [NSString stringWithFormat:@"%lu", (unsigned long)[activityCount count]];
+        [statsSectionNormalDay.statsObjects addObject:statNormalDayActivity];
+    }
+    
+    [self.statsSectionArray addObject:statsSectionNormalDay];
+//    [self.statsSectionArray addObject:statsSectionAverageTime];
+//    [self.statsSectionArray addObject:statsSectionNumberPerDay];
+//    [self.statsSectionArray addObject:statsSectionMostFrequent];
+}
+
+- (void)addActivity:(PetActivity *)pa toNormalDay:(NSMutableDictionary *)normalDay {
+    NSString *timeOfDay = @"Midnight";
+    NSString *activityName = pa.activity.name;
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:(NSDayCalendarUnit) fromDate:pa.date];
+    NSDate *midnight = [cal dateFromComponents:components];
+    NSDate *earlyMorning = [midnight dateByAddingTimeInterval:5*60*60]; //6am
+    NSDate *midMorning = [midnight dateByAddingTimeInterval:9*60*60];   //9am
+    NSDate *noon = [midnight dateByAddingTimeInterval:12*60*60];        //12pm
+    NSDate *afternoon = [midnight dateByAddingTimeInterval:15*60*60];   //3pm
+    NSDate *afterWork = [midnight dateByAddingTimeInterval:18*60*60];   //6pm
+    NSDate *evening = [midnight dateByAddingTimeInterval:21*60*60];     //9pm
+    NSDate *lateNight = [midnight dateByAddingTimeInterval:24*60*60];   //12am
+    
+    components = [cal components:(NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit) fromDate:pa.date];
+    NSDate *compareTime = [cal dateFromComponents:components];
+    
+    if ([compareTime compare:midnight] == NSOrderedDescending && [compareTime compare:earlyMorning] == NSOrderedAscending)
+        timeOfDay = @"Early Morning";
+    else if ([compareTime compare:earlyMorning] == NSOrderedDescending && [compareTime compare:midMorning] == NSOrderedAscending)
+        timeOfDay = @"Mid Morning";
+    else if ([compareTime compare:midMorning] == NSOrderedDescending && [compareTime compare:noon] == NSOrderedAscending)
+        timeOfDay = @"Noon";
+    else if ([compareTime compare:noon] == NSOrderedDescending && [compareTime compare:afternoon] == NSOrderedAscending)
+        timeOfDay = @"Afternoon";
+    else if ([compareTime compare:afternoon] == NSOrderedDescending && [compareTime compare:afterWork] == NSOrderedAscending)
+        timeOfDay = @"After Work";
+    else if ([compareTime compare:afterWork] == NSOrderedDescending && [compareTime compare:evening] == NSOrderedAscending)
+        timeOfDay = @"Evening";
+    else if ([compareTime compare:evening] == NSOrderedDescending && [compareTime compare:lateNight] == NSOrderedAscending)
+        timeOfDay = @"Late Night";
+    else
+        timeOfDay = @"Really Late";
+    
+    NSMutableDictionary *dictForTimeOfDay = [normalDay objectForKey:timeOfDay];
+    if (!dictForTimeOfDay)
+        dictForTimeOfDay = [[NSMutableDictionary alloc] init];
+    
+    NSNumber *count = [dictForTimeOfDay objectForKey:activityName];
+    if (!count)
+        count = [[NSNumber alloc] initWithInt:0];
+    
+    count = [NSNumber numberWithInt:count.intValue + 1];
+    [dictForTimeOfDay setValue:count forKey:activityName];
+    
+    [normalDay setValue:dictForTimeOfDay forKey:timeOfDay];
 }
 
 #pragma mark - UITableViewDataSource
@@ -235,23 +297,17 @@
 {
     PTStatsSection *statsSection = [self.statsSectionArray objectAtIndex:section];
 	return [statsSection sectionName];
-//    return @"Daily Average Times";
-//    return @"Total Counts";
-//    return @"Average Time Summary";
-
 }
 
 //override
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [self.statsSectionArray count];
-//    return 1;
 }
 
 //override
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return 1;
     PTStatsSection *statsSection = [self.statsSectionArray objectAtIndex:section];
     return [statsSection.statsObjects count];
 }
@@ -264,9 +320,9 @@
     
     // Configure the cell...
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
-    [df setTimeStyle:NSDateFormatterShortStyle];
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    //[df setDateFormat:@"yyyy-MM-dd 'at' hh:mm a"];
+//    [df setTimeStyle:NSDateFormatterShortStyle];
     
     cell.textLabel.text = stat.titleText;
     cell.detailTextLabel.text = stat.detailText;
