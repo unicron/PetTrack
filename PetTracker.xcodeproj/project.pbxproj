@@ -250,6 +250,10 @@
 				DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */,
 				DAFAEA30192A83A700C68649 /* PTKeyValuePair.h */,
 				DAFAEA31192A83A700C68649 /* PTKeyValuePair.m */,
+				DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */,
+				DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */,
+				DA09FDFC1920178D00BE8ABF /* PTStatsSection.h */,
+				DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -408,10 +412,6 @@
 				DA5A863619086704009E847C /* NKOColorPickerView.m */,
 				DA1BCE4218EE0DC900991981 /* PTStatsTableViewCell.h */,
 				DA1BCE4318EE0DC900991981 /* PTStatsTableViewCell.m */,
-				DA1BCE4518EE5DBF00991981 /* PTStatsObject.h */,
-				DA1BCE4618EE5DBF00991981 /* PTStatsObject.m */,
-				DA09FDFC1920178D00BE8ABF /* PTStatsSection.h */,
-				DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */,
 				DAC8B559195786540083420B /* GKImages */,
 				DAC8B54C195786540083420B /* GKClasses */,
 			);
