@@ -13,6 +13,7 @@
 #import "StatsTableViewController.h"
 #import "PTSettingsNavigationViewController.h"
 #import "PTSettingsPetViewController.h"
+#import "DaySummaryTableViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
@@ -288,8 +289,8 @@
         view.managedObjectContext = self.managedObjectContext;
         view.pet = self.pet;
         
-    } else if ([segue.destinationViewController isKindOfClass:[StatsTableViewController class]]) {
-        StatsTableViewController *view = (StatsTableViewController *)segue.destinationViewController;
+    } else if ([segue.destinationViewController isKindOfClass:[DaySummaryTableViewController class]]) {
+        DaySummaryTableViewController *view = (DaySummaryTableViewController *)segue.destinationViewController;
         view.managedObjectContext = self.managedObjectContext;
         view.pet = self.pet;
         

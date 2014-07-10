@@ -62,6 +62,7 @@
 		DAC8B56D195786540083420B /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B55F195786540083420B /* PLCameraSheetDoneButton@2x.png */; };
 		DAC8B56E195786540083420B /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B560195786540083420B /* PLCameraSheetDoneButtonPressed.png */; };
 		DAC8B56F195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC8B561195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png */; };
+		DAC8B57C196E10DA0083420B /* DaySummaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC8B57B196E10DA0083420B /* DaySummaryTableViewController.m */; };
 		DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACDA0BA18EF2408008589CD /* PTPetViewController.m */; };
 		DAF7F22F18E1CB69009FFADF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7F22E18E1CB69009FFADF /* CoreData.framework */; };
 		DAFAEA32192A83A700C68649 /* PTKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFAEA31192A83A700C68649 /* PTKeyValuePair.m */; };
@@ -165,6 +166,8 @@
 		DAC8B55F195786540083420B /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
 		DAC8B560195786540083420B /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
 		DAC8B561195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
+		DAC8B57A196E10DA0083420B /* DaySummaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaySummaryTableViewController.h; sourceTree = "<group>"; };
+		DAC8B57B196E10DA0083420B /* DaySummaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaySummaryTableViewController.m; sourceTree = "<group>"; };
 		DACDA0B918EF2408008589CD /* PTPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPetViewController.h; sourceTree = "<group>"; };
 		DACDA0BA18EF2408008589CD /* PTPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTPetViewController.m; sourceTree = "<group>"; };
 		DAF7F22E18E1CB69009FFADF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -244,6 +247,8 @@
 		DA5A8643190B384B009E847C /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				DAC8B57A196E10DA0083420B /* DaySummaryTableViewController.h */,
+				DAC8B57B196E10DA0083420B /* DaySummaryTableViewController.m */,
 				DA6A230318E2103100B50155 /* StatsTableViewController.h */,
 				DA6A230418E2103100B50155 /* StatsTableVIewController.m */,
 				DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */,
@@ -568,6 +573,7 @@
 				DA1BCE4718EE5DBF00991981 /* PTStatsObject.m in Sources */,
 				DAA8533618FF1E9A0014483A /* PTSettingsManagePetsCDTVC.m in Sources */,
 				DAA8533C18FF1EF10014483A /* PTSettingsTableViewController.m in Sources */,
+				DAC8B57C196E10DA0083420B /* DaySummaryTableViewController.m in Sources */,
 				DA0F5B4418FE288600A3A21C /* PetTracker.xcdatamodeld in Sources */,
 				DA8D169518CFFEAD008ACE5D /* main.m in Sources */,
 				DACDA0BB18EF2408008589CD /* PTPetViewController.m in Sources */,
