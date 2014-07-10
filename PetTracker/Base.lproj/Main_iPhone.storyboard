@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="View Statistics" id="3xV-CO-AmK">
+                                    <barButtonItem title="View Summary" id="3xV-CO-AmK">
                                         <connections>
                                             <segue destination="JHL-X7-V2H" kind="push" identifier="Day Summary" id="1Jw-PL-cFK"/>
                                         </connections>
@@ -994,6 +994,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Day Summary" id="dwf-cU-LXm">
+                        <barButtonItem key="backBarButtonItem" title="Summary" id="8kO-b1-ggw"/>
                         <barButtonItem key="rightBarButtonItem" title="More..." id="r1b-fh-25J">
                             <connections>
                                 <segue destination="Gfm-0U-Sa6" kind="push" id="Ha6-6l-sIF"/>

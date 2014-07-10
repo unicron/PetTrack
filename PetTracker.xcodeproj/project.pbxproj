@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */; };
 		DA0523E818D1471C001FEA41 /* ViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */; };
 		DA0523EE18D3B641001FEA41 /* HistoryCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0523ED18D3B641001FEA41 /* HistoryCDTVC.m */; };
 		DA09FDFE1920178D00BE8ABF /* PTStatsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09FDFD1920178D00BE8ABF /* PTStatsSection.m */; };
@@ -79,7 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fur-wallpaper-8-1024x682.png"; sourceTree = "<group>"; };
 		DA0523E618D1471C001FEA41 /* ViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerHelper.h; sourceTree = "<group>"; };
 		DA0523E718D1471C001FEA41 /* ViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerHelper.m; sourceTree = "<group>"; };
 		DA0523EC18D3B641001FEA41 /* HistoryCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCDTVC.h; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				DA5A863B19086712009E847C /* nko_colormap.png */,
 				DA5A863A19086712009E847C /* nko_brightness_guide@2x.png */,
 				DA5A863919086712009E847C /* nko_brightness_guide.png */,
-				DA0523E418D144A0001FEA41 /* fur-wallpaper-8-1024x682.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -523,7 +520,6 @@
 				DAC8B56A195786540083420B /* PLCameraSheetButtonPressed.png in Resources */,
 				DAC8B569195786540083420B /* PLCameraSheetButton@2x.png in Resources */,
 				DA5A8640190AEDCB009E847C /* dog-120 icon 2.png in Resources */,
-				DA0523E518D144A0001FEA41 /* fur-wallpaper-8-1024x682.png in Resources */,
 				DAC8B56F195786540083420B /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
 				DA8D16A718CFFEAD008ACE5D /* Images.xcassets in Resources */,
 				DA5A863E19086712009E847C /* nko_colormap.png in Resources */,
