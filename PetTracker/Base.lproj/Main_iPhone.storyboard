@@ -155,6 +155,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="r8c-Xc-yeA" kind="push" identifier="Acknowledgements" id="Of6-7c-JgI"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Pe7-QC-dmC" style="IBUITableViewCellStyleDefault" id="Ota-zA-J8n">
                                         <rect key="frame" x="0.0" y="196" width="320" height="44"/>
@@ -362,6 +365,46 @@
                 <exit id="QKw-cn-Rbf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1868" y="-983"/>
+        </scene>
+        <!--View Controller - Acknowledgements-->
+        <scene sceneID="4eq-on-8ZD">
+            <objects>
+                <viewController id="r8c-Xc-yeA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WLx-qM-1R7"/>
+                        <viewControllerLayoutGuide type="bottom" id="DhX-XV-sbl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0or-UD-GXk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVm-1y-NCc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">This app uses portions of the open source library "NKOColorPicker" (https://github.com/FWCarlos/NKO-Color-Picker-View-iOS).  
+
+The license is provided here for reference:  
+
+Copyright (C) 2014 Carlos Vidal
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE LICENSE</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Acknowledgements" id="Kka-hg-TYz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99c-6Y-bIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-2348"/>
         </scene>
         <!--Settings Manage PetsCDTVC - Pets-->
         <scene sceneID="ao9-On-VCo">
@@ -590,9 +633,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tP4-Vd-VVp">
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tP4-Vd-VVp">
                                 <rect key="frame" x="0.0" y="269" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="wO1-mX-Bdx"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="419293721.94816101">
                                     <!--2014-04-15 22:28:41 +0000-->
                                 </date>
@@ -618,45 +664,45 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-HJ-kmz">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-HJ-kmz">
                                 <rect key="frame" x="20" y="107" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c94-zc-1je">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c94-zc-1je">
                                 <rect key="frame" x="20" y="188" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating New Activity:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeO-h2-iBl">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Creating New Activity:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeO-h2-iBl">
                                 <rect key="frame" x="20" y="78" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rfW-pN-HN6"/>
+                                    <constraint firstAttribute="height" constant="21" id="Zbl-Vt-VXh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Pet:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT8-u2-0f8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="For Pet:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT8-u2-0f8">
                                 <rect key="frame" x="20" y="159" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="EBV-OW-QTH"/>
+                                    <constraint firstAttribute="height" constant="21" id="iqf-87-eU5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-E3-8sZ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date and Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-E3-8sZ">
                                 <rect key="frame" x="20" y="240" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qkO-jG-hVm"/>
+                                    <constraint firstAttribute="height" constant="21" id="ade-IG-AJt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -681,27 +727,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </toolbar>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="tlC-I5-KP8" firstAttribute="leading" secondItem="tP4-Vd-VVp" secondAttribute="leading" id="6mC-E3-wbr"/>
-                            <constraint firstAttribute="trailing" secondItem="FeO-h2-iBl" secondAttribute="trailing" constant="20" symbolic="YES" id="CJR-2w-c65"/>
-                            <constraint firstAttribute="bottom" secondItem="tlC-I5-KP8" secondAttribute="bottom" id="CxA-EY-cxV"/>
-                            <constraint firstItem="FeO-h2-iBl" firstAttribute="trailing" secondItem="MHS-HJ-kmz" secondAttribute="trailing" id="I7A-Uu-pWo"/>
-                            <constraint firstItem="MHS-HJ-kmz" firstAttribute="top" secondItem="FeO-h2-iBl" secondAttribute="bottom" constant="8" symbolic="YES" id="Laf-0e-arO"/>
-                            <constraint firstItem="IuP-E3-8sZ" firstAttribute="centerX" secondItem="tP4-Vd-VVp" secondAttribute="centerX" id="NHn-kR-veM"/>
-                            <constraint firstItem="nT8-u2-0f8" firstAttribute="top" secondItem="MHS-HJ-kmz" secondAttribute="bottom" constant="31" id="POM-so-xYI"/>
-                            <constraint firstItem="tP4-Vd-VVp" firstAttribute="trailing" secondItem="tlC-I5-KP8" secondAttribute="trailing" id="QMZ-SZ-Zgu"/>
-                            <constraint firstItem="FeO-h2-iBl" firstAttribute="leading" secondItem="MHS-HJ-kmz" secondAttribute="leading" id="RW6-eU-Gnf"/>
-                            <constraint firstItem="tP4-Vd-VVp" firstAttribute="leading" secondItem="I5p-6Y-EI1" secondAttribute="leading" id="Rmm-5Y-zgB"/>
-                            <constraint firstItem="c94-zc-1je" firstAttribute="top" secondItem="nT8-u2-0f8" secondAttribute="bottom" constant="8" symbolic="YES" id="UwB-o8-aWr"/>
-                            <constraint firstItem="MHS-HJ-kmz" firstAttribute="trailing" secondItem="nT8-u2-0f8" secondAttribute="trailing" id="VZO-oC-9rL"/>
-                            <constraint firstItem="FeO-h2-iBl" firstAttribute="leading" secondItem="I5p-6Y-EI1" secondAttribute="leading" constant="20" symbolic="YES" id="dix-LT-AWf"/>
-                            <constraint firstItem="IuP-E3-8sZ" firstAttribute="top" secondItem="c94-zc-1je" secondAttribute="bottom" constant="31" id="e25-Vv-ft6"/>
-                            <constraint firstItem="c94-zc-1je" firstAttribute="trailing" secondItem="IuP-E3-8sZ" secondAttribute="trailing" id="iLE-c0-JvR"/>
-                            <constraint firstItem="MHS-HJ-kmz" firstAttribute="leading" secondItem="nT8-u2-0f8" secondAttribute="leading" id="jjU-xi-M8L"/>
-                            <constraint firstItem="FeO-h2-iBl" firstAttribute="top" secondItem="pqo-CL-FGg" secondAttribute="bottom" constant="58" id="lwr-Pr-4us"/>
-                            <constraint firstItem="nT8-u2-0f8" firstAttribute="leading" secondItem="c94-zc-1je" secondAttribute="leading" id="n6b-ui-d6D"/>
-                            <constraint firstItem="c94-zc-1je" firstAttribute="trailing" secondItem="nT8-u2-0f8" secondAttribute="trailing" id="u5Y-vD-B5f"/>
-                            <constraint firstItem="tP4-Vd-VVp" firstAttribute="top" secondItem="IuP-E3-8sZ" secondAttribute="bottom" constant="8" symbolic="YES" id="vf1-OJ-pz4"/>
-                            <constraint firstItem="IuP-E3-8sZ" firstAttribute="leading" secondItem="c94-zc-1je" secondAttribute="leading" id="wch-a7-ltB"/>
+                            <constraint firstItem="c94-zc-1je" firstAttribute="leading" secondItem="nT8-u2-0f8" secondAttribute="leading" id="8bv-Po-gjU"/>
+                            <constraint firstItem="c94-zc-1je" firstAttribute="trailing" secondItem="IuP-E3-8sZ" secondAttribute="trailing" id="97r-la-zee"/>
+                            <constraint firstAttribute="trailing" secondItem="FeO-h2-iBl" secondAttribute="trailing" constant="20" symbolic="YES" id="9DI-pq-FFA"/>
+                            <constraint firstItem="nT8-u2-0f8" firstAttribute="trailing" secondItem="MHS-HJ-kmz" secondAttribute="trailing" id="9Wc-U2-gJG"/>
+                            <constraint firstItem="MHS-HJ-kmz" firstAttribute="trailing" secondItem="FeO-h2-iBl" secondAttribute="trailing" id="ADn-XO-14a"/>
+                            <constraint firstItem="nT8-u2-0f8" firstAttribute="trailing" secondItem="c94-zc-1je" secondAttribute="trailing" id="I5L-Ma-P6q"/>
+                            <constraint firstItem="tP4-Vd-VVp" firstAttribute="leading" secondItem="I5p-6Y-EI1" secondAttribute="leading" id="IxF-GN-CSK"/>
+                            <constraint firstAttribute="bottom" secondItem="tlC-I5-KP8" secondAttribute="bottom" id="N0c-Gz-HyI"/>
+                            <constraint firstItem="nT8-u2-0f8" firstAttribute="leading" secondItem="MHS-HJ-kmz" secondAttribute="leading" id="S3G-sm-PGM"/>
+                            <constraint firstItem="tlC-I5-KP8" firstAttribute="trailing" secondItem="tP4-Vd-VVp" secondAttribute="trailing" id="V6P-6F-H3k"/>
+                            <constraint firstItem="tP4-Vd-VVp" firstAttribute="leading" secondItem="tlC-I5-KP8" secondAttribute="leading" id="WYT-kn-YKh"/>
+                            <constraint firstItem="FeO-h2-iBl" firstAttribute="leading" secondItem="I5p-6Y-EI1" secondAttribute="leading" constant="20" symbolic="YES" id="YuP-Lv-Y4s"/>
+                            <constraint firstItem="IuP-E3-8sZ" firstAttribute="centerX" secondItem="tP4-Vd-VVp" secondAttribute="centerX" id="bjg-IW-Mnr"/>
+                            <constraint firstItem="nT8-u2-0f8" firstAttribute="top" secondItem="MHS-HJ-kmz" secondAttribute="bottom" constant="31" id="eFf-zG-Wfe"/>
+                            <constraint firstItem="MHS-HJ-kmz" firstAttribute="top" secondItem="FeO-h2-iBl" secondAttribute="bottom" constant="8" symbolic="YES" id="gZy-Zq-Fp5"/>
+                            <constraint firstItem="IuP-E3-8sZ" firstAttribute="top" secondItem="c94-zc-1je" secondAttribute="bottom" constant="31" id="gta-NI-m9Y"/>
+                            <constraint firstItem="FeO-h2-iBl" firstAttribute="leading" secondItem="MHS-HJ-kmz" secondAttribute="leading" id="khd-cb-mYA"/>
+                            <constraint firstItem="tP4-Vd-VVp" firstAttribute="top" secondItem="IuP-E3-8sZ" secondAttribute="bottom" constant="8" symbolic="YES" id="peG-RU-Wv4"/>
+                            <constraint firstItem="c94-zc-1je" firstAttribute="leading" secondItem="IuP-E3-8sZ" secondAttribute="leading" id="xQL-Ln-d7d"/>
+                            <constraint firstItem="c94-zc-1je" firstAttribute="top" secondItem="nT8-u2-0f8" secondAttribute="bottom" constant="8" symbolic="YES" id="xXE-kz-60L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record Activity" id="X70-eZ-ISn"/>
