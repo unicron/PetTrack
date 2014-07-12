@@ -44,13 +44,14 @@
     // Do any additional setup after loading the view.
     
 //    [self getOrCreatePets];
-    [self setupScrollView];
+//    [self setupScrollView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self getOrCreatePets];
-
+    
+    [self setupScrollView];
 }
 
 - (void)didReceiveMemoryWarning
