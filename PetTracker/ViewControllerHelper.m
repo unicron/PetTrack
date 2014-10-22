@@ -72,7 +72,7 @@
         pet.name = @"Zelda";
         pet.order = @0;
         
-        UIImage *petImage = [UIImage imageNamed:@"IMG_1272.jpg"];
+        UIImage *petImage = [UIImage imageNamed:@"Zelda.jpg"];
         pet.picture = [NSData dataWithData:UIImageJPEGRepresentation(petImage, 0.8)];
         
         // Save the context.
@@ -101,7 +101,7 @@
         activity.bgred = @0;
         activity.bggreen = @128;
         activity.bgblue = @128;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Nap";
@@ -109,7 +109,7 @@
         activity.bgred = @255;
         activity.bggreen = @128;
         activity.bgblue = @0;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Meal";
@@ -117,7 +117,7 @@
         activity.bgred = @64;
         activity.bggreen = @0;
         activity.bgblue = @128;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Snack";
@@ -125,7 +125,7 @@
         activity.bgred = @128;
         activity.bggreen = @0;
         activity.bgblue = @0;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Potty #1";
@@ -133,7 +133,7 @@
         activity.bgred = @25;
         activity.bggreen = @25;
         activity.bgblue = @25;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Potty #2";
@@ -141,7 +141,7 @@
         activity.bgred = @0;
         activity.bggreen = @0;
         activity.bgblue = @255;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Playtime";
@@ -149,7 +149,7 @@
         activity.bgred = @204;
         activity.bggreen = @102;
         activity.bgblue = @255;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
         activity = [Activity create:nil inManagedObjectContext:context];
         activity.name = @"Sick";
@@ -157,11 +157,8 @@
         activity.bgred = @255;
         activity.bggreen = @102;
         activity.bgblue = @102;
-        activity.bgalpha = @0.5;
+        activity.bgalpha = @0.8;
         
-        //seems like this won't work without implementing a custom transformer
-        //        NSData *theData = [NSKeyedArchiver archivedDataWithRootObject:[UIColor blackColor]];
-        //        UIColor *theColor = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:theData];
         
         // Save the context.
         NSError *error;

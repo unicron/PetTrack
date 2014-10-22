@@ -77,6 +77,11 @@
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
 {
     switch(type) {
+        case NSFetchedResultsChangeMove:
+        case NSFetchedResultsChangeUpdate:
+            //not handled
+            break;
+            
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;

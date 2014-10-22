@@ -39,7 +39,7 @@
     
     NKOColorPickerDidChangeColorBlock colorPickerChangeBlock = ^(UIColor *color) {
         //Your code handling a color change in the picker view.
-        color = [color colorWithAlphaComponent:0.5];
+        color = [color colorWithAlphaComponent:0.8];
         self.colorResult.backgroundColor = color;
     };
     

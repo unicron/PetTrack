@@ -125,9 +125,13 @@
             self.pet = self.pets.firstObject;
             
         } else {
+            //show pet creation screens
             if (self.isViewLoaded && self.view.window) {
                 [self performSegueWithIdentifier:@"Initial Pet" sender:self];
             }
+            
+            //create Zelda for testing purposes
+            //self.pet = [ViewControllerHelper createDefaultPetWithManagedObjectContextContext:self.managedObjectContext];
         }
     }
 }

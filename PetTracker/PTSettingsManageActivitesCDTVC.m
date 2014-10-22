@@ -80,7 +80,7 @@
 
 - (void)setRowHeight{
     [ViewControllerHelper setRowHeightForTable:self.tableView
-                                     withCount:[[self.fetchedResultsController fetchedObjects] count]];
+                                     withCount:(int)[[self.fetchedResultsController fetchedObjects] count]];
 }
 
 - (IBAction)doneActivity:(UIStoryboardSegue *)segue {
@@ -143,7 +143,7 @@
     // Update the order of them all according to their index in the mutable array
     [activities enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         Activity *act = (Activity *)obj;
-        act.order = [NSNumber numberWithInt:idx];
+        act.order = [NSNumber numberWithInt:(int)idx];
     }];
     
     // Save the managed object context

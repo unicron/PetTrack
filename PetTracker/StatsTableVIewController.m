@@ -185,7 +185,7 @@
         //keep track of the highest count for activity
         if ([[querySection objects] count] > frequentActivity.valueInt) {
             frequentActivity.keyString = querySection.name;
-            frequentActivity.valueInt = [[querySection objects] count];
+            frequentActivity.valueInt = (int)[[querySection objects] count];
         }
     }
     

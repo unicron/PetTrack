@@ -120,7 +120,7 @@
     // Update the order of them all according to their index in the mutable array
     [pets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         Pet *p = (Pet *)obj;
-        p.order = [NSNumber numberWithInt:idx];
+        p.order = [NSNumber numberWithInt:(int)idx];
     }];
     
     // Save the managed object context

@@ -72,7 +72,7 @@
     }
     
     [ViewControllerHelper setRowHeightForTable:self.tableView
-                                     withCount:[[self.fetchedResultsController fetchedObjects] count]];
+                                     withCount:(int)[[self.fetchedResultsController fetchedObjects] count]];
 }
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
